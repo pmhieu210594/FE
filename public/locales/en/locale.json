@@ -1,0 +1,1345 @@
+﻿{
+  "Layout": {
+    "appName": "EDCAP",
+    "admin": "Admin",
+    "dashboard": "Dashboard",
+    "pmDashboard": "PM Dashboard",
+    "customers": "Customers",
+    "projects": "Projects",
+    "systemAdmin": "System Administration",
+    "organization": "Organization",
+    "teams": "Teams",
+    "roles": "Roles",
+    "repositories": "Repositories",
+    "userAccounts": "User Accounts",
+    "auditLogs": "Audit Log",
+    "scoreThresholds": "Score Thresholds",
+    "traceability": "Traceability",
+    "openSidebar": "Expand sidebar",
+    "closeSidebar": "Collapse sidebar",
+    "language": "Language",
+    "logout": "Logout",
+    "guest": "Guest",
+    "qaDashboard": "QA Dashboard",
+    "developmentDashboard": "Development Dashboard"
+  },
+  "Components": {
+    "Search": "Search",
+    "actions": "Actions",
+    "PleaseEnter": "Please enter {{title}}",
+    "PleaseEnterOnlyNumber": "Please enter numbers only.",
+    "PleaseEnterOnlyText": "Please enter letters only.",
+    "PleaseEnterAtLeastCharacters": "Please enter at least {{min}} characters.",
+    "PleaseEnterAValidEmailAddress": "Please enter a valid email address.",
+    "PasswordNeedsToHaveAtLeast8Characters": "Password must have at least 8 characters, including upper/lowercase letters, numbers, and a special character.",
+    "PleaseEnterMaximumCharacters": "Please enter no more than {{max}} characters.",
+    "PleaseEnterAtLeastNumberCharacters": "Please enter at least {{min}} characters.",
+    "PleaseEnterMinimumNumber": "Please enter a number greater than or equal to {{min}}.",
+    "PleaseEnterMaximumNumberCharacters": "Please enter no more than {{max}} digits.",
+    "PleaseEnterMaximumNumber": "Please enter a number less than or equal to {{max}}.",
+    "IsAlreadyTaken": "{{label}} '{{value}}' is already taken.",
+    "Action": "Action",
+    "Clear": "Clear",
+    "OK": "OK",
+    "Enter": "Enter {{title}}",
+    "PleaseChoose": "Please choose {{title}}",
+    "Filter": "Filter",
+    "PerPageSuffix": "/page",
+    "SomethingWentWrong": "Something went wrong, please try again!",
+    "UnsafeInputDetected": "Your input contains characters that are not allowed. Please remove any HTML/script tags and try again.",
+    "Hide": "Hide",
+    "ResetSize": "Reset size",
+    "PinRight": "Pin Right",
+    "PinLeft": "Pin Left",
+    "Choose": "Choose"
+  },
+  "Pages": {
+    "Login": {
+      "brandLabel": "EDCAP access",
+      "title": "Sign in to EDCAP",
+      "description": "Use your EDCAP account to access the workspace.",
+      "formTitle": "Welcome back",
+      "formDescription": "Enter your username and password to continue.",
+      "username": "Username",
+      "usernamePlaceholder": "Enter your username",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password",
+      "signIn": "Sign in",
+      "signingIn": "Signing in...",
+      "loginFailed": "Login failed. Please try again.",
+      "secureAccessTitle": "Secure access",
+      "secureAccessBody": "Signed-in users receive a short-lived bearer token for the current session.",
+      "temporaryLandingTitle": "Temporary landing",
+      "temporaryLandingBody": "Non-admin users are routed here while the dedicated home route is being finalized."
+    },
+    "Errors": {
+      "INVALID_CREDENTIALS": "Invalid username or password.",
+      "ACCOUNT_TEMPORARILY_UNAVAILABLE": "This account is temporarily unavailable.",
+      "NO_ROLE_ASSIGNED": "You do not have access. Please contact your admin.",
+      "VALIDATION_ERROR": "Validation failed. Please check the highlighted fields.",
+      "UNAUTHORIZED": "You are not authorized to perform this action.",
+      "BAD_REQUEST": "The request could not be processed.",
+      "INTERNAL_ERROR": "An unexpected error occurred."
+    },
+    "Home": {
+      "title": "Workspace home",
+      "description": "This is the temporary landing page for non-admin users.",
+      "welcome": "Signed in as {{name}}.",
+      "body": "You have not joined any projects. Please contact the ADMIN for assistance."
+    },
+    "Traceability": {
+      "title": "Traceability Map",
+      "description": "Review ticket evidence, linked PRs, commits, CI runs, broken links, and timeline events.",
+      "ticketId": "Ticket ID",
+      "ticketKey": "Ticket key",
+      "internalTicketId": "Internal ticket ID",
+      "ticketIdPlaceholder": "Enter a ticket ID",
+      "load": "Load",
+      "clear": "Clear",
+      "emptyState": "Enter a ticket ID to load the traceability view.",
+      "loading": "Loading traceability data...",
+      "loadingFailed": "Unable to load traceability data.",
+      "NotFound": "Traceability data was not found for this ticket.",
+      "completeness": "Completeness",
+      "artifacts": "Artifacts",
+      "prs": "PRs",
+      "commits": "Commits",
+      "ciRuns": "CI runs",
+      "reviewRounds": "Review rounds",
+      "brokenLinks": "Broken links",
+      "traceabilityTab": "Traceability",
+      "brokenLinksTitle": "Broken Links",
+      "brokenLinksDescription": "Missing evidence stays visible.",
+      "noBrokenLinks": "No broken links were found.",
+      "reviewComments": "Review comments",
+      "noReviewComments": "No review comments",
+      "timelineTitle": "Timeline",
+      "timelineDescription": "Evidence events ordered chronologically.",
+      "noTimeline": "No timeline events were found.",
+      "linksTitle": "Traceability Links",
+      "linksDescription": "Persisted relationships from the read model.",
+      "noLinks": "No traceability links were found.",
+      "item": "Item",
+      "state": "State",
+      "path": "Path",
+      "updatedAt": "Updated at",
+      "present": "Present",
+      "missing": "Missing",
+      "confidence": "Confidence",
+      "ticket": "Ticket",
+      "backToDashboard": "Back to dashboard",
+      "lastRun": "Last run",
+      "lastCommit": "Last commit",
+      "version": "Version"
+    },
+    "PmDashboard": {
+      "version": "Version",
+      "kicker": "PM operational view",
+      "title": "PM Dashboard",
+      "description": "Track blocked work, missing evidence, EQS, and risk signals in one read-only view.",
+      "refresh": "Refresh",
+      "export": "Export CSV",
+      "refreshSuccess": "Dashboard refreshed.",
+      "exportSuccess": "CSV export started.",
+      "filters": "Filters",
+      "filtersDescription": "Refine the dashboard by project, time range, repository, quality band, and risk level.",
+      "projectId": "Project",
+      "periodKey": "Time range",
+      "repositoryId": "Repository",
+      "phaseCode": "Phase",
+      "scoreBand": "Quality band",
+      "riskLevel": "Risk level",
+      "status": "Status",
+      "allProjects": "All projects",
+      "allPeriods": "All periods",
+      "allRepositories": "All repositories",
+      "allPhases": "All phases",
+      "allQualityBands": "All quality bands",
+      "allRiskLevels": "All risk levels",
+      "allTicketsTitle": "List of tickets",
+      "allTicketsDescription": "Every ticket in the current filter set, including clean tickets with no issue.",
+      "search": "Search",
+      "searchPlaceholder": "Search ticket, PR, AC, connector, or finding",
+      "blockedTickets": "Tickets blocked",
+      "openIssuesDetail": "This ticket currently has issue records.",
+      "contentMissingEvidenceDetailTicket": "No missing evidence for this ticket.",
+      "missingEvidence": "Missing evidence",
+      "openIssues": "Open issues",
+      "waitingReview": "Waiting review",
+      "ciFailed": "CI failed",
+      "riskTickets": "Risk tickets",
+      "exceptionTickets": "Exception tickets",
+      "eqsSummary": "EQS summary",
+      "updatedAt": "Updated at",
+      "phaseBottleneck": "Missing evidence bottleneck",
+      "phaseBottleneckDescription": "Tickets grouped by repository using missing evidence counts.",
+      "missingEvidenceBottleneck": "Missing evidence bottleneck",
+      "missingEvidenceBottleneckDescription": "Tickets grouped by repository using missing evidence counts.",
+      "listTitle": "Attention list",
+      "listDescription": "{{total}} ticket(s) match the current filters.",
+      "pageInfo": "Page {{page}} of {{totalPages}}",
+      "totalItems": "{{total}} total",
+      "ticket": "Ticket",
+      "phase": "Phase",
+      "risk": "Risk",
+      "createAt": "Created at",
+      "totalScore": "Total score",
+      "eqs": "EQS",
+      "age": "Age",
+      "ownerDisplay": "Owner",
+      "action": "Action",
+      "viewDetail": "View details",
+      "view": "View",
+      "pagination": "Page {{page}} of {{totalPages}}",
+      "previous": "Previous",
+      "next": "Next",
+      "detailTitle": "Ticket detail",
+      "loadingDetail": "Loading ticket detail...",
+      "detailFailed": "Unable to load ticket detail.",
+      "blocked": "Blocked",
+      "traceability": "Traceability",
+      "openTraceability": "Open traceability",
+      "metadata": "Metadata",
+      "repository": "Repository",
+      "project": "Project",
+      "missingEvidenceTitle": "Missing evidence",
+      "riskExceptionTitle": "Risk and exception",
+      "scoreBreakdown": "Score breakdown",
+      "none": "None",
+      "ticketId": "Ticket ID",
+      "roleTabs": {
+        "pm": "PM",
+        "qa": "QA",
+        "development": "Development",
+        "security": "Security",
+        "executive": "Executive",
+        "dataOps": "Data Ops"
+      },
+      "cards": {
+        "ticketProgress": {
+          "title": "Ticket progress",
+          "description": "Count by phase, days stalled, overdue"
+        },
+        "missingEvidence": {
+          "title": "Missing evidence",
+          "description": "Missing spec-pack.md, imp-plan.md, review-checklist.md, self-review.md, test-plan.md, test-result.md, or test-report.md."
+        },
+        "traceabilityMissingSections": {
+          "title": "Traceability gaps",
+          "description": "Tickets with missing required traceability sections"
+        },
+        "openIssues": {
+          "title": "Open issues",
+          "description": "Unresolved issues, due, owning role"
+        },
+        "waitingReview": {
+          "title": "Waiting review",
+          "description": "PR review requested, pending approval"
+        },
+        "ciFailed": {
+          "title": "CI failed",
+          "description": "Failure causes, retry count"
+        },
+        "exceptionRisk": {
+          "title": "Exception / Risk",
+          "description": "Skip, no-verify, emergency merge, high risk"
+        }
+      },
+      "emptyState": "No tickets match the current filters.",
+      "titleTicket": "Title",
+      "ticketInformation": "Ticket information",
+      "phaseName": "Phase name",
+      "phaseDescription": "Description",
+      "phaseCreatedAt": "Created at",
+      "REPORT": "Report",
+      "SPEC_PACK": "Spec pack",
+      "riskTitle": "Risk",
+      "exceptionTitle": "Exception",
+      "traceabilityIssuesTitle": "Traceability issues",
+      "firstCiPass": "First CI Pass",
+      "firstCiFailed": "First CI Failed",
+      "reviews": "Reviews",
+      "openIssuesCount": "Open issues",
+      "exceptions": "Exceptions",
+      "risks": "Risks",
+      "traceabilityIssuesCount": "Traceability issues",
+      "missingSections": "Missing sections",
+      "spec_pack_ac_numbering": "spec-pack.md exists and has numbered ACs spec_pack_ac_numbering",
+      "spec_pack_scope": "spec-pack.md contains Scope child sections, Open Issues, and Risk controls",
+      "impl_plan_impact_rollback_ac": "impl-plan.md contains impact scope, rollback, and AC mapping",
+      "pr_review_canonical_source": "PR review metadata/comments are the canonical review source and the review state is present",
+      "review_checklist_security_test": "review-checklist.md exists and covers security/test viewpoints",
+      "self_review_commands_results_concerns": "self-review.md contains commands run, results, and concerns",
+      "test_plan_results_ac_linkage": "test-plan.md and test-results.md are linked to ACs",
+      "ci_link_present": "CI run ID or CI link is present",
+      "blackbox_testcases_main_acs": "blackbox-testcases.md  is present",
+      "report_overview_impact_review_test_risk_remaining": "report.md contains overview, impact, review, test, risk, and remaining issues",
+      "openTraceabilityDescription": "Missing required sections are counted as traceability issues and keep the ticket out of a clean state.",
+      "notFoundTraceabilityDescription": "No mandatory components are missing.",
+      "mergedAt": "Merged at"
+    },
+    "Admin": {
+      "title": "Admin dashboard",
+      "description": "Monitor connector runs and trigger synchronization jobs.",
+      "connectorsTitle": "Available connectors",
+      "connectorsDescription": "Choose a connector and run it against a project.",
+      "connector": "Connector",
+      "selectPlaceholder": "Select a connector",
+      "projectId": "Project ID",
+      "projectIdPlaceholder": "Enter project ID",
+      "syncNow": "Sync now",
+      "unknownError": "An unexpected error occurred.",
+      "loading": "Loading run history...",
+      "noRunsFound": "No runs were found for this connector.",
+      "runHistory": "Run history for {{connector}}",
+      "records": "records"
+    },
+    "Customer": {
+      "title": "Customer Management",
+      "refresh": "Refresh",
+      "create": "Create Customer",
+      "createTitle": "Create Customer",
+      "editTitle": "Edit Customer",
+      "formTitle": "Customer form",
+      "filters": "Filters",
+      "keyword": "Keyword",
+      "keywordPlaceholder": "Search by code or alias",
+      "organization": "Organization",
+      "classification": "Classification",
+      "status": "Status",
+      "all": "All",
+      "customerCode": "Customer code",
+      "customerCodePlaceholder": "Enter customer code",
+      "customerAlias": "Customer alias",
+      "customerAliasPlaceholder": "Enter customer alias",
+      "Code": {
+        "Required": "Please enter a customer code.",
+        "MaxLength": "Customer code must be 50 characters or less.",
+        "Duplicate": "Customer code already exists."
+      },
+      "Alias": {
+        "Required": "Please enter a customer name or alias.",
+        "MaxLength": "Customer name / alias must be 255 characters or less.",
+        "Duplicate": "Customer name / alias already exists in this Organization."
+      },
+      "Classification": {
+        "Invalid": "Classification is invalid."
+      },
+      "Status": {
+        "Invalid": "Status must be All, Active, or Deleted."
+      },
+      "Organization": {
+        "Required": "Please select an organization.",
+        "NotFound": "Organization was not found.",
+        "Unavailable": "The selected Organization is inactive or deleted."
+      },
+      "NotFound": "Customer was not found.",
+      "Deleted": {
+        "CannotEdit": "Deleted Customer cannot be edited."
+      },
+      "AlreadyDeleted": "Customer has already been deleted.",
+      "Conflict": {
+        "Version": "Customer was updated by another user. Please reload and try again."
+      },
+      "Error": {
+        "Forbidden": "You do not have permission to access Customer Management."
+      },
+      "listTitle": "Customer list",
+      "listDescription": "{{total}} customer(s) found",
+      "loading": "Loading customers...",
+      "empty": "No customers were found for the current filters.",
+      "detailTitle": "Customer detail",
+      "detailDescription": "Selected customer summary and actions.",
+      "detailEmpty": "Select a customer from the list to see details.",
+      "save": "Save",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete",
+      "deleteConfirm": "Are you sure you want to delete this customer?",
+      "apply": "Apply",
+      "previous": "Previous",
+      "next": "Next",
+      "pagination": "Page {{page}} of {{totalPages}}",
+      "version": "Version",
+      "updatedAt": "Updated at",
+      "deletedAt": "Deleted at",
+      "unknownError": "An unexpected error occurred.",
+      "selectOrganization": "Select an organization",
+      "createSuccess": "OK",
+      "updateSuccess": "OK",
+      "deleteSuccess": "OK",
+      "classificationValues": {
+        "INTERNAL": "Internal",
+        "EXTERNAL": "External"
+      },
+      "statusValues": {
+        "ACTIVE": "Active",
+        "DELETED": "Deleted"
+      },
+      "updatedBy": "Updated by",
+      "createdBy": "Created by",
+      "createdAt": "Created at",
+      "deletedBy": "Deleted by"
+    },
+    "Project": {
+      "title": "Project Management",
+      "create": "Create Project",
+      "createTitle": "Create Project",
+      "editTitle": "Edit Project",
+      "detailTitle": "Project detail",
+      "detailEmpty": "Select a Project from the list to see details.",
+      "filters": "Filters",
+      "apply": "Apply",
+      "save": "Save",
+      "close": "Close",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete",
+      "deleteConfirm": "Are you sure you want to delete project {{projectName}}?",
+      "all": "All",
+      "projectName": "Project name",
+      "projectType": "Project type",
+      "riskLevel": "Risk level",
+      "customer": "Customer",
+      "teams": "Teams",
+      "addTeam": "Add team",
+      "addTeamTitle": "Add team",
+      "selectTeam": "Select team",
+      "removeTeam": "Remove team",
+      "teamsEmpty": "No teams selected.",
+      "status": "Status",
+      "emptyValue": "-",
+      "statusValues": {
+        "ACTIVE": "Active",
+        "DELETED": "Deleted"
+      },
+      "severity": {
+        "INFO": "Info",
+        "LOW": "Low",
+        "MEDIUM": "Medium",
+        "HIGH": "High",
+        "CRITICAL": "Critical"
+      },
+      "Alias": {
+        "Required": "Project name is required.",
+        "MaxLength": "Project name must be 255 characters or less.",
+        "Duplicate": "Project name already exists for this customer."
+      },
+      "Customer": {
+        "Required": "Please select a customer.",
+        "Unavailable": "The selected customer is inactive or deleted."
+      },
+      "ProjectType": {
+        "Invalid": "Project type is invalid."
+      },
+      "RiskLevel": {
+        "Invalid": "Risk level is invalid."
+      },
+      "Team": {
+        "Invalid": "One or more selected Teams are invalid."
+      },
+      "Status": {
+        "Invalid": "Status must be All, Active, or Deleted."
+      },
+      "NotFound": "Project was not found.",
+      "Error": {
+        "Forbidden": "You do not have permission to access Project Management."
+      },
+      "loading": "Loading Project details...",
+      "createdAt": "Created at",
+      "updatedAt": "Updated at",
+      "createSuccess": "OK",
+      "updateSuccess": "OK",
+      "deleteSuccess": "OK",
+      "unknownError": "An unexpected error occurred.",
+      "teamAssignmentHint": "Manage assigned teams for this project.",
+      "teamAssignmentDetailHint": "Assigned teams for this project."
+    },
+    "Repository": {
+      "title": "Repository Management",
+      "create": "Create Repository",
+      "createTitle": "Create Repository",
+      "editTitle": "Edit Repository",
+      "detailTitle": "Repository detail",
+      "loading": "Loading repository...",
+      "detailEmpty": "Select a repository from the list to see details.",
+      "save": "Save",
+      "cancel": "Cancel",
+      "close": "Close",
+      "edit": "Edit",
+      "delete": "Delete",
+      "project": "Project",
+      "name": "Repository name",
+      "hostType": "Host type",
+      "defaultBranch": "Default branch",
+      "repoUrl": "Repository URL",
+      "status": "Status",
+      "all": "All",
+      "filters": "Filters",
+      "apply": "Apply",
+      "statusValues": {
+        "ACTIVE": "Active",
+        "DELETED": "Deleted"
+      },
+      "emptyValue": "-",
+      "createdAt": "Created at",
+      "updatedAt": "Updated at",
+      "deleteConfirm": "Are you sure you want to delete {{repositoryName}}?",
+      "createSuccess": "Repository created successfully.",
+      "updateSuccess": "Repository updated successfully.",
+      "deleteSuccess": "Repository deleted successfully.",
+      "unknownError": "An unexpected error occurred.",
+      "Project": {
+        "Required": "Please select a project.",
+        "NotFound": "Project was not found."
+      },
+      "Name": {
+        "Required": "Please enter a repository name.",
+        "MaxLength": "Repository name must be 255 characters or less.",
+        "Duplicate": "Repository name already exists in this project."
+      },
+      "HostType": {
+        "Required": "Please select a host type.",
+        "Invalid": "Host type is invalid."
+      },
+      "DefaultBranch": {
+        "MaxLength": "Default branch must be 100 characters or less."
+      },
+      "Url": {
+        "MaxLength": "Repository URL must be 2048 characters or less."
+      },
+      "NotFound": "Repository was not found.",
+      "Error": {
+        "Forbidden": "You do not have permission to access Repository Management."
+      }
+    },
+    "Team": {
+      "title": "Team Management",
+      "create": "Create Team",
+      "createTitle": "Create Team",
+      "editTitle": "Edit Team",
+      "detailTitle": "Team detail",
+      "detailEmpty": "Select a Team from the list to see details.",
+      "filters": "Filters",
+      "apply": "Apply",
+      "save": "Save",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete",
+      "deleteConfirm": "Are you sure you want to delete this Team?",
+      "all": "All",
+      "teamCode": "Team code",
+      "teamCodePlaceholder": "Enter team code",
+      "teamName": "Team name",
+      "teamNamePlaceholder": "Enter team name",
+      "description": "Description",
+      "descriptionPlaceholder": "Enter description",
+      "status": "Status",
+      "statusValues": {
+        "ACTIVE": "Active",
+        "DELETED": "Deleted",
+        "INACTIVE": "Inactive"
+      },
+      "Code": {
+        "Required": "Please enter a team code.",
+        "MaxLength": "Team code must be 50 characters or less.",
+        "Duplicate": "Team code already exists."
+      },
+      "Name": {
+        "Required": "Please enter a team name.",
+        "MaxLength": "Team name must be 255 characters or less."
+      },
+      "Description": {
+        "MaxLength": "Description must be 500 characters or less."
+      },
+      "Status": {
+        "Invalid": "Status must be All, Active, or Deleted."
+      },
+      "NotFound": "Team was not found.",
+      "NotActive": "The selected Team is inactive or deleted.",
+      "AlreadyDeleted": "Team has already been deleted.",
+      "Deleted": {
+        "CannotEdit": "Deleted Team cannot be edited."
+      },
+      "Conflict": {
+        "Version": "Team was updated by another user. Please reload and try again."
+      },
+      "Error": {
+        "Forbidden": "You do not have permission to access Team Management."
+      },
+      "loading": "Loading Team details...",
+      "members": "Members",
+      "member": "Member",
+      "pseudonym": "Pseudonym",
+      "role": "Role",
+      "selectMember": "Select a member",
+      "selectRole": "Select a role",
+      "addMember": "Add member",
+      "addMemberTitle": "Add Team member",
+      "updateMemberTitle": "Update role",
+      "memberCount": "Member count",
+      "version": "Version",
+      "updatedAt": "Updated at",
+      "joinedAt": "Joined at",
+      "editMember": "Edit member role",
+      "removeMember": "Remove member",
+      "removeMemberConfirm": "Are you sure you want to remove this member from the Team?",
+      "createSuccess": "OK",
+      "updateSuccess": "OK",
+      "deleteSuccess": "OK",
+      "memberAddSuccess": "OK",
+      "memberUpdateSuccess": "OK",
+      "memberRemoveSuccess": "OK",
+      "unknownError": "An unexpected error occurred.",
+      "Member": {
+        "Required": "Please select a member.",
+        "NotFound": "Member was not found.",
+        "Duplicate": "This member is already assigned to the team."
+      },
+      "Role": {
+        "Required": "Please select a role.",
+        "NotFound": "Role was not found."
+      },
+      "updatedBy": "Updated by",
+      "createdBy": "Created by",
+      "createdAt": "Created at",
+      "deletedBy": "Deleted by"
+    },
+    "Organization": {
+      "title": "Organization management",
+      "create": "Create organization",
+      "filtersTitle": "Filters",
+      "filtersDescription": "Search by code or name and switch between active, inactive, or all records.",
+      "keyword": "Keyword",
+      "keywordPlaceholder": "Search by code or name",
+      "status": "Status",
+      "apply": "Apply",
+      "reset": "Reset",
+      "listTitle": "Organization list",
+      "listDescription": "Latest updated organizations appear first.",
+      "loading": "Loading organization details...",
+      "total": "{{total}} records",
+      "paginationDescription": "Showing {{from}} - {{to}}/Total {{total}} organizations",
+      "empty": "No organizations were found.",
+      "table": {
+        "code": "Code",
+        "name": "Name",
+        "status": "Status",
+        "updatedAt": "Updated at",
+        "actions": "Actions"
+      },
+      "Status": {
+        "ACTIVE": "Active",
+        "DELETED": "Deleted",
+        "Invalid": "Status must be All, Active, or Deleted."
+      },
+      "view": "View",
+      "edit": "Edit",
+      "delete": "Delete",
+      "detailTitle": "Details",
+      "detailDescription": "Read-only deleted records and metadata are shown here.",
+      "detailEmpty": "Select an organization from the list to see details.",
+      "detail": {
+        "description": "Description",
+        "version": "Version",
+        "updatedAt": "Updated at",
+        "updatedBy": "Updated by",
+        "createdBy": "Created by",
+        "createdAt": "Created at",
+        "deletedAt": "Deleted at",
+        "deletedBy": "Deleted by"
+      },
+      "pagination": "Page {{page}} of {{totalPages}}",
+      "traceId": "Trace ID",
+      "error": "An unexpected error occurred.",
+      "deleteConfirm": "Delete this organization? This action will soft delete the record.",
+      "Message": {
+        "Created": "Organization was created.",
+        "Updated": "Organization was updated.",
+        "Deleted": "Organization was deleted."
+      },
+      "Form": {
+        "CreateTitle": "Create organization",
+        "EditTitle": "Edit organization",
+        "CreateDescription": "Provide a unique code, name, and optional description.",
+        "EditDescription": "Update the organization fields and keep the current version for optimistic locking.",
+        "Code": "Organization code",
+        "Name": "Organization name",
+        "Description": "Description",
+        "Close": "Close",
+        "Cancel": "Cancel",
+        "Save": "Save",
+        "Saving": "Saving..."
+      },
+      "Filter": {
+        "All": "All",
+        "Active": "Active",
+        "Deleted": "Deleted"
+      },
+      "Code": {
+        "Required": "Organization code is required.",
+        "MaxLength": "Organization code must be 50 characters or fewer.",
+        "Duplicate": "Organization code already exists.",
+        "DuplicateOnUpdate": "Organization code already exists."
+      },
+      "Name": {
+        "Required": "Organization name is required.",
+        "MaxLength": "Organization name must be 255 characters or fewer.",
+        "Duplicate": "Organization name already exists."
+      },
+      "Description": {
+        "MaxLength": "Description must be 500 characters or fewer."
+      },
+      "Deleted": {
+        "EditNotAllowed": "Deleted organization cannot be edited.",
+        "AlreadyDeleted": "Organization has already been deleted."
+      },
+      "Conflict": {
+        "Version": "Organization was updated by another user. Please reload and try again."
+      },
+      "NotFound": "Organization was not found.",
+      "DeleteConfirm": "Are you sure you want to delete this organization?"
+    },
+    "UserAccounts": {
+      "title": "User Accounts",
+      "loading": "Loading account details...",
+      "paginationDescription": "{{from}}-{{to}} of {{total}} items",
+      "table": {
+        "username": "Username",
+        "member": "Full name",
+        "role": "Role",
+        "status": "Status",
+        "updatedAt": "Updated at"
+      },
+      "fields": {
+        "username": "Username",
+        "member": "Full name",
+        "email": "Email",
+        "role": "Role",
+        "status": "Status",
+        "password": "Password",
+        "newPassword": "New password",
+        "confirmPassword": "Confirm password",
+        "createdAt": "Created at",
+        "updatedAt": "Updated at"
+      },
+      "status": {
+        "ACTIVE": "Active",
+        "INACTIVE": "Inactive"
+      },
+      "filter": {
+        "all": "All"
+      },
+      "actions": {
+        "create": "Create user",
+        "view": "View",
+        "edit": "Edit",
+        "resetPassword": "Reset password",
+        "deactivate": "Deactivate",
+        "reactivate": "Reactivate"
+      },
+      "confirm": {
+        "deactivate": "Deactivate this account?",
+        "reactivate": "Reactivate this account?"
+      },
+      "form": {
+        "createTitle": "Create User Account",
+        "editTitle": "Edit User Account",
+        "detailTitle": "User Account Detail",
+        "create": "Create",
+        "resetTitle": "Reset password",
+        "save": "Save",
+        "cancel": "Cancel",
+        "close": "Close"
+      },
+      "empty": {
+        "detail": "Select an account to see details.",
+        "unmapped": "Unmapped"
+      },
+      "security": {
+        "title": "Security",
+        "description": "Password hash hidden. Token not displayed."
+      },
+      "validation": {
+        "usernameRequired": "Username is required.",
+        "roleRequired": "Role is required.",
+        "passwordMin": "Password must be at least 8 characters.",
+        "passwordPattern": "Password must include letters, numbers, and a special character.",
+        "passwordMismatch": "Password confirmation does not match."
+      }
+    },
+    "RoleManagement": {
+      "title": "Role management",
+      "create": "Create role",
+      "keywordPlaceholder": "Search by role name",
+      "sort": "Sort",
+      "filters": "Filters",
+      "apply": "Apply",
+      "all": "All",
+      "status": "Status",
+      "statusValues": {
+        "ACTIVE": "Active",
+        "DELETED": "Deleted"
+      },
+      "loading": "Loading roles...",
+      "empty": "No roles were found.",
+      "total": "{{total}} records",
+      "previous": "Previous",
+      "next": "Next",
+      "pagination": "Page {{page}} of {{totalPages}}",
+      "view": "View",
+      "edit": "Edit",
+      "delete": "Delete",
+      "detailTitle": "Role details",
+      "error": "An unexpected error occurred.",
+      "DeleteConfirm": "Delete role {{roleName}}?",
+      "emptyValue": "-",
+      "table": {
+        "name": "Role name",
+        "description": "Description",
+        "createdAt": "Created date",
+        "updatedAt": "Updated date"
+      },
+      "detail": {
+        "createdAt": "Created date",
+        "updatedAt": "Updated date"
+      },
+      "Sort": {
+        "NameAsc": "Role name A-Z",
+        "NameDesc": "Role name Z-A"
+      },
+      "Message": {
+        "Created": "Role was created.",
+        "Updated": "Role was updated.",
+        "Deleted": "Role was deleted."
+      },
+      "Form": {
+        "CreateTitle": "Create role",
+        "EditTitle": "Edit role",
+        "Name": "Role name",
+        "Description": "Description",
+        "Close": "Close",
+        "Cancel": "Cancel",
+        "Save": "Save"
+      },
+      "RoleName": {
+        "Required": "Role name is required.",
+        "MaxLength": "Role name must be 100 characters or fewer.",
+        "Duplicate": "Role name already exists."
+      },
+      "SortInvalid": "Sort field is invalid.",
+      "Status": {
+        "Invalid": "Status must be All, Active, or Deleted."
+      },
+      "NotFound": "Role was not found."
+    },
+    "Dashboard": {
+      "roleTabs": {
+        "pm": "PM",
+        "qa": "QA",
+        "development": "Development",
+        "security": "Security",
+        "executive": "Executive",
+        "dataOps": "Data Ops"
+      },
+      "reset": "Reset"
+    },
+    "QaDashboard": {
+      "kicker": "Chapter 9 Dashboard",
+      "title": "QA Dashboard ",
+      "description": "AC-Test Coverage, untested AC, Blackbox Coverage, Test Results, Defect Leakage, and acceptance readiness.",
+      "searchPlaceholder": "Search ticket, PR, AC, phase, connector, or finding",
+      "export": "Export CSV",
+      "refresh": "Refresh",
+      "refreshSuccess": "QA dashboard refreshed.",
+      "exportSuccess": "Export started.",
+      "projectId": "Project",
+      "repositoryId": "Repository",
+      "ticketId": "Ticket",
+      "emptyState": "No data matches the current filters.",
+      "cards": {
+        "acTestCoverage": {
+          "title": "AC-Test Coverage",
+          "description": "AC coverage by ticket and sprint"
+        },
+        "acNotTested": {
+          "title": "AC not tested",
+          "description": "AC count, content, related ticket, owning role"
+        },
+        "blackboxCoverage": {
+          "title": "Blackbox Coverage",
+          "description": "Normal / abnormal / boundary / permission / performance"
+        },
+        "testResults": {
+          "title": "Test Results",
+          "description": "PASS / FAIL / not yet run / CI run link"
+        },
+        "defectLeakage": {
+          "title": "Defect Leakage",
+          "description": "QA / production bugs, root-cause phase"
+        },
+        "acceptanceReady": {
+          "title": "Acceptance ready",
+          "description": "Report yes/no, test results, risk, rollback"
+        }
+      },
+      "loading": "Loading...",
+      "acceptanceCriteria": {
+        "title": "Acceptance Criteria Coverage",
+        "ac": "AC",
+        "ticket": "Ticket",
+        "status": "Status",
+        "blackbox": "Blackbox",
+        "gap": "Gap",
+        "totalItems": "{{count}} items"
+      },
+      "coverageTrend": {
+        "title": "AC Coverage Trend",
+        "target": "Target {{target}}%"
+      },
+      "ticketTable": {
+        "title": "Tickets",
+        "ticketId": "Ticket ID",
+        "summary": "Summary",
+        "status": "Status",
+        "priority": "Priority",
+        "assignee": "Assignee",
+        "acCoverage": "AC Coverage",
+        "testResult": "Test Result",
+        "updatedDate": "Updated Date",
+        "viewDetail": "View Detail",
+        "version": "Version"
+      },
+      "ticketDetail": {
+        "back": "Back to QA Dashboard",
+        "notFound": "Ticket not found.",
+        "loading": "Loading ticket...",
+        "description": "Description",
+        "sprint": "Sprint",
+        "assignee": "Assignee",
+        "createdDate": "Created Date",
+        "updatedDate": "Updated Date",
+        "stats": {
+          "acCoverage": "AC Coverage",
+          "totalAc": "Total AC",
+          "testedAc": "Tested AC",
+          "notTestedAc": "Not Tested AC",
+          "testResult": "Test Result %"
+        },
+        "acTable": {
+          "title": "Acceptance Criteria",
+          "acId": "AC ID",
+          "acceptanceCriteria": "Acceptance Criteria",
+          "status": "Status",
+          "linkedTestCase": "Linked Test Case",
+          "testResult": "Test Result",
+          "owner": "Owner",
+          "export": "Export CSV"
+        },
+        "trend": {
+          "title": "AC Coverage Trend"
+        },
+        "viewCiRun": "View CI Run"
+      }
+    },
+    "SecurityDashboard": {
+      "kicker": "Chapter 9 Dashboard",
+      "title": "Security Dashboard",
+      "description": "Safety Pack, Secret Scan, SAST/SCA, Security Checklist, and Security Exception at a glance. Read-only.",
+      "searchPlaceholder": "Search ticket",
+      "export": "Export CSV",
+      "exportNotAvailable": "Export is not available yet for the Security Dashboard.",
+      "refresh": "Refresh",
+      "projectId": "Project",
+      "repositoryId": "Repository",
+      "safetyStatus": "Safety Pack",
+      "secretScanStatus": "Secret Scan",
+      "sastStatus": "SAST",
+      "exceptionStatus": "Exception",
+      "allProjects": "All projects",
+      "allRepositories": "All repositories",
+      "allStatuses": "All statuses",
+      "emptyState": "No data matches the current filters.",
+      "loading": "Loading...",
+      "loadingDetail": "Loading ticket detail...",
+      "detailFailed": "Failed to load ticket detail.",
+      "none": "None",
+      "cards": {
+        "safetyPack": {
+          "title": "Safety Pack Unready",
+          "description": "Repositories without a READY Safety Pack"
+        },
+        "secretScan": {
+          "title": "Secret Scan Failures",
+          "description": "Tickets with a FAIL secret scan result"
+        },
+        "sastSca": {
+          "title": "SAST/SCA Failures",
+          "description": "Tickets with a FAIL SAST or SCA result"
+        },
+        "exception": {
+          "title": "Open Exceptions",
+          "description": "Security exceptions awaiting follow-up"
+        }
+      },
+      "table": {
+        "title": "Ticket Security Review",
+        "ticket": "Ticket",
+        "repository": "Repository",
+        "safety": "Safety Pack",
+        "secretScan": "Secret Scan",
+        "sast": "SAST",
+        "sca": "SCA",
+        "exception": "Exception",
+        "verdict": "Final Verdict",
+        "totalItems": "{{count}} items",
+        "version": "Version"
+      },
+      "drawer": {
+        "title": "Ticket detail",
+        "metadata": "Metadata",
+        "project": "Project",
+        "repository": "Repository",
+        "safetyStatus": "Safety Pack",
+        "finalVerdict": "Final Verdict",
+        "scansTitle": "Security Scans",
+        "checklistTitle": "Security Checklist",
+        "checklistAllValid": "All checklist sections are valid.",
+        "exceptionsTitle": "Security Exceptions"
+      }
+    },
+    "DevDashboard": {
+      "kicker": "Chapter 9 Dashboard",
+      "title": "Development Dashboard",
+      "description": "PRs to review today, missing evidence, CI failure, repeated review comments, AI effectiveness and DevEx.",
+      "searchPlaceholder": "Search ticket, PR, AC, phase, connector, or finding",
+      "export": "Export CSV",
+      "refresh": "Refresh",
+      "refreshSuccess": "Development dashboard refreshed.",
+      "exportSuccess": "Export started.",
+      "projectId": "Project",
+      "periodKey": "Sprint / Period",
+      "repositoryId": "Repository",
+      "updatedAt": "Updated",
+      "emptyState": "No data matches the current filters.",
+      "cards": {
+        "prToReviewToday": {
+          "title": "PR that needs to be reviewed today",
+          "description": "My team's PR, CI failed, review requested."
+        },
+        "ticketBlock": {
+          "title": "Tickets are stuck",
+          "description": "The ticket remains open and is stalled due to a long-pending PR, missing evidence, pending review, CI failure, open issues, or risks."
+        },
+        "missingEvidence": {
+          "title": "Missing evidence",
+          "description": "Missing spec-pack.md, imp-plan.md, review-checklist.md, self-review.md, test-plan.md, test-result.md or test-report.md,"
+        },
+        "TraceabilityGaps": {
+          "title": "Traceability gaps",
+          "description": "The ticket is missing traceability links for mandatory artifacts."
+        },
+        "OpenIssue": {
+          "title": "Open Issues",
+          "description": "The ticket has open issues in the spec-pack or report."
+        },
+        "ciFailure": {
+          "title": "CI failures",
+          "description": "Run Lint, test, build, security, flaky failures"
+        },
+        "firstCIPassRate": {
+          "title": "First CI Pass Rate",
+          "description": "The ratio of tickets with a successfully identified CI on the first attempt to the total number of tickets with a CI."
+        },
+        "exception": {
+          "title": "Exception",
+          "description": "Number of tickets with exceptions."
+        },
+        "risk": {
+          "title": "Risk",
+          "description": "There is an open ticket with a risk signal."
+        },
+        "repeatedReviewComment": {
+          "title": "Repeated review comments",
+          "description": "Suggestions for improving rules/templates"
+        },
+        "aiEffectiveness": {
+          "title": "AI Effectiveness",
+          "description": "template, read_file_count, token, cache hit"
+        },
+        "devEx": {
+          "title": "DevEx",
+          "description": "Waiting for review, waiting for fixes, difficult-to-use template"
+        },
+        "reviewComment": {
+          "title": "Review comments",
+          "description": "Open comments from code review"
+        },
+        "parserError": {
+          "title": "Parser errors",
+          "description": "Parse errors, schema violations, missing items"
+        }
+      },
+      "pendingPrs": {
+        "title": "PR that needs to be processed",
+        "pr": "PR",
+        "signal": "Signal",
+        "detail": "Detail",
+        "evidence": "Evidence"
+      },
+      "ciFailureChart": {
+        "title": "CI Failure Categories"
+      },
+      "allCiStatus": "All CI statuses",
+      "allReviewStatus": "All review statuses",
+      "ciStatus": "CI Status",
+      "ciStatusFail": "Fail",
+      "ciStatusPass": "Pass",
+      "reviewStatus": "Review Status",
+      "reviewStatusOpen": "Open findings",
+      "reviewStatusResolved": "No findings",
+      "viewDetail": "View detail",
+      "ticketTable": {
+        "title": "Title",
+        "total": "{{count}} items",
+        "ticket": "Ticket",
+        "ciStatus": "CI Status",
+        "ciFailCount": "CI Fails",
+        "openFindings": "Open findings",
+        "ageDays": "Age",
+        "reworkRounds": "Rework rounds",
+        "reviewRounds": "Review rounds",
+        "reviewComments": "Review comments",
+        "parserError": "Parser error",
+        "parserErrorYes": "Error",
+        "parserErrorNo": "OK",
+        "prev": "Previous",
+        "next": "Next",
+        "version": "Version"
+      },
+      "detail": {
+        "title": "Ticket detail",
+        "ticket": "Ticket",
+        "project": "Project",
+        "status": "Status",
+        "age": "Age",
+        "ciFailures": "CI Failures",
+        "openFindings": "Open findings",
+        "parserErrors": "Parser errors",
+        "ciRuns": "CI Runs",
+        "findings": "Findings",
+        "reviewComments": "Review comments",
+        "viewCiRun": "View CI run",
+        "viewCommit": "View commit",
+        "openTraceability": "Open traceability",
+        "noReviewComments": "No review comments",
+        "noParserErrors": "No parser errors",
+        "parserSummary": "Parser summary",
+        "parseErrors": "Parse errors",
+        "schemaViolations": "Schema violations",
+        "missing": "Missing"
+      }
+    },
+    "AdminAuditLog": {
+      "title": "Admin Audit Log",
+      "description": "Read-only trail of every CRUD operation and login event across the admin screens.",
+      "filters": {
+        "module": "Module",
+        "operationType": "Operation Type",
+        "status": "Status",
+        "actor": "Actor",
+        "actorPlaceholder": "Search by username",
+        "dateRange": "Date Range",
+        "all": "All"
+      },
+      "cards": {
+        "total": {
+          "title": "Total entries",
+          "description": "Matching the current filter."
+        },
+        "success": {
+          "title": "Success (this page)",
+          "description": "Successful operations on the current page."
+        },
+        "failed": {
+          "title": "Failed (this page)",
+          "description": "Failed operations on the current page."
+        },
+        "modules": {
+          "title": "Modules (this page)",
+          "description": "Distinct modules on the current page."
+        }
+      },
+      "table": {
+        "time": "Time",
+        "actor": "Actor",
+        "module": "Module",
+        "entity": "Entity",
+        "operation": "Operation",
+        "status": "Status",
+        "detail": "Detail"
+      },
+      "detail": {
+        "title": "Audit Log Detail",
+        "loading": "Loading...",
+        "time": "Time",
+        "actor": "Actor",
+        "userAgent": "User-Agent",
+        "changedFields": "Changed Fields",
+        "traceId": "Trace ID",
+        "errorMessage": "Error Message",
+        "diffTitle": "Before / After",
+        "before": "Before",
+        "after": "After"
+      }
+    },
+    "ThresholdConfig": {
+      "title": "Score Threshold Configuration",
+      "description": "Configure the score-band thresholds used to classify evaluation and quality scores.",
+      "actions": {
+        "edit": "Edit",
+        "cancel": "Cancel",
+        "save": "Save",
+        "addBand": "Add band",
+        "delete": "Delete",
+        "undo": "Undo"
+      },
+      "table": {
+        "from": "From",
+        "to": "To",
+        "label": "Label",
+        "code": "Code",
+        "color": "Color",
+        "status": "Status",
+        "createdInfo": "Created",
+        "updatedInfo": "Updated",
+        "actions": "Actions"
+      },
+      "status": {
+        "ACTIVE": "Active",
+        "DELETED": "Deleted"
+      },
+      "ActiveSet": {
+        "Empty": "At least one active band is required."
+      },
+      "Label": {
+        "Required": "Label is required.",
+        "MaxLength": "Label must not exceed 255 characters."
+      },
+      "Code": {
+        "Required": "Code is required.",
+        "InvalidFormat": "Code must be uppercase letters, digits, or underscore only.",
+        "MaxLength": "Code must not exceed 100 characters.",
+        "Duplicate": "Code must be unique among active bands."
+      },
+      "Color": {
+        "InvalidFormat": "Color must be a valid hex value, e.g. #10B981.",
+        "MaxLength": "Color must not exceed 20 characters."
+      },
+      "Range": {
+        "OutOfBounds": "Score range must be within 0-100.",
+        "MinGreaterThanMax": "From must not be greater than To.",
+        "MaxLength": "From and To must not exceed 3 characters."
+      },
+      "Coverage": {
+        "Gap": "Active bands must cover the full 0-100 range with no gaps.",
+        "Overlap": "Active bands must not overlap."
+      }
+    },
+    "DataOpsDashboard": {
+      "export": "Export CSV",
+      "title": "Data Ops Dashboard",
+      "description": "Connector health, parser health, missing evidence, freshness and traceability health at a glance.",
+      "searchPlaceholder": "Search connector or repository",
+      "projectId": "Project",
+      "repositoryId": "Repository",
+      "connectorName": "Connector",
+      "parserStatus": "Parser Status",
+      "allProjects": "All projects",
+      "allRepositories": "All repositories",
+      "allConnectors": "All connectors",
+      "allParserStatus": "All parser statuses",
+      "parserStatusSuccess": "Success",
+      "parserStatusWarning": "Warning",
+      "parserStatusError": "Error",
+      "emptyState": "No data matches the current filters.",
+      "cards": {
+        "connectorFailure": {
+          "title": "Connector failures",
+          "description": "Connectors whose latest run failed."
+        },
+        "parseError": {
+          "title": "Parse errors",
+          "description": "Data quality checks with parse errors."
+        },
+        "missingEvidence": {
+          "title": "Missing evidence",
+          "description": "Artifacts missing or with required fields missing."
+        },
+        "staleFreshness": {
+          "title": "Stale freshness",
+          "description": "Data quality checks exceeding the freshness threshold."
+        },
+        "brokenLink": {
+          "title": "Broken links",
+          "description": "Traceability links with low confidence."
+        }
+      },
+      "repositoryIssues": {
+        "title": "Repository issues",
+        "connectorCount": "{{count}} connectors",
+        "failedConnectorCount": "{{count}} failed",
+        "parseErrorCount": "{{count}} parse errors",
+        "missingEvidenceCount": "{{count}} missing evidence",
+        "connectors": "Connectors",
+        "noConnectorRows": "Missing evidence was detected, but no connector rows were returned for this repository.",
+        "failedRuns": "Failed runs",
+        "parseErrorsShort": "Parse errors"
+      },
+      "kpiChart": {
+        "title": "KPI Overview"
+      },
+      "connectorTable": {
+        "title": "Connectors",
+        "description": "Monitor connector health and drill into repository-level issues.",
+        "total": "{{count}} items",
+        "missingEvidence": "Missing evidence",
+        "connector": "Connector",
+        "repository": "Repository",
+        "latestRunStatus": "Latest run",
+        "failedRunCount": "Failed runs",
+        "parseErrorCount": "Parse errors",
+        "prev": "Previous",
+        "next": "Next"
+      },
+      "detail": {
+        "title": "Connector detail",
+        "repository": "Repository",
+        "recentRuns": "Recent runs",
+        "noRuns": "No connector runs recorded.",
+        "dataQuality": "Data quality checks",
+        "noDataQualityIssues": "No data quality issues recorded.",
+        "parseErrorCount": "{{count}} parse errors",
+        "errorSummaryLabel": "Error summary",
+        "noErrorSummary": "No parse error summary was recorded.",
+        "missingEvidence": "Evidence files",
+        "noMissingEvidence": "No missing evidence rows were found for this connector.",
+        "itemCount": "{{count}} items",
+        "requiredFieldsMissing": "Missing section in file",
+        "exists": "Exists",
+        "missing": "Missing"
+      }
+    }
+  },
+  "Component": {
+    "Permission": {
+      "Denied": "You do not have permission to perform this action.",
+      "Unauthorized": "Your session has expired. Please sign in again."
+    },
+    "Error": {
+      "Unexpected": "An unexpected error occurred."
+    }
+  }
+}

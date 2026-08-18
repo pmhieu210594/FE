@@ -1,0 +1,415 @@
+/**
+ *
+ * This file contains the styles for the form component.
+ * The styles defined here are applied to the .ant-input class.
+ */
+.ant-input {
+  @apply flex items-center rounded-lg border text-base-content;
+  &:focus {
+    @apply bg-base-100 shadow shadow-primary/20 outline-0;
+  }
+  input& {
+    @apply h-8 w-full border-base-content/20 bg-base-100 px-4;
+    &.disabled {
+      @apply cursor-not-allowed bg-base-300 focus:shadow-none;
+    }
+    &.before {
+      @apply rounded-r-lg pl-10;
+    }
+    &.after {
+      @apply rounded-l-lg pr-10;
+    }
+  }
+  textarea& {
+    @apply w-full border-base-content/20 bg-base-100 px-4 py-2.5;
+  }
+  &-outlined.ant-input-status-error:not(.ant-input-disabled) {
+    @apply bg-base-300/50;
+    &:focus {
+      @apply bg-base-300/50;
+    }
+  }
+  div:has(> &) {
+    span {
+      @apply absolute top-0 flex size-8 items-center justify-center rounded-r-lg border border-l-0 border-base-content/20 bg-base-100 text-base-content;
+
+      &.before {
+        @apply left-0;
+      }
+      &.after {
+        @apply right-0;
+      }
+    }
+  }
+}
+.ant-empty {
+  .ant-empty-description {
+    @apply text-base-content;
+  }
+}
+
+::placeholder,
+.ant-select-selection-placeholder {
+  @apply !text-base-content/30;
+}
+
+.ant-otp {
+  @apply w-full gap-5;
+}
+.ant-select {
+  @apply w-full;
+
+  &-dropdown {
+    @apply bg-base-100;
+    .ant-select-item {
+      @apply text-base-content;
+    }
+    .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+      @apply bg-primary/10 text-primary;
+    }
+  }
+  &.ant-select-open .ant-select-selection-item {
+    @apply text-base-content;
+  }
+  &:not(.ant-select-customize-input) .ant-select-selector {
+    @apply rounded-lg border-base-content/20 bg-base-100 px-4 text-base-content;
+  }
+  &-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    @apply border-base-content/20;
+  }
+  &-single {
+    @apply h-8;
+    &.ant-select-show-arrow .ant-select-selection-item {
+      @apply pr-4;
+    }
+  }
+  &-multiple .ant-select-selection-item {
+    @apply my-0 -ml-1 h-5 rounded-xl bg-base-100 px-2 py-0 leading-5;
+  }
+  .ant-select-arrow,
+  .ant-select-clear {
+    @apply text-base-content;
+  }
+}
+
+.c-form {
+  @apply grid grid-cols-12 gap-4;
+
+  .table .item {
+    @apply mb-0;
+    > svg {
+      top: calc(50% - 0.8rem);
+    }
+  }
+  .item {
+    @apply relative mb-3;
+    .feedback {
+      @apply invisible -mt-6 flex items-center text-error opacity-0 transition-all duration-150 ease-in-out;
+    }
+    > svg {
+      @apply absolute right-3 top-1/2 h-3 w-3 -translate-y-1/2 transform text-error;
+    }
+    &.type-date,
+    &.type-password {
+      > svg {
+        @apply right-9;
+      }
+    }
+    &.type-select > svg {
+      @apply right-6;
+    }
+
+    &.error {
+      @apply relative;
+      .feedback {
+        @apply visible mt-0 opacity-100;
+      }
+      .ant-input {
+        @apply border-error;
+      }
+    }
+  }
+
+  .icon {
+    @apply absolute right-3 z-10 size-5 fill-base-content;
+    top: calc(50% - 0.6rem);
+  }
+
+  .table .ant-form-item {
+    @apply mb-0;
+    .ant-input,
+    .ant-picker,
+    .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+      @apply rounded-none border-0;
+    }
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    @apply m-0;
+    -webkit-appearance: none;
+  }
+  .input-otp {
+    @media (min-width: 640px) {
+      @apply justify-between px-3;
+    }
+    &__field {
+      @apply h-12 w-12 max-w-none rounded-xl;
+    }
+  }
+}
+
+.ant-tabs {
+  .ant-tabs-ink-bar {
+    @apply bg-primary;
+  }
+  &.ant-tabs-top > .ant-tabs-nav:before {
+    @apply border-b border-base-200;
+  }
+  .ant-tabs-tab {
+    @apply !bg-transparent py-2.5;
+    &:hover {
+      @apply !text-primary;
+    }
+    .ant-tabs-tab-btn {
+      @apply text-base font-normal uppercase !text-base-content;
+    }
+    &-active {
+      .ant-tabs-tab-btn {
+        @apply !bg-base-100 font-bold !text-primary !opacity-100;
+      }
+    }
+  }
+}
+
+.ant-switch {
+  @apply !bg-primary;
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    @apply !bg-primary;
+  }
+  &-inner-unchecked {
+    @apply !-mt-5;
+    & svg {
+      @apply ~'pl-0.5' w-4;
+    }
+  }
+  &-checked {
+    @apply !bg-success;
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      @apply !bg-success;
+    }
+  }
+}
+
+.ant-picker {
+  &.ant-picker-outlined {
+    @apply h-8 w-full items-center rounded-lg border border-solid border-base-content/20 bg-base-100 px-4 text-base-content;
+
+    &:hover,
+    .ant-picker-input > input,
+    .ant-picker-suffix {
+      @apply text-base-content;
+    }
+
+    &:hover,
+    &.ant-picker-status-error:not(.ant-picker-disabled) {
+      @apply bg-base-100;
+    }
+  }
+  & &-separator,
+  & &-clear {
+    @apply text-base-content;
+  }
+
+  &-dropdown {
+    .ant-picker-panel-container {
+      @apply bg-base-100;
+    }
+
+    .ant-picker-header,
+    .ant-picker-footer,
+    .ant-picker-header button,
+    .ant-picker-content th,
+    .ant-picker-cell.ant-picker-cell-in-view {
+      @apply text-base-content;
+    }
+    .ant-picker-header,
+    .ant-picker-footer {
+      @apply border-base-200;
+    }
+    .ant-picker-cell {
+      @apply text-base-content/30;
+    }
+    .ant-picker-cell-disabled {
+      &.ant-picker-cell {
+        @apply text-base-300;
+        &::before {
+          @apply bg-base-200/50;
+        }
+      }
+      &.ant-picker-cell-today .ant-picker-cell-inner::before {
+        @apply border-primary/50;
+      }
+    }
+    .ant-picker-cell-in-view.ant-picker-cell-in-range:not(.ant-picker-cell-disabled):before,
+    .ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-disabled):before,
+    .ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-disabled):before {
+      @apply bg-base-300;
+    }
+    .ant-picker-cell-in-view.ant-picker-cell-selected:not(.ant-picker-cell-disabled) .ant-picker-cell-inner,
+    .ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-disabled) .ant-picker-cell-inner,
+    .ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-disabled) .ant-picker-cell-inner {
+      @apply bg-primary text-base-100;
+    }
+    .ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before {
+      @apply border-primary;
+    }
+  }
+}
+
+.ant-checkbox,
+.ant-radio {
+  &-inner,
+  &-checked:after {
+    @apply size-4 rounded-lg border-2;
+  }
+
+  &-wrapper {
+    @apply text-base-content;
+  }
+  &-wrapper &:not(&-disabled):hover &-inner,
+  &-wrapper:not(&-wrapper-disabled):hover &-inner {
+    @apply border-primary;
+  }
+
+  &-wrapper:not(&-wrapper-disabled):hover &-checked:not(&-disabled) &-inner,
+  &-wrapper &-checked:not(&-disabled) &-inner,
+  &-wrapper &-checked:not(&-disabled):hover &-inner {
+    @apply border-primary bg-primary;
+  }
+
+  &-wrapper .ant-checkbox-inner:after {
+    @apply border-base-100;
+  }
+  &-wrapper .ant-radio-inner::after {
+    @apply size-7 bg-base-100;
+    margin-block-start: -14px;
+    margin-inline-start: -14px;
+  }
+  &-wrapper &-inner {
+    @apply size-5 border-base-content/20 bg-base-100;
+  }
+}
+
+.sun-editor {
+  @apply bg-base-100 text-base-content;
+
+  &-editable {
+    font-family:
+      Plus Jakarta Sans,
+      ui-sans-serif,
+      system-ui,
+      sans-serif,
+      'Apple Color Emoji',
+      'Segoe UI Emoji',
+      'Segoe UI Symbol',
+      'Noto Color Emoji';
+  }
+  .se-toolbar {
+    @apply bg-base-300/50 outline-base-content/20;
+  }
+  .se-container > input {
+    @apply hidden;
+  }
+  .se-btn {
+    @apply h-8 w-8 leading-6 text-base-content;
+  }
+  .se-resizing-bar {
+    @apply border-base-content/20 bg-base-300/50 text-base-content;
+  }
+
+  .se-placeholder {
+    @apply text-base-content/40;
+    font-family:
+      Plus Jakarta Sans,
+      ui-sans-serif,
+      system-ui,
+      sans-serif,
+      'Apple Color Emoji',
+      'Segoe UI Emoji',
+      'Segoe UI Symbol',
+      'Noto Color Emoji';
+    font-size: 14px;
+  }
+  & &-editable {
+    @apply bg-base-100 text-justify text-base-content;
+    figure {
+      @apply inline-block w-full py-5 text-center;
+      figcaption {
+        @apply mt-1 inline-block border border-base-200 bg-base-100 px-2 py-1;
+      }
+    }
+    p {
+      @apply mb-3;
+    }
+    img {
+      @apply mx-auto;
+    }
+    h1 {
+      @apply mb-7 mt-0 text-5xl text-primary;
+    }
+    h2 {
+      @apply mb-6 mt-0 text-4xl text-primary;
+    }
+    h3 {
+      @apply mb-5 mt-0 text-3xl text-primary;
+    }
+    h4 {
+      @apply mb-4 mt-0 text-2xl text-primary;
+    }
+    h5 {
+      @apply mb-4 mt-0 text-xl text-primary;
+    }
+    h6 {
+      @apply mb-4 mt-0 text-lg text-primary;
+    }
+    table {
+      @apply my-3 w-full;
+      th,
+      td {
+        @apply ~'py-1.5' border border-base-100 px-2 text-left;
+      }
+    }
+    blockquote {
+      @apply relative m-0 mx-auto mb-7 table border-0 p-4 text-justify text-inherit;
+      background:
+        linear-gradient(to right, theme('textColor.primary') 2px, transparent 1px) 0 100%,
+        linear-gradient(to left, theme('textColor.primary') 2px, transparent 1px) 100% 0,
+        linear-gradient(to bottom, theme('textColor.primary') 2px, transparent 1px) 100% 0,
+        linear-gradient(to top, theme('textColor.primary') 2px, transparent 1px) 0 100%;
+      background-size: 20px 20px;
+      background-repeat: no-repeat;
+
+      &:before,
+      &:after {
+        @apply absolute text-3xl font-black text-primary;
+        font-family:
+          Line Awesome Free,
+          serif;
+      }
+
+      &:before {
+        @apply -top-3 right-full -mr-3;
+        content: '"';
+      }
+
+      &:after {
+        @apply -bottom-3 left-full top-auto -ml-3;
+        content: '"';
+      }
+    }
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(**/.env)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)",
+      "Read(**/*.p12)",
+      "Read(**/*.jks)",
+      "Read(**/*.keystore)",
+      "Read(**/*id_rsa*)",
+      "Read(**/*id_ed25519*)",
+      "Read(**/*credential*)",
+      "Read(**/*secret*)",
+      "Bash(*rm -rf*)",
+      "Bash(*DROP TABLE*)",
+      "Bash(*DROP DATABASE*)",
+      "Bash(*TRUNCATE TABLE*)",
+      "Bash(*git push*--force*)",
+      "Bash(*git push* -f *)",
+      "Bash(*git reset --hard*origin*)",
+      "Bash(*git clean -f*)",
+      "Bash(*git clean -fd*)",
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)",
+      "Read(./credentials/**)",
+      "Bash(rm *)",
+      "Bash(rm -rf *)",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(git push *)",
+      "Bash(kubectl apply *)",
+      "Bash(terraform apply *)",
+      "Bash(aws s3 cp *)",
+      "Bash(gh secret *)"
+    ],
+    "allow": [
+      "Read(d:/EDCAP_FULL/EDCAP_BE/src/**)",
+      "Read(d:/EDCAP_FULL/EDCAP_BE/pom.xml)",
+      "Read(d:/EDCAP_FULL/EDCAP_BE/docker-compose.yml)",
+      "Read(d:/EDCAP_FULL/EDCAP_BE/README.md)",
+      "Read(d:/EDCAP_FULL/EDCAP_FE/src/**)",
+      "Read(d:/EDCAP_FULL/EDCAP_FE/package.json)",
+      "Read(d:/EDCAP_FULL/EDCAP_FE/tsconfig.json)",
+      "Read(d:/EDCAP_FULL/EDCAP_FE/vite.config.*)",
+      "Read(d:/EDCAP_FULL/EDCAP_FE/eslint.config.*)",
+      "Read(d:/EDCAP_FULL/EDCAP_FE/README.md)",
+      "Read(d:/EDCAP_FULL/docs/**)",
+      "Read(d:/EDCAP_FULL/.claude/**)",
+      "Bash(mvn clean*)",
+      "Bash(mvn test*)",
+      "Bash(mvn compile*)",
+      "Bash(mvn verify*)",
+      "Bash(mvn package -DskipTests*)",
+      "Bash(npm run build*)",
+      "Bash(npm run test*)",
+      "Bash(npm run lint*)",
+      "Bash(npm test*)",
+      "Bash(npx tsc*)",
+      "Glob(*)",
+      "Read(./files/indexes/**)",
+      "Read(./files/llm_context/**)",
+      "Read(./files/summaries/**)",
+      "Read(./chats/handoff/**)",
+      "Read(./chats/decisions/**)",
+      "Read(./knowledge/approved/**)",
+      "Read(./docs/**)",
+      "Bash(python tools/file_intel/analyze_file.py *)",
+      "Bash(python tools/chat_intel/handoff_builder.py *)",
+      "Bash(python -m json.tool .claude/settings.json)",
+      "Bash(python -m py_compile tools/common/*.py)",
+      "Bash(python3 tools/file_intel/analyze_file.py *)",
+      "Bash(python -m tools.file_intel.analyze_file *)",
+      "Bash(python3 -m tools.file_intel.analyze_file *)",
+      "Read(./chats/session_state/**)",
+      "Bash(python .claude/hooks/context_meter.py)",
+      "Bash(python3 .claude/hooks/context_meter.py)",
+      "Bash(python .claude/hooks/context_meter.py --prompt)",
+      "Bash(python3 .claude/hooks/context_meter.py --prompt)"
+    ],
+    "ask": [
+      "Read(./files/raw/**)",
+      "Read(./chats/raw/**)",
+      "Bash(git *)",
+      "WebFetch(*)",
+      "WebSearch(*)"
+    ]
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/user_prompt_intake.py\"",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/context_meter.py\" --prompt",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/pre_tool_cost_guard.py\""
+          },
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/file_size_guard.py\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/pii_secret_redactor.py\""
+          },
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/log_filter.py\""
+          },
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/post_tool_summarizer.py\""
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/pre_compact_guard.py\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/stop_handoff.py\"",
+            "timeout": 2
+          },
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/context_meter.py\"",
+            "timeout": 5
+          }
+        ],
+        "matcher": "*"
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/stop_handoff.py\" --session-end",
+            "timeout": 2
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/session_start.py\"",
+            "timeout": 2
+          }
+        ]
+      }
+    ]
+  },
+  "env": {
+    "BRC_CONTEXT_LIMIT": "1000000",
+    "BRC_CONTEXT_METER_MAX_LINES": "5000",
+    "BRC_CONTEXT_METER_PROMPT_PREFIX": "true"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "python \"$CLAUDE_PROJECT_DIR/.claude/statusline/brc_statusline.py\"",
+    "padding": 1,
+    "refreshInterval": 5
+  }
+}

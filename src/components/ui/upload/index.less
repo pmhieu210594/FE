@@ -1,0 +1,18 @@
+/**
+ * This is the documentation comment for the .upload class.
+ */
+.upload {
+  &:not(.upload-grid) {
+    @apply w-24;
+  }
+
+  &-grid {
+    @apply grid grid-cols-2 gap-2 sm:grid-cols-3;
+  }
+  img {
+    @apply h-24 object-cover object-center;
+  }
+  .btn-delete {
+    @apply absolute right-1 size-5 cursor-pointer rounded-full bg-base-200 text-base-content hover:!bg-error;
+  }
+}

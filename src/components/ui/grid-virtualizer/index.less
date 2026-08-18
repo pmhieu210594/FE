@@ -1,0 +1,106 @@
+/**
+ * This is the documentation comment for the .c-virtual-scroll class.
+ */
+.c-virtual-scroll {
+  @apply w-full;
+
+  &.virtualized {
+    thead {
+      @apply sticky top-0 -z-0;
+    }
+
+    tbody {
+      tr {
+        @apply absolute;
+      }
+    }
+  }
+
+  thead {
+    @apply grid;
+
+    tr {
+      @apply flex;
+
+      &:first-child th {
+        &:first-child {
+          @apply rounded-tl-lg;
+        }
+
+        &:last-child {
+          @apply rounded-tr-lg;
+        }
+      }
+
+      th {
+        @apply relative flex items-center justify-center bg-muted px-2 py-0 text-sm;
+
+        >button {
+          @apply flex w-full items-center justify-center truncate;
+
+          svg.sort {
+            @apply absolute right-1 top-1/2 -translate-y-1/2 transform transition-all duration-150 ease-in-out;
+          }
+        }
+
+        .resizer {
+          // Hit-area is wider than the visible line so the handle is easy to
+          // grab with a mouse. Kept entirely inside the column's own box
+          // (no negative margin) so it never pushes past the table's right
+          // edge — doing so on the last column caused a phantom horizontal
+          // scrollbar.
+          @apply absolute right-0 top-0 z-10 h-full w-2 cursor-col-resize select-none touch-none bg-transparent;
+
+          &::after {
+            content: "";
+            @apply ~"w-0.5" absolute right-1/2 top-[0.3rem] block translate-x-1/2 bg-border transition-colors;
+            height: calc(100% - 0.6rem);
+          }
+
+          &:hover::after {
+            @apply bg-foreground/50;
+          }
+
+          &.resizing::after {
+            @apply bg-primary;
+          }
+        }
+
+        .filter {
+          @apply -mr-1 transition-all duration-150 ease-in-out;
+        }
+
+        &:hover .filter {
+          @apply opacity-100;
+        }
+      }
+    }
+  }
+
+  tbody {
+    @apply relative grid;
+
+    tr {
+      @apply flex;
+
+      // &:nth-of-type(even) > td {
+      //   @apply bg-base-300/30;
+      // }
+      td {
+        @apply relative flex shrink-0 items-center;
+
+        >div {
+          @apply w-full truncate px-2 py-1 leading-normal;
+
+          span {
+            @apply truncate;
+          }
+        }
+
+        svg {
+          @apply transition-all duration-150 ease-in-out;
+        }
+      }
+    }
+  }
+}

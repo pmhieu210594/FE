@@ -1,0 +1,36 @@
+[data-theme='light'] {
+  --p: from #7dbf36 l a b;
+  --pc: from #eff6ff l a b;
+  --s: from #ff6f1e l a b;
+  --sc: from #fff5ef l a b;
+  --b1: from #f9f9f9 l a b;
+  --b2: from #f1f1f4 l a b;
+  --b3: from #dbdfe9 l a b;
+  --bc: from #1f2937 l a b;
+  --in: from #7239ea l a b;
+  --inc: from #f8f5ff l a b;
+  --su: from #17c653 l a b;
+  --suc: from #eafff1 l a b;
+  --wa: from #f6b100 l a b;
+  --wac: from #fff8dd l a b;
+  --er: from #f8285a l a b;
+  --erc: from #ffeef3 l a b;
+}
+[data-theme='dark'] {
+  --p: from #6d9542 l a b;
+  --pc: from #172331 l a b;
+  --s: from #d74e00 l a b;
+  --sc: from #272320 l a b;
+  --b1: from #1b1c22 l a b;
+  --b2: from #26272f l a b;
+  --b3: from #363843 l a b;
+  --bc: from #a6adbb l a b;
+  --in: from #883fff l a b;
+  --inc: from #272134 l a b;
+  --su: from #00a261 l a b;
+  --suc: from #1f2623 l a b;
+  --wa: from #c59a00 l a b;
+  --wac: from #242320 l a b;
+  --er: from #e42855 l a b;
+  --erc: from #302024 l a b;
+}

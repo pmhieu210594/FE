@@ -1,0 +1,28 @@
+/**
+ * This file contains the styles for the pagination component.
+ */
+.pagination {
+  @apply mt-4 flex w-full items-center justify-between gap-3 border-t border-base-200 pt-4;
+
+  .left {
+    @apply relative flex flex-none items-center gap-2 whitespace-nowrap;
+  }
+
+  .right {
+    @apply ml-auto flex flex-none items-center justify-center gap-1 rounded-lg bg-base-200 p-1 sm:flex-wrap;
+
+    > button {
+      @apply ~'px-1.5 py-0.5' min-w-6 rounded-lg text-center text-sm font-medium text-base-content hover:bg-base-content/30;
+
+      &.active {
+        @apply bg-base-content/30;
+      }
+      &.disabled {
+        @apply text-base-content/30;
+      }
+      svg {
+        @apply ~'size-2';
+      }
+    }
+  }
+}

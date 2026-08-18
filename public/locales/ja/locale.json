@@ -1,0 +1,1351 @@
+﻿{
+  "Layout": {
+    "appName": "EDCAP",
+    "admin": "管理者",
+    "dashboard": "Dashboard",
+    "pmDashboard": "PM Dashboard",
+    "customers": "顧客",
+    "projects": "プロジェクト",
+    "systemAdmin": "システム管理",
+    "organization": "組織",
+    "teams": "チーム",
+    "userAccounts": "ユーザーアカウント",
+    "auditLogs": "監査ログ",
+    "scoreThresholds": "スコア閾値",
+    "roles": "役割",
+    "traceability": "Traceability",
+    "openSidebar": "サイドバーを展開",
+    "closeSidebar": "サイドバーを折りたたむ",
+    "language": "言語",
+    "logout": "ログアウト",
+    "guest": "ゲスト",
+    "qaDashboard": "QA Dashboard",
+    "developmentDashboard": "Development Dashboard",
+    "repositories": "リポジトリ"
+  },
+  "Components": {
+    "Search": "検索",
+    "actions": "操作",
+    "PleaseEnter": "{{title}}を入力してください",
+    "PleaseEnterOnlyNumber": "数字のみを入力してください。",
+    "PleaseEnterOnlyText": "文字のみを入力してください。",
+    "PleaseEnterAtLeastCharacters": "少なくとも{{min}}文字を入力してください。",
+    "PleaseEnterAValidEmailAddress": "有効なメールアドレスを入力してください。",
+    "PasswordNeedsToHaveAtLeast8Characters": "パスワードは大文字・小文字・数字・特殊文字を含む8文字以上にしてください。",
+    "PleaseEnterMaximumCharacters": "{{max}}文字以内で入力してください。",
+    "PleaseEnterAtLeastNumberCharacters": "少なくとも{{min}}文字を入力してください。",
+    "PleaseEnterMinimumNumber": "{{min}}以上の数値を入力してください。",
+    "PleaseEnterMaximumNumberCharacters": "{{max}}桁以内で入力してください。",
+    "PleaseEnterMaximumNumber": "{{max}}以下の数値を入力してください。",
+    "IsAlreadyTaken": "{{label}}『{{value}}』はすでに使用されています。",
+    "Action": "操作",
+    "Clear": "クリア",
+    "OK": "OK",
+    "Enter": "{{title}}を入力",
+    "PleaseChoose": "{{title}}を選択してください",
+    "Filter": "フィルタ",
+    "PerPageSuffix": "/ページ",
+    "SomethingWentWrong": "問題が発生しました。もう一度お試しください。",
+    "UnsafeInputDetected": "入力内容に許可されていない文字が含まれています。HTML/スクリプトタグを削除してから再度お試しください。",
+    "Hide": "隠れる",
+    "PinRight": "ピン右",
+    "ResetSize": "サイズをリセット",
+    "PinLeft": "ピンを左に留める",
+    "Choose": "選ぶ"
+  },
+  "Pages": {
+    "Login": {
+      "brandLabel": "EDCAPアクセス",
+      "title": "EDCAPにサインイン",
+      "description": "EDCAPアカウントでワークスペースにアクセスします。",
+      "formTitle": "おかえりなさい",
+      "formDescription": "ユーザー名とパスワードを入力して続行してください。",
+      "username": "ユーザー名",
+      "usernamePlaceholder": "ユーザー名を入力",
+      "password": "パスワード",
+      "passwordPlaceholder": "パスワードを入力",
+      "showPassword": "パスワードを表示",
+      "hidePassword": "パスワードを非表示",
+      "signIn": "サインイン",
+      "signingIn": "サインイン中...",
+      "loginFailed": "ログインに失敗しました。もう一度お試しください。",
+      "secureAccessTitle": "安全なアクセス",
+      "secureAccessBody": "サインインしたユーザーには、現在のセッション用の短命な bearer token が発行されます。",
+      "temporaryLandingTitle": "一時的なランディング",
+      "temporaryLandingBody": "専用のホーム画面が完成するまで、管理者以外のユーザーはここに案内されます。"
+    },
+    "Errors": {
+      "INVALID_CREDENTIALS": "ユーザー名またはパスワードが正しくありません。",
+      "ACCOUNT_TEMPORARILY_UNAVAILABLE": "このアカウントは一時的に利用できません。",
+      "NO_ROLE_ASSIGNED": "アクセス権限がありません。管理者にお問い合わせください。",
+      "VALIDATION_ERROR": "バリデーションに失敗しました。強調表示された項目を確認してください。",
+      "UNAUTHORIZED": "この操作を実行する権限がありません。",
+      "BAD_REQUEST": "リクエストを処理できませんでした。",
+      "INTERNAL_ERROR": "予期しないエラーが発生しました。"
+    },
+    "Home": {
+      "title": "ワークスペースホーム",
+      "description": "これは管理者以外のユーザー向けの一時的なランディングページです。",
+      "welcome": "{{name}} としてサインインしています。",
+      "body": "どのプロジェクトにも参加していません。サポートが必要な場合は、管理者（ADMIN）にご連絡ください。"
+    },
+    "Traceability": {
+      "title": "Traceability Map",
+      "description": "Ticket の証跡、PR、commit、CI、broken links、timeline を確認します。",
+      "ticketId": "Ticket ID",
+      "ticketKey": "チケットキー",
+      "internalTicketId": "内部チケットID",
+      "ticketIdPlaceholder": "Ticket ID を入力",
+      "load": "読み込み",
+      "clear": "クリア",
+      "emptyState": "Ticket ID を入力すると traceability を表示できます。",
+      "loading": "Traceability データを読み込み中...",
+      "loadingFailed": "Traceability データの読み込みに失敗しました。",
+      "NotFound": "この ticket の traceability データが見つかりません。",
+      "completeness": "Completeness",
+      "artifacts": "Artifacts",
+      "prs": "PRs",
+      "commits": "コミット",
+      "ciRuns": "CI実行",
+      "reviewRounds": "レビューラウンド",
+      "brokenLinks": "Broken Links",
+      "traceabilityTab": "Traceability",
+      "brokenLinksTitle": "Broken Links",
+      "brokenLinksDescription": "不足している証跡も表示します。",
+      "noBrokenLinks": "Broken links はありません。",
+      "reviewComments": "レビューコメント",
+      "noReviewComments": "レビューコメントはありません",
+      "timelineTitle": "Timeline",
+      "timelineDescription": "証跡イベントを時系列で表示します。",
+      "noTimeline": "Timeline イベントはありません。",
+      "linksTitle": "Traceability Links",
+      "linksDescription": "read model に保存された関係です。",
+      "noLinks": "Traceability links はありません。",
+      "item": "項目",
+      "state": "状態",
+      "path": "パス",
+      "updatedAt": "更新日時",
+      "present": "現在",
+      "missing": "不足",
+      "confidence": "信頼度",
+      "ticket": "チケット",
+      "backToDashboard": "ダッシュボードに戻る",
+      "lastRun": "最終実行",
+      "lastCommit": "最終コミット"
+    },
+    "PmDashboard": {
+      "version": "バージョン",
+      "kicker": "PM運用ビュー",
+      "title": "PM Dashboard",
+      "description": "ブロック中の作業、証跡不足、EQS、リスクシグナルを 1 画面で確認します。",
+      "refresh": "更新",
+      "export": "CSV出力",
+      "refreshSuccess": "ダッシュボードを更新しました。",
+      "exportSuccess": "CSV 出力を開始しました。",
+      "filters": "フィルタ",
+      "filtersDescription": "プロジェクト、期間、リポジトリ、phase、score band、risk level、キーワードで read model を絞り込みます。",
+      "projectId": "プロジェクトID",
+      "periodKey": "期間キー",
+      "repositoryId": "リポジトリID",
+      "phaseCode": "Phase code",
+      "scoreBand": "品質バンド",
+      "riskLevel": "リスクレベル",
+      "status": "ステータス",
+      "all": "すべて",
+      "allProjects": "すべてのプロジェクト",
+      "allPeriods": "すべての期間",
+      "allRepositories": "すべてのリポジトリ",
+      "allPhases": "すべてのフェーズ",
+      "allQualityBands": "すべての品質バンド",
+      "allRiskLevels": "すべてのリスクレベル",
+      "allTicketsTitle": "チケット一覧",
+      "allTicketsDescription": "現在のフィルターに含まれるすべてのチケットを表示します。問題のないクリーンなチケットも含みます。",
+      "search": "検索",
+      "searchPlaceholder": "Ticket、タイトル、repository、phase、またはキーワード",
+      "reset": "リセット",
+      "blockedTickets": "ブロック中のチケット",
+      "openIssuesDetail": "このチケットには現在、問題記録があります。",
+      "contentMissingEvidenceDetailTicket": "このチケットには証拠の欠落はありません。",
+      "missingEvidence": "不足証跡",
+      "openIssues": "オープン課題",
+      "waitingReview": "レビュー待ち",
+      "ciFailed": "CI失敗",
+      "riskTickets": "リスクチケット",
+      "exceptionTickets": "例外チケット",
+      "eqsSummary": "EQS概要",
+      "updatedAt": "更新日時",
+      "phaseBottleneck": "Phase bottleneck",
+      "phaseBottleneckDescription": "ブロック中の ticket を phase ごとに集計します。",
+      "missingEvidenceBottleneck": "不足エビデンスのボトルネック",
+      "missingEvidenceBottleneckDescription": "リポジトリごとに不足エビデンス数でチケットを集計します。",
+      "listTitle": "注目リスト",
+      "listDescription": "現在のフィルタに一致する ticket は {{total}} 件です。",
+      "pageInfo": "ページ {{page}} / {{totalPages}}",
+      "totalItems": "合計 {{total}} 件",
+      "ticket": "チケット",
+      "phase": "段階",
+      "risk": "Risk",
+      "totalScore": "総合スコア",
+      "eqs": "EQS",
+      "age": "経過日数",
+      "ownerDisplay": "担当者",
+      "action": "操作",
+      "viewDetail": "詳細を見る",
+      "view": "表示",
+      "pagination": "ページ {{page}} / {{totalPages}}",
+      "previous": "前へ",
+      "next": "次へ",
+      "detailTitle": "Ticket詳細",
+      "loadingDetail": "Ticket詳細を読み込み中...",
+      "detailFailed": "Ticket詳細を読み込めませんでした。",
+      "blocked": "ブロック中",
+      "traceability": "Traceability",
+      "openTraceability": "Traceability を開く",
+      "metadata": "メタデータ",
+      "repository": "Repository",
+      "project": "Project",
+      "createAt": "作成日時",
+      "missingEvidenceTitle": "不足証跡",
+      "riskExceptionTitle": "Risk と exception",
+      "scoreBreakdown": "スコア内訳",
+      "none": "なし",
+      "ticketId": "Ticket ID",
+      "roleTabs": {
+        "pm": "PM",
+        "qa": "QA",
+        "development": "開発",
+        "security": "セキュリティ",
+        "executive": "経営層",
+        "dataOps": "データ運用"
+      },
+      "cards": {
+        "prToReviewToday": {
+          "title": "本日レビューが必要なPR",
+          "description": "自分のチームのPR、CI失敗、またはレビュー依頼済みのPR。"
+        },
+        "ticketBlock": {
+          "title": "停滞しているチケット",
+          "description": "チケットは未完了のままで、PRの長期保留、エビデンス不足、レビュー待ち、CI失敗、未解決のIssue、またはリスクにより停滞しています。"
+        },
+        "missingEvidence": {
+          "title": "エビデンス不足",
+          "description": "spec-pack.md、imp-plan.md、review-checklist.md、self-review.md、test-plan.md、test-result.md、または test-report.md が不足しています。"
+        },
+        "TraceabilityGaps": {
+          "title": "トレーサビリティ不足",
+          "description": "チケットに必須成果物へのトレーサビリティリンクが不足しています。"
+        },
+        "OpenIssue": {
+          "title": "未解決のIssue",
+          "description": "チケットの spec-pack またはレポートに未解決のIssueがあります。"
+        },
+        "ciFailure": {
+          "title": "CI失敗",
+          "description": "Lint、テスト、ビルド、セキュリティチェック、またはFlaky Testが失敗しています。"
+        },
+        "firstCIPassRate": {
+          "title": "初回CI成功率",
+          "description": "初回のCI実行で成功したチケット数を、CIを実行したチケット総数で割った割合です。"
+        },
+        "exception": {
+          "title": "例外",
+          "description": "例外が登録されているチケット数。"
+        },
+        "risk": {
+          "title": "リスク",
+          "description": "リスクシグナルが付与された未完了のチケットがあります。"
+        },
+        "repeatedReviewComment": {
+          "title": "繰り返されるレビューコメント",
+          "description": "ルールやテンプレート改善のための提案。"
+        },
+        "aiEffectiveness": {
+          "title": "AI有効性",
+          "description": "テンプレート、読み込みファイル数、トークン数、キャッシュヒット率。"
+        },
+        "devEx": {
+          "title": "DevEx",
+          "description": "レビュー待ち、修正待ち、または使いにくいテンプレート。"
+        }
+      },
+      "emptyState": "現在のフィルターに一致するチケットはありません。",
+      "titleTicket": "タイトル",
+      "ticketInformation": "チケット情報",
+      "phaseName": "フェーズ名",
+      "phaseDescription": "説明",
+      "phaseCreatedAt": "作成日時",
+      "riskTitle": "リスク",
+      "exceptionTitle": "例外",
+      "traceabilityIssuesTitle": "トレーサビリティの問題",
+      "firstCiPass": "初回CI成功",
+      "firstCiFailed": "初回CI失敗",
+      "reviews": "レビュー",
+      "openIssuesCount": "未解決の問題",
+      "exceptions": "例外",
+      "risks": "リスク",
+      "traceabilityIssuesCount": "トレーサビリティの問題",
+      "missingSections": "欠落セクション",
+      "spec_pack_ac_numbering": "spec-pack.md が存在し、番号付きの AC が含まれている",
+      "spec_pack_scope": "spec-pack.md に Scope の子セクション、Open Issues、および Risk Controls が含まれている",
+      "impl_plan_impact_rollback_ac": "impl-plan.md に影響範囲、ロールバック計画、および AC との対応付けが含まれている",
+      "pr_review_canonical_source": "PR レビューのメタデータ／コメントが正式なレビューソースであり、レビュー状態が記録されている",
+      "review_checklist_security_test": "review-checklist.md が存在し、セキュリティおよびテストの観点を網羅している",
+      "self_review_commands_results_concerns": "self-review.md に実行したコマンド、結果、および懸念事項が記載されている",
+      "test_plan_results_ac_linkage": "test-plan.md と test-results.md が AC に関連付けられている",
+      "ci_link_present": "CI の実行 ID または CI リンクが存在する",
+      "blackbox_testcases_main_acs": "blackbox-testcases.md が存在する",
+      "report_overview_impact_review_test_risk_remaining": "report.md に概要、影響、レビュー、テスト、リスク、および残課題が含まれている",
+      "openTraceabilityDescription": "トレーサビリティの問題を開くことで、証拠、PR、commit、CI、破損したリンク、およびタイムラインを表示できます。",
+      "notFoundTraceabilityDescription": "必須のコンポーネントはすべて揃っています。",
+      "mergedAt": "マージ日時"
+    },
+    "Admin": {
+      "title": "管理ダッシュボード",
+      "description": "コネクタの実行を監視し、同期ジョブを開始します。",
+      "connectorsTitle": "利用可能なコネクタ",
+      "connectorsDescription": "コネクタを選択してプロジェクトで実行します。",
+      "connector": "コネクタ",
+      "selectPlaceholder": "コネクタを選択",
+      "projectId": "プロジェクトID",
+      "projectIdPlaceholder": "プロジェクトIDを入力",
+      "syncNow": "今すぐ同期",
+      "unknownError": "予期せぬエラーが発生しました。",
+      "loading": "実行履歴を読み込み中...",
+      "noRunsFound": "このコネクタの実行が見つかりませんでした。",
+      "runHistory": "{{connector}} の実行履歴",
+      "records": "レコード"
+    },
+    "Customer": {
+      "title": "顧客管理",
+      "refresh": "更新",
+      "create": "顧客作成",
+      "createTitle": "顧客作成",
+      "editTitle": "顧客編集",
+      "formTitle": "顧客フォーム",
+      "filters": "絞り込み",
+      "keyword": "キーワード",
+      "keywordPlaceholder": "コードまたはエイリアスで検索",
+      "organization": "組織",
+      "classification": "分類",
+      "status": "ステータス",
+      "all": "すべて",
+      "customerCode": "顧客コード",
+      "customerCodePlaceholder": "顧客コードを入力",
+      "customerAlias": "顧客エイリアス",
+      "customerAliasPlaceholder": "顧客エイリアスを入力",
+      "Code": {
+        "Required": "顧客コードを入力してください。",
+        "MaxLength": "顧客コードは50文字以内で入力してください。",
+        "Duplicate": "同じ顧客コードが既に存在します。"
+      },
+      "Alias": {
+        "Required": "顧客名またはエイリアスを入力してください。",
+        "MaxLength": "顧客名 / エイリアスは255文字以内で入力してください。",
+        "Duplicate": "この組織には同じ顧客名 / エイリアスが既に存在します。"
+      },
+      "Classification": {
+        "Invalid": "分類が不正です。"
+      },
+      "Status": {
+        "Invalid": "ステータスは「すべて」/「有効」/「削除済み」のいずれかで指定してください。"
+      },
+      "Organization": {
+        "Required": "組織を選択してください。",
+        "NotFound": "組織が見つかりません。",
+        "Unavailable": "選択された組織は無効または削除済みです。"
+      },
+      "NotFound": "顧客が見つかりません。",
+      "Deleted": {
+        "CannotEdit": "削除済みの顧客は編集できません。"
+      },
+      "AlreadyDeleted": "顧客は既に削除されています。",
+      "Conflict": {
+        "Version": "顧客情報は他のユーザーによって更新されました。再読み込みして再試行してください。"
+      },
+      "Error": {
+        "Forbidden": "顧客管理にアクセスする権限がありません。"
+      },
+      "listTitle": "顧客一覧",
+      "listDescription": "{{total}} 件の顧客が見つかりました",
+      "loading": "顧客を読み込み中...",
+      "empty": "現在の条件に一致する顧客はありません。",
+      "detailTitle": "顧客詳細",
+      "detailDescription": "選択中の顧客の概要と操作です。",
+      "detailEmpty": "一覧から顧客を選択すると詳細が表示されます。",
+      "save": "保存",
+      "cancel": "キャンセル",
+      "edit": "編集",
+      "delete": "削除",
+      "deleteConfirm": "この顧客を削除してもよろしいですか？",
+      "apply": "適用",
+      "previous": "前へ",
+      "next": "次へ",
+      "pagination": "{{page}} / {{totalPages}} ページ",
+      "version": "バージョン",
+      "updatedAt": "更新日時",
+      "deletedAt": "削除日時",
+      "unknownError": "予期せぬエラーが発生しました。",
+      "selectOrganization": "組織を選択",
+      "createSuccess": "OK",
+      "updateSuccess": "OK",
+      "deleteSuccess": "OK",
+      "classificationValues": {
+        "INTERNAL": "内部",
+        "EXTERNAL": "外部"
+      },
+      "statusValues": {
+        "ACTIVE": "有効",
+        "DELETED": "削除済み"
+      },
+      "updatedBy": "更新者",
+      "createdBy": "作成者",
+      "createdAt": "作成日時",
+      "deletedBy": "削除者"
+    },
+    "Project": {
+      "title": "プロジェクト管理",
+      "create": "プロジェクト作成",
+      "createTitle": "プロジェクト作成",
+      "editTitle": "プロジェクト編集",
+      "detailTitle": "プロジェクト詳細",
+      "detailEmpty": "一覧からプロジェクトを選択すると詳細が表示されます。",
+      "filters": "フィルター",
+      "apply": "適用",
+      "save": "保存",
+      "close": "閉じる",
+      "cancel": "キャンセル",
+      "edit": "編集",
+      "delete": "削除",
+      "deleteConfirm": "プロジェクト {{projectName}} を削除してもよろしいですか？",
+      "all": "すべて",
+      "projectName": "プロジェクト名",
+      "projectType": "プロジェクト種別",
+      "riskLevel": "リスクレベル",
+      "customer": "顧客",
+      "teams": "チーム",
+      "addTeam": "チーム追加",
+      "addTeamTitle": "チーム追加",
+      "selectTeam": "チームを選択",
+      "removeTeam": "チームを外す",
+      "teamsEmpty": "選択されたチームはありません。",
+      "status": "ステータス",
+      "emptyValue": "-",
+      "statusValues": {
+        "ACTIVE": "有効",
+        "DELETED": "削除済み"
+      },
+      "severity": {
+        "INFO": "情報",
+        "LOW": "低",
+        "MEDIUM": "中",
+        "HIGH": "高",
+        "CRITICAL": "重大"
+      },
+      "Alias": {
+        "Required": "プロジェクト名を入力してください。",
+        "MaxLength": "プロジェクト名は255文字以内で入力してください。",
+        "Duplicate": "この顧客では同じプロジェクト名が既に存在します。"
+      },
+      "Customer": {
+        "Required": "顧客を選択してください。",
+        "Unavailable": "選択された顧客は無効または削除済みです。"
+      },
+      "ProjectType": {
+        "Invalid": "プロジェクト種別が不正です。"
+      },
+      "RiskLevel": {
+        "Invalid": "リスクレベルが不正です。"
+      },
+      "Team": {
+        "Invalid": "選択されたチームのいずれかが不正です。"
+      },
+      "Status": {
+        "Invalid": "ステータスは「すべて」/「有効」/「削除済み」のいずれかで指定してください。"
+      },
+      "NotFound": "プロジェクトが見つかりません。",
+      "Error": {
+        "Forbidden": "プロジェクト管理にアクセスする権限がありません。"
+      },
+      "loading": "プロジェクト詳細を読み込み中...",
+      "createdAt": "作成日時",
+      "updatedAt": "更新日時",
+      "createSuccess": "プロジェクトを作成しました。",
+      "updateSuccess": "プロジェクトを更新しました。",
+      "deleteSuccess": "プロジェクトを削除しました。",
+      "unknownError": "予期しないエラーが発生しました。",
+      "teamAssignmentHint": "本プロジェクトに割り当てられたチームを管理する。",
+      "teamAssignmentDetailHint": "このプロジェクトに割り当てられたチーム。"
+    },
+    "Repository": {
+      "title": "リポジトリ管理",
+      "create": "リポジトリ作成",
+      "createTitle": "リポジトリ作成",
+      "editTitle": "リポジトリ編集",
+      "detailTitle": "リポジトリ詳細",
+      "loading": "リポジトリを読み込み中...",
+      "detailEmpty": "一覧からリポジトリを選択すると詳細が表示されます。",
+      "save": "保存",
+      "cancel": "キャンセル",
+      "close": "閉じる",
+      "edit": "編集",
+      "delete": "削除",
+      "project": "プロジェクト",
+      "name": "リポジトリ名",
+      "hostType": "ホスト種別",
+      "defaultBranch": "デフォルトブランチ",
+      "repoUrl": "リポジトリURL",
+      "status": "ステータス",
+      "statusValues": {
+        "ACTIVE": "有効",
+        "DELETED": "削除済み"
+      },
+      "all": "すべて",
+      "filters": "フィルター",
+      "apply": "適用",
+      "emptyValue": "-",
+      "createdAt": "作成日時",
+      "updatedAt": "更新日時",
+      "deleteConfirm": "{{repositoryName}} を削除してもよろしいですか？",
+      "createSuccess": "リポジトリを作成しました。",
+      "updateSuccess": "リポジトリを更新しました。",
+      "deleteSuccess": "リポジトリを削除しました。",
+      "unknownError": "予期せぬエラーが発生しました。",
+      "Project": {
+        "Required": "プロジェクトを選択してください。",
+        "NotFound": "プロジェクトが見つかりません。"
+      },
+      "Name": {
+        "Required": "リポジトリ名を入力してください。",
+        "MaxLength": "リポジトリ名は255文字以内で入力してください。",
+        "Duplicate": "このプロジェクトに同じリポジトリ名が既に存在します。"
+      },
+      "HostType": {
+        "Required": "ホスト種別を選択してください。",
+        "Invalid": "ホスト種別が不正です。"
+      },
+      "DefaultBranch": {
+        "MaxLength": "デフォルトブランチは100文字以内で入力してください。"
+      },
+      "Url": {
+        "MaxLength": "リポジトリURLは2048文字以内で入力してください。"
+      },
+      "NotFound": "リポジトリが見つかりません。",
+      "Error": {
+        "Forbidden": "リポジトリ管理にアクセスする権限がありません。"
+      }
+    },
+    "Team": {
+      "title": "チーム管理",
+      "create": "チーム作成",
+      "createTitle": "チーム作成",
+      "editTitle": "チーム編集",
+      "detailTitle": "チーム詳細",
+      "detailEmpty": "一覧からチームを選択すると詳細が表示されます。",
+      "filters": "フィルター",
+      "apply": "適用",
+      "save": "保存",
+      "cancel": "キャンセル",
+      "edit": "編集",
+      "delete": "削除",
+      "deleteConfirm": "このチームを削除してもよろしいですか？",
+      "all": "すべて",
+      "teamCode": "チームコード",
+      "teamCodePlaceholder": "チームコードを入力",
+      "teamName": "チーム名",
+      "teamNamePlaceholder": "チーム名を入力",
+      "description": "説明",
+      "descriptionPlaceholder": "説明を入力",
+      "status": "ステータス",
+      "statusValues": {
+        "ACTIVE": "有効",
+        "DELETED": "削除済み",
+        "INACTIVE": "無効"
+      },
+      "Code": {
+        "Required": "チームコードを入力してください。",
+        "MaxLength": "チームコードは50文字以内で入力してください。",
+        "Duplicate": "チームコードは既に存在します。"
+      },
+      "Name": {
+        "Required": "チーム名を入力してください。",
+        "MaxLength": "チーム名は255文字以内で入力してください。"
+      },
+      "Description": {
+        "MaxLength": "説明は500文字以内で入力してください。"
+      },
+      "Status": {
+        "Invalid": "ステータスは「すべて」/「有効」/「削除済み」のいずれかで指定してください。"
+      },
+      "NotFound": "チームが見つかりません。",
+      "NotActive": "選択されたチームは無効または削除済みです。",
+      "AlreadyDeleted": "チームは既に削除されています。",
+      "Deleted": {
+        "CannotEdit": "削除済みのチームは編集できません。"
+      },
+      "Conflict": {
+        "Version": "チームは他のユーザーによって更新されました。再読み込みしてから再試行してください。"
+      },
+      "Error": {
+        "Forbidden": "チーム管理にアクセスする権限がありません。"
+      },
+      "loading": "チーム詳細を読み込み中...",
+      "members": "メンバー",
+      "member": "メンバー",
+      "pseudonym": "エイリアス",
+      "role": "ロール",
+      "selectMember": "メンバーを選択",
+      "selectRole": "ロールを選択",
+      "addMember": "メンバー追加",
+      "addMemberTitle": "チームメンバー追加",
+      "updateMemberTitle": "メンバーのロール更新",
+      "memberCount": "メンバー数",
+      "version": "バージョン",
+      "updatedAt": "更新日時",
+      "joinedAt": "参加日時",
+      "editMember": "メンバーロール編集",
+      "removeMember": "メンバー削除",
+      "removeMemberConfirm": "このメンバーをチームから削除してもよろしいですか？",
+      "createSuccess": "作成しました。",
+      "updateSuccess": "更新しました。",
+      "deleteSuccess": "削除しました。",
+      "memberAddSuccess": "メンバーを追加しました。",
+      "memberUpdateSuccess": "メンバーのロールを更新しました。",
+      "memberRemoveSuccess": "メンバーを削除しました。",
+      "unknownError": "予期しないエラーが発生しました。",
+      "Member": {
+        "Required": "メンバーを選択してください。",
+        "NotFound": "メンバーが見つかりません。",
+        "Duplicate": "このメンバーはすでにチームに割り当てられています。"
+      },
+      "Role": {
+        "Required": "ロールを選択してください。",
+        "NotFound": "ロールが見つかりません。"
+      },
+      "updatedBy": "更新者",
+      "createdBy": "作成者",
+      "createdAt": "作成日時",
+      "deletedBy": "削除者"
+    },
+    "Organization": {
+      "title": "組織管理",
+      "create": "組織を作成",
+      "filtersTitle": "フィルタ",
+      "filtersDescription": "コードまたは名前で検索し、有効・無効・全件を切り替えます。",
+      "keyword": "キーワード",
+      "keywordPlaceholder": "コードまたは名前で検索",
+      "status": "ステータス",
+      "apply": "適用",
+      "reset": "リセット",
+      "listTitle": "組織一覧",
+      "listDescription": "最新の更新順で表示します。",
+      "loading": "組織の詳細を読み込み中...",
+      "total": "{{total}}件",
+      "paginationDescription": "表示 {{from}} - {{to}} / 合計 {{total}} 件の組織",
+      "empty": "組織が見つかりませんでした。",
+      "table": {
+        "code": "コード",
+        "name": "名称",
+        "status": "ステータス",
+        "updatedAt": "更新日時",
+        "actions": "操作"
+      },
+      "Status": {
+        "ACTIVE": "有効",
+        "DELETED": "削除済み",
+        "Invalid": "ステータスは All / Active / Deleted のいずれかで指定してください。"
+      },
+      "view": "表示",
+      "edit": "編集",
+      "delete": "削除",
+      "detailTitle": "詳細",
+      "detailDescription": "削除済みレコードやメタデータを読み取り専用で表示します。",
+      "detailEmpty": "一覧から組織を選択すると詳細が表示されます。",
+      "detail": {
+        "description": "説明",
+        "version": "バージョン",
+        "updatedAt": "更新日時",
+        "updatedBy": "更新者",
+        "createdBy": "作成者",
+        "createdAt": "作成日時",
+        "deletedAt": "削除日時",
+        "deletedBy": "削除者"
+      },
+      "pagination": "{{page}} / {{totalPages}} ページ",
+      "traceId": "トレースID",
+      "error": "予期せぬエラーが発生しました。",
+      "deleteConfirm": "この組織を削除しますか？この操作は論理削除です。",
+      "Message": {
+        "Created": "組織を作成しました。",
+        "Updated": "組織を更新しました。",
+        "Deleted": "組織を削除しました。"
+      },
+      "Form": {
+        "CreateTitle": "組織を作成",
+        "EditTitle": "組織を編集",
+        "CreateDescription": "一意のコード、名称、任意の説明を入力してください。",
+        "EditDescription": "楽観ロック用の現在バージョンを保持したまま更新してください。",
+        "Code": "組織コード",
+        "Name": "組織名",
+        "Description": "説明",
+        "Close": "閉じる",
+        "Cancel": "キャンセル",
+        "Save": "保存",
+        "Saving": "保存中..."
+      },
+      "Filter": {
+        "All": "すべて",
+        "Active": "有効",
+        "Deleted": "削除済み"
+      },
+      "Code": {
+        "Required": "組織コードは必須です。",
+        "MaxLength": "組織コードは50文字以内で入力してください。",
+        "Duplicate": "組織コードは既に存在します。",
+        "DuplicateOnUpdate": "組織コードは既に存在します。"
+      },
+      "Name": {
+        "Required": "組織名は必須です。",
+        "MaxLength": "組織名は255文字以内で入力してください。",
+        "Duplicate": "組織名は既に存在します。"
+      },
+      "Description": {
+        "MaxLength": "説明は500文字以内で入力してください。"
+      },
+      "Deleted": {
+        "EditNotAllowed": "削除済みの組織は編集できません。",
+        "AlreadyDeleted": "組織は既に削除されています。"
+      },
+      "Conflict": {
+        "Version": "他のユーザーにより組織が更新されました。再読み込みして再度お試しください。"
+      },
+      "NotFound": "組織が見つかりません。",
+      "DeleteConfirm": "この組織を削除してもよろしいですか？"
+    },
+    "UserAccounts": {
+      "title": "ユーザーアカウント",
+      "loading": "アカウント詳細を読み込み中...",
+      "paginationDescription": "{{from}}-{{to}} / {{total}} 件",
+      "table": {
+        "username": "ユーザー名",
+        "member": "氏名",
+        "role": "ロール",
+        "status": "ステータス",
+        "updatedAt": "更新日時"
+      },
+      "fields": {
+        "username": "ユーザー名",
+        "member": "氏名",
+        "email": "メール",
+        "role": "ロール",
+        "status": "ステータス",
+        "password": "パスワード",
+        "newPassword": "新しいパスワード",
+        "confirmPassword": "パスワード確認",
+        "createdAt": "作成日時",
+        "updatedAt": "更新日時"
+      },
+      "status": {
+        "ACTIVE": "有効",
+        "INACTIVE": "無効"
+      },
+      "filter": {
+        "all": "すべて"
+      },
+      "actions": {
+        "create": "ユーザーを作成",
+        "view": "表示",
+        "edit": "編集",
+        "resetPassword": "パスワードをリセット",
+        "deactivate": "無効化",
+        "reactivate": "再有効化"
+      },
+      "confirm": {
+        "deactivate": "このアカウントを無効化しますか？",
+        "reactivate": "このアカウントを再有効化しますか？"
+      },
+      "form": {
+        "createTitle": "ユーザーアカウントを作成",
+        "editTitle": "ユーザーアカウントを編集",
+        "detailTitle": "ユーザーアカウント詳細",
+        "create": "作成",
+        "resetTitle": "パスワードをリセット",
+        "save": "保存",
+        "cancel": "キャンセル",
+        "close": "閉じる"
+      },
+      "empty": {
+        "detail": "詳細を見るアカウントを選択してください。",
+        "unmapped": "未連携"
+      },
+      "security": {
+        "title": "セキュリティ",
+        "description": "パスワードハッシュは非表示です。トークンは表示しません。"
+      },
+      "validation": {
+        "usernameRequired": "ユーザー名は必須です。",
+        "roleRequired": "ロールは必須です。",
+        "passwordMin": "パスワードは8文字以上にしてください。",
+        "passwordPattern": "パスワードには文字、数字、特殊文字を含めてください。",
+        "passwordMismatch": "確認用パスワードが一致しません。"
+      }
+    },
+    "RoleManagement": {
+      "title": "ロール管理",
+      "create": "ロールを作成",
+      "keywordPlaceholder": "ロール名で検索",
+      "sort": "並び替え",
+      "filters": "フィルター",
+      "apply": "適用",
+      "all": "すべて",
+      "status": "ステータス",
+      "statusValues": {
+        "ACTIVE": "有効",
+        "DELETED": "削除済み"
+      },
+      "loading": "ロールを読み込み中...",
+      "empty": "ロールが見つかりませんでした。",
+      "total": "{{total}}件",
+      "previous": "前へ",
+      "next": "次へ",
+      "pagination": "{{page}} / {{totalPages}} ページ",
+      "view": "表示",
+      "edit": "編集",
+      "delete": "削除",
+      "detailTitle": "ロール詳細",
+      "error": "予期せぬエラーが発生しました。",
+      "DeleteConfirm": "ロール {{roleName}} を削除しますか？",
+      "emptyValue": "-",
+      "table": {
+        "name": "ロール名",
+        "description": "説明",
+        "createdAt": "作成日",
+        "updatedAt": "更新日"
+      },
+      "detail": {
+        "createdAt": "作成日",
+        "updatedAt": "更新日"
+      },
+      "Sort": {
+        "NameAsc": "ロール名 A-Z",
+        "NameDesc": "ロール名 Z-A"
+      },
+      "Message": {
+        "Created": "ロールを作成しました。",
+        "Updated": "ロールを更新しました。",
+        "Deleted": "ロールを削除しました。"
+      },
+      "Form": {
+        "CreateTitle": "ロールを作成",
+        "EditTitle": "ロールを編集",
+        "Name": "ロール名",
+        "Description": "説明",
+        "Close": "閉じる",
+        "Cancel": "キャンセル",
+        "Save": "保存"
+      },
+      "RoleName": {
+        "Required": "ロール名は必須です。",
+        "MaxLength": "ロール名は100文字以内で入力してください。",
+        "Duplicate": "ロール名は既に存在します。"
+      },
+      "SortInvalid": "並び替え項目が無効です。",
+      "Status": {
+        "Invalid": "ステータスは すべて・有効・削除済み のいずれかにしてください。"
+      },
+      "NotFound": "ロールが見つかりません。"
+    },
+    "Dashboard": {
+      "roleTabs": {
+        "pm": "PM",
+        "qa": "QA",
+        "development": "Development",
+        "security": "Security",
+        "executive": "Executive",
+        "dataOps": "Data Ops"
+      },
+      "reset": "リセット"
+    },
+    "QaDashboard": {
+      "kicker": "Chapter 9 Dashboard",
+      "title": "QA Dashboard",
+      "description": "AC-Testカバレッジ、未テストAC、ブラックボックスカバレッジ、テスト結果、Defect Leakage、受け入れ準備状況。",
+      "searchPlaceholder": "チケット、PR、AC、フェーズ、コネクタ、findingを検索...",
+      "export": "CSVエクスポート",
+      "refresh": "更新",
+      "refreshSuccess": "QAダッシュボードを更新しました。",
+      "exportSuccess": "CSVエクスポートを開始しました。",
+      "projectId": "プロジェクト",
+      "repositoryId": "リポジトリ",
+      "ticketId": "チケット",
+      "emptyState": "現在のフィルターに一致するデータはありません。",
+      "cards": {
+        "acTestCoverage": {
+          "title": "AC-Testカバレッジ",
+          "description": "チケット・スプリント別のACカバレッジ"
+        },
+        "acNotTested": {
+          "title": "未テストAC",
+          "description": "AC件数、内容、関連チケット、担当ロール"
+        },
+        "blackboxCoverage": {
+          "title": "ブラックボックスカバレッジ",
+          "description": "正常 / 異常 / 境界 / 権限 / パフォーマンス"
+        },
+        "testResults": {
+          "title": "テスト結果",
+          "description": "PASS / FAIL / 未実行 / CI実行リンク"
+        },
+        "defectLeakage": {
+          "title": "Defect Leakage",
+          "description": "QA・本番バグ、原因フェーズ"
+        },
+        "acceptanceReady": {
+          "title": "受け入れ準備",
+          "description": "レポート有無、テスト結果、リスク、ロールバック"
+        }
+      },
+      "loading": "読み込み中...",
+      "acceptanceCriteria": {
+        "title": "受け入れ基準カバレッジ",
+        "ac": "AC",
+        "ticket": "チケット",
+        "status": "状態",
+        "blackbox": "Blackbox",
+        "gap": "Gap",
+        "totalItems": "{{count}} 件"
+      },
+      "coverageTrend": {
+        "title": "ACカバレッジ推移",
+        "target": "目標 {{target}}%"
+      },
+      "ticketTable": {
+        "title": "チケット",
+        "ticketId": "チケットID",
+        "summary": "概要",
+        "status": "ステータス",
+        "priority": "優先度",
+        "assignee": "担当者",
+        "acCoverage": "ACカバレッジ",
+        "testResult": "テスト結果",
+        "updatedDate": "更新日",
+        "viewDetail": "詳細を見る",
+        "version": "バージョン"
+      },
+      "ticketDetail": {
+        "back": "QAダッシュボードに戻る",
+        "notFound": "チケットが見つかりません。",
+        "loading": "チケットを読み込み中...",
+        "description": "説明",
+        "sprint": "スプリント",
+        "assignee": "担当者",
+        "createdDate": "作成日",
+        "updatedDate": "更新日",
+        "stats": {
+          "acCoverage": "ACカバレッジ",
+          "totalAc": "AC総数",
+          "testedAc": "テスト済みAC",
+          "notTestedAc": "未テストAC",
+          "testResult": "テスト結果 %"
+        },
+        "acTable": {
+          "title": "受け入れ基準",
+          "acId": "AC ID",
+          "acceptanceCriteria": "受け入れ基準",
+          "status": "ステータス",
+          "linkedTestCase": "紐付くテストケース",
+          "testResult": "テスト結果",
+          "owner": "担当者",
+          "export": "CSVエクスポート"
+        },
+        "trend": {
+          "title": "ACカバレッジ推移"
+        },
+        "viewCiRun": "CI実行結果を見る"
+      }
+    },
+    "SecurityDashboard": {
+      "kicker": "Chapter 9 Dashboard",
+      "title": "Security Dashboard",
+      "description": "Safety Pack、Secret Scan、SAST/SCA、Security Checklist、Security Exceptionを一覧表示。読み取り専用。",
+      "searchPlaceholder": "チケットを検索",
+      "export": "CSVエクスポート",
+      "exportNotAvailable": "セキュリティダッシュボードのエクスポートはまだ利用できません。",
+      "refresh": "更新",
+      "projectId": "プロジェクト",
+      "repositoryId": "リポジトリ",
+      "safetyStatus": "Safety Pack",
+      "secretScanStatus": "Secret Scan",
+      "sastStatus": "SAST",
+      "exceptionStatus": "Exception",
+      "allProjects": "すべてのプロジェクト",
+      "allRepositories": "すべてのリポジトリ",
+      "allStatuses": "すべてのステータス",
+      "emptyState": "現在のフィルターに一致するデータはありません。",
+      "loading": "読み込み中...",
+      "loadingDetail": "チケット詳細を読み込み中...",
+      "detailFailed": "チケット詳細の読み込みに失敗しました。",
+      "none": "なし",
+      "cards": {
+        "safetyPack": {
+          "title": "Safety Pack未準備件数",
+          "description": "Safety PackがREADYでないリポジトリ数"
+        },
+        "secretScan": {
+          "title": "Secret Scan失敗件数",
+          "description": "Secret ScanがFAILのチケット数"
+        },
+        "sastSca": {
+          "title": "SAST/SCA失敗件数",
+          "description": "SASTまたはSCAがFAILのチケット数"
+        },
+        "exception": {
+          "title": "未対応の例外件数",
+          "description": "フォローアップ待ちのSecurity Exception"
+        }
+      },
+      "table": {
+        "title": "チケット別セキュリティレビュー",
+        "ticket": "チケット",
+        "repository": "リポジトリ",
+        "safety": "Safety Pack",
+        "secretScan": "Secret Scan",
+        "sast": "SAST",
+        "sca": "SCA",
+        "exception": "Exception",
+        "verdict": "最終判定",
+        "totalItems": "{{count}} 件",
+        "version": "バージョン"
+      },
+      "drawer": {
+        "title": "チケット詳細",
+        "metadata": "メタデータ",
+        "project": "プロジェクト",
+        "repository": "リポジトリ",
+        "safetyStatus": "Safety Pack",
+        "finalVerdict": "最終判定",
+        "scansTitle": "セキュリティスキャン",
+        "checklistTitle": "セキュリティチェックリスト",
+        "checklistAllValid": "すべてのチェックリスト項目は有効です。",
+        "exceptionsTitle": "セキュリティ例外"
+      }
+    },
+    "DevDashboard": {
+      "kicker": "Chapter 9 Dashboard",
+      "title": "Development Dashboard",
+      "description": "本日レビューすべきPR、エビデンス不足、CI失敗、繰り返しレビューコメント、AI効果、DevEx。",
+      "searchPlaceholder": "チケット、PR、AC、フェーズ、コネクタ、findingを検索...",
+      "export": "Export",
+      "refresh": "Refresh",
+      "refreshSuccess": "開発ダッシュボードを更新しました。",
+      "exportSuccess": "エクスポートを開始しました。",
+      "projectId": "プロジェクト",
+      "repositoryId": "リポジトリ",
+      "emptyState": "現在のフィルターに一致するデータはありません。",
+      "cards": {
+        "prToReviewToday": {
+          "title": "本日レビューが必要なPR",
+          "description": "自分のチームのPR、CI失敗、またはレビュー依頼済みのPR。"
+        },
+        "ticketBlock": {
+          "title": "停滞しているチケット",
+          "description": "PRの長期保留、エビデンス不足、レビュー待ち、CI失敗、未解決の課題、またはリスクにより、チケットが未完了のまま停滞しています。"
+        },
+        "missingEvidence": {
+          "title": "エビデンス不足",
+          "description": "spec-pack.md、imp-plan.md、review-checklist.md、self-review.md、test-plan.md、test-result.md、または test-report.md が不足しています。"
+        },
+        "TraceabilityGaps": {
+          "title": "トレーサビリティの不足",
+          "description": "チケットに必須成果物へのトレーサビリティリンクが不足しています。"
+        },
+        "OpenIssue": {
+          "title": "未解決のIssue",
+          "description": "チケットの spec-pack またはレポートに未解決のIssueがあります。"
+        },
+        "ciFailure": {
+          "title": "CI失敗",
+          "description": "Lint、テスト、ビルド、セキュリティチェック、または不安定なテストの失敗。"
+        },
+        "firstCIPassRate": {
+          "title": "初回CI成功率",
+          "description": "初回のCI実行で成功したチケット数を、CIが実行されたチケット総数で割った割合。"
+        },
+        "exception": {
+          "title": "例外",
+          "description": "例外が登録されているチケット数。"
+        },
+        "risk": {
+          "title": "リスク",
+          "description": "リスクシグナルが付与された未完了のチケットがあります。"
+        },
+        "repeatedReviewComment": {
+          "title": "繰り返されるレビューコメント",
+          "description": "ルールやテンプレート改善のための提案。"
+        },
+        "aiEffectiveness": {
+          "title": "AI有効性",
+          "description": "テンプレート、読み込みファイル数、トークン数、キャッシュヒット率。"
+        },
+        "devEx": {
+          "title": "開発者体験",
+          "description": "レビュー待ち、修正待ち、または使いにくいテンプレート。"
+        },
+        "reviewComment": {
+          "title": "レビューコメント",
+          "description": "コードレビューからのオープンコメント"
+        },
+        "parserError": {
+          "title": "パーサーエラー",
+          "description": "パースエラー、スキーマ違反、欠損"
+        }
+      },
+      "pendingPrs": {
+        "title": "対応が必要なPR",
+        "pr": "PR",
+        "signal": "Signal",
+        "detail": "Detail",
+        "evidence": "Evidence"
+      },
+      "ciFailureChart": {
+        "title": "CI Failure Categories"
+      },
+      "allCiStatus": "すべてのCIステータス",
+      "allReviewStatus": "すべてのレビューステータス",
+      "ciStatus": "CIステータス",
+      "ciStatusFail": "失敗",
+      "ciStatusPass": "成功",
+      "reviewStatus": "レビューステータス",
+      "reviewStatusOpen": "Findingあり",
+      "reviewStatusResolved": "Findingなし",
+      "viewDetail": "詳細を見る",
+      "ticketTable": {
+        "title": "タイトル",
+        "total": "{{count}} 件",
+        "ticket": "チケット",
+        "ciStatus": "CIステータス",
+        "ciFailCount": "CI失敗数",
+        "openFindings": "オープンFinding",
+        "ageDays": "経過日数",
+        "reworkRounds": "再作業ラウンド",
+        "reviewRounds": "レビューラウンド",
+        "reviewComments": "レビューコメント",
+        "parserError": "パーサーエラー",
+        "parserErrorYes": "エラーあり",
+        "parserErrorNo": "問題なし",
+        "prev": "前へ",
+        "next": "次へ",
+        "version": "バージョン"
+      },
+      "detail": {
+        "title": "チケット詳細",
+        "ticket": "チケット",
+        "project": "プロジェクト",
+        "status": "ステータス",
+        "age": "経過日数",
+        "ciFailures": "CI失敗",
+        "openFindings": "オープンFinding",
+        "parserErrors": "パーサーエラー",
+        "ciRuns": "CI実行",
+        "findings": "Finding",
+        "reviewComments": "レビューコメント",
+        "viewCiRun": "CI実行を見る",
+        "viewCommit": "コミットを見る",
+        "openTraceability": "Traceabilityを開く",
+        "noReviewComments": "レビューコメントはありません",
+        "noParserErrors": "パーサーエラーなし",
+        "parserSummary": "パーサーサマリー",
+        "parseErrors": "パースエラー",
+        "schemaViolations": "スキーマ違反",
+        "missing": "欠損"
+      }
+    },
+    "AdminAuditLog": {
+      "title": "管理監査ログ",
+      "description": "管理画面のすべてのCRUD操作とログインイベントを記録する読み取り専用の監査証跡です。",
+      "filters": {
+        "module": "モジュール",
+        "operationType": "操作種別",
+        "actor": "実行者",
+        "actorPlaceholder": "ユーザー名で検索",
+        "dateRange": "期間",
+        "all": "すべて"
+      },
+      "cards": {
+        "total": {
+          "title": "合計件数",
+          "description": "現在のフィルター条件に一致する件数。"
+        },
+        "modules": {
+          "title": "モジュール数（このページ）",
+          "description": "現在のページのモジュール種別数。"
+        }
+      },
+      "table": {
+        "time": "日時",
+        "actor": "実行者",
+        "module": "モジュール",
+        "entity": "対象",
+        "operation": "操作",
+        "detail": "詳細"
+      },
+      "detail": {
+        "title": "監査ログ詳細",
+        "loading": "読み込み中...",
+        "time": "日時",
+        "actor": "実行者",
+        "userAgent": "ユーザーエージェント",
+        "changedFields": "変更フィールド",
+        "traceId": "トレースID",
+        "errorMessage": "エラーメッセージ",
+        "diffTitle": "変更前 / 変更後",
+        "before": "変更前",
+        "after": "変更後"
+      }
+    },
+    "ThresholdConfig": {
+      "title": "スコア閾値設定",
+      "description": "評価スコアおよび品質スコアを分類するためのスコア帯閾値を設定します。",
+      "actions": {
+        "edit": "編集",
+        "cancel": "キャンセル",
+        "save": "保存",
+        "addBand": "帯を追加",
+        "delete": "削除",
+        "undo": "元に戻す"
+      },
+      "table": {
+        "from": "開始",
+        "to": "終了",
+        "label": "ラベル",
+        "code": "コード",
+        "color": "色",
+        "status": "状態",
+        "createdInfo": "作成日",
+        "updatedInfo": "更新日時",
+        "actions": "操作"
+      },
+      "status": {
+        "ACTIVE": "有効",
+        "DELETED": "削除済み"
+      },
+      "ActiveSet": {
+        "Empty": "有効な帯が少なくとも1つ必要です。"
+      },
+      "Label": {
+        "Required": "ラベルは必須です。",
+        "MaxLength": "ラベルは255文字以内で入力してください。"
+      },
+      "Code": {
+        "Required": "コードは必須です。",
+        "InvalidFormat": "コードは大文字・数字・アンダースコアのみ使用できます。",
+        "MaxLength": "コードは100文字以内で入力してください。",
+        "Duplicate": "コードは有効な帯の中で一意である必要があります。"
+      },
+      "Color": {
+        "InvalidFormat": "色は有効な16進数値である必要があります（例: #10B981）。",
+        "MaxLength": "色は20文字以内で入力してください。"
+      },
+      "Range": {
+        "OutOfBounds": "スコア範囲は0〜100の範囲内である必要があります。",
+        "MinGreaterThanMax": "開始値は終了値より大きくできません。",
+        "MaxLength": "開始値と終了値は3文字以内で入力してください。"
+      },
+      "Coverage": {
+        "Gap": "有効な帯は0〜100の範囲全体を隙間なくカバーする必要があります。",
+        "Overlap": "有効な帯同士が重複してはいけません。"
+      }
+    },
+    "DataOpsDashboard": {
+      "export": "CSVエクスポート",
+      "title": "DataOps Dashboard",
+      "description": "コネクタの健全性、パーサーの健全性、欠損エビデンス、鮮度、トレーサビリティの健全性を一覧表示します。",
+      "searchPlaceholder": "コネクタまたはリポジトリを検索",
+      "projectId": "プロジェクト",
+      "repositoryId": "リポジトリ",
+      "connectorName": "コネクタ",
+      "parserStatus": "パーサーステータス",
+      "allProjects": "すべてのプロジェクト",
+      "allRepositories": "すべてのリポジトリ",
+      "allConnectors": "すべてのコネクタ",
+      "allParserStatus": "すべてのパーサーステータス",
+      "parserStatusSuccess": "成功",
+      "parserStatusWarning": "警告",
+      "parserStatusError": "エラー",
+      "emptyState": "現在のフィルタに一致するデータがありません。",
+      "cards": {
+        "connectorFailure": {
+          "title": "コネクタ障害",
+          "description": "最新の実行が失敗したコネクタ。"
+        },
+        "parseError": {
+          "title": "パースエラー",
+          "description": "パースエラーがあるデータ品質チェック。"
+        },
+        "missingEvidence": {
+          "title": "欠損エビデンス",
+          "description": "存在しない、または必須項目が欠けているアーティファクト。"
+        },
+        "staleFreshness": {
+          "title": "鮮度低下",
+          "description": "鮮度しきい値を超えたデータ品質チェック。"
+        },
+        "brokenLink": {
+          "title": "リンク切れ",
+          "description": "信頼度の低いトレーサビリティリンク。"
+        }
+      },
+      "repositoryIssues": {
+        "title": "リポジトリの問題",
+        "connectorCount": "{{count}} 件のコネクタ",
+        "failedConnectorCount": "{{count}} 件の失敗",
+        "parseErrorCount": "{{count}} 件のパースエラー",
+        "missingEvidenceCount": "{{count}} 件の不足エビデンス",
+        "connectors": "コネクタ",
+        "noConnectorRows": "不足エビデンスは検出されましたが、このリポジトリのコネクタ行は返されませんでした。",
+        "failedRuns": "失敗実行",
+        "parseErrorsShort": "パースエラー"
+      },
+      "kpiChart": {
+        "title": "KPI概要"
+      },
+      "connectorTable": {
+        "title": "コネクタ",
+        "description": "コネクタの状態を監視し、リポジトリレベルの問題を詳細に調査します。",
+        "total": "{{count}} 件",
+        "connector": "コネクタ",
+        "repository": "リポジトリ",
+        "latestRunStatus": "最新実行",
+        "failedRunCount": "失敗回数",
+        "parseErrorCount": "パースエラー",
+        "prev": "前へ",
+        "next": "次へ"
+      },
+      "detail": {
+        "title": "コネクタ詳細",
+        "repository": "リポジトリ",
+        "recentRuns": "最近の実行",
+        "noRuns": "コネクタの実行記録がありません。",
+        "dataQuality": "データ品質チェック",
+        "noDataQualityIssues": "データ品質の問題は記録されていません。",
+        "parseErrorCount": "パースエラー {{count}} 件",
+        "errorSummaryLabel": "エラー要約",
+        "noErrorSummary": "パースエラー要約は記録されていません。",
+        "missingEvidence": "証跡ファイル",
+        "noMissingEvidence": "このコネクタに不足エビデンス行はありません。",
+        "itemCount": "{{count}} 件",
+        "requiredFieldsMissing": "ファイル内の不足セクション",
+        "exists": "存在",
+        "missing": "不足"
+      }
+    }
+  },
+  "Component": {
+    "Permission": {
+      "Denied": "この操作を実行する権限がありません。",
+      "Unauthorized": "セッションの有効期限が切れました。再度サインインしてください。"
+    },
+    "Error": {
+      "Unexpected": "予期せぬエラーが発生しました。"
+    }
+  }
+}

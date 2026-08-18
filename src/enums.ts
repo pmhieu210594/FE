@@ -1,0 +1,141 @@
+/**
+ * Active enums for auth-core and reusable shared UI.
+ */
+
+export enum ETableAlign {
+  left = "left",
+  right = "right",
+  center = "center",
+}
+
+export enum ETableFilterType {
+  date = "date",
+  text = "text",
+  number = "number",
+  select = "select",
+}
+
+export enum EFormType {
+  onlyNumber = "only_number",
+  hidden = "hidden",
+  number = "number",
+  text = "text",
+  name = "name",
+  tab = "tab",
+  addable = "addable",
+  editor = "editor",
+  richtext = "richtext",
+  upload = "upload",
+  password = "password",
+  textarea = "textarea",
+  slider = "slider",
+  sliderNumber = "slider_number",
+  date = "date",
+  dateRange = "date_range",
+  time = "time",
+  timeRange = "time_range",
+  checkbox = "checkbox",
+  checkboxSingle = "checkbox_single",
+  radio = "radio",
+  chips = "chips",
+  select = "select",
+  selectTable = "select_table",
+  treeSelect = "tree_select",
+  otp = "otp",
+  switch = "switch",
+}
+
+export enum EFormPickerDate {
+  time = "time",
+  date = "date",
+  week = "week",
+  month = "month",
+  quarter = "quarter",
+  year = "year",
+}
+
+export enum EFormRuleType {
+  required = "required",
+  email = "email",
+  min = "min",
+  max = "max",
+  custom = "custom",
+  phone = "phone",
+  onlyText = "only_text",
+  onlyTextSpace = "only_text_space",
+  noXss = "no_xss",
+  textarea = "textarea",
+  api = "api",
+  optional = "optional",
+}
+
+export enum EStatusState {
+  idle = "idle",
+  isFulfilled = "is.fulfilled",
+}
+
+export enum EIcon {
+  desktopFileExportIcon = "desktop-file-export-icon",
+  disable = "disable",
+  edit = "edit",
+  doubleArrow = "double-arrow",
+  en = "en",
+  eye = "eye",
+  eyeSlash = "eye-slash",
+  filter = "filter",
+  filterFill = "filter-fill",
+  filterIcon = "filters-icon",
+  funnelCheckIcon = "funnel-check-icon",
+  home = "home",
+  inputIcon = "input-icon",
+  ja = "ja",
+  key = "key",
+  manageUser = "manage-user",
+  logoBrycen = "logo-brycen",
+  out = "out",
+  paste = "paste",
+  project = "project",
+  plus = "plus",
+  search = "search",
+  spinner = "spinner",
+  sort = "sort",
+  timePeriod = "time-period",
+  upload = "upload",
+  times = "times",
+  trash = "trash",
+  userCircle = "user-circle",
+  us = "us",
+  vn = "vn",
+  workflow = "workflow",
+  vi = "vi",
+  addPlusIcon = "add-plus-icon",
+  arrow = "arrow",
+  calendar = "calendar",
+  coinDollar = "coin-dollar",
+  departmentPermission = "department-permission",
+  check = "check",
+  checkSquare = "check-square",
+  copy = "copy",
+  dayNight = "day-night",
+  warning = "warning",
+  today = "calendar-checkmark-line-icon",
+  checkList = "checklist-icon",
+  moreInfo = "info-icon",
+  move = "move",
+  close = "close",
+  undo = "undo",
+}
+
+export enum ETypeChart {
+  pie = "pie",
+  ring = "ring",
+  ringHalfDonut = "ring-half-donut",
+  bubble = "bubble",
+  line = "line",
+  bar = "bar",
+  stackedBar = "stacked-bar",
+  lineBar = "line-bar",
+  area = "area",
+  stackedArea = "stacked-area",
+  scatter = "scatter",
+}

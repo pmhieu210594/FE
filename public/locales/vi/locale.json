@@ -1,0 +1,1382 @@
+﻿{
+  "Layout": {
+    "appName": "EDCAP",
+    "admin": "Quản trị",
+    "dashboard": "Dashboard",
+    "pmDashboard": "PM Dashboard",
+    "customers": "Khách hàng",
+    "projects": "Dự án",
+    "systemAdmin": "Quản trị hệ thống",
+    "organization": "Tổ chức",
+    "teams": "Nhóm",
+    "userAccounts": "Tài khoản người dùng",
+    "auditLogs": "Nhật ký kiểm toán",
+    "scoreThresholds": "Ngưỡng điểm",
+    "roles": "Vai trò",
+    "traceability": "Traceability",
+    "openSidebar": "Mở rộng sidebar",
+    "closeSidebar": "Thu gọn sidebar",
+    "language": "Ngôn ngữ",
+    "logout": "Đăng xuất",
+    "guest": "Khách",
+    "qaDashboard": "QA Dashboard",
+    "developmentDashboard": "Development Dashboard",
+    "repositories": "Kho lưu trữ"
+  },
+  "Components": {
+    "Search": "Tìm kiếm",
+    "actions": "Hành động",
+    "PleaseEnter": "Vui lòng nhập {{title}}",
+    "PleaseEnterOnlyNumber": "Vui lòng chỉ nhập số.",
+    "PleaseEnterOnlyText": "Vui lòng chỉ nhập chữ cái.",
+    "PleaseEnterAtLeastCharacters": "Vui lòng nhập ít nhất {{min}} ký tự.",
+    "PleaseEnterAValidEmailAddress": "Vui lòng nhập địa chỉ email hợp lệ.",
+    "PasswordNeedsToHaveAtLeast8Characters": "Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt.",
+    "PleaseEnterMaximumCharacters": "Vui lòng nhập tối đa {{max}} ký tự.",
+    "PleaseEnterAtLeastNumberCharacters": "Vui lòng nhập ít nhất {{min}} ký tự.",
+    "PleaseEnterMinimumNumber": "Vui lòng nhập số lớn hơn hoặc bằng {{min}}.",
+    "PleaseEnterMaximumNumberCharacters": "Vui lòng nhập không quá {{max}} chữ số.",
+    "PleaseEnterMaximumNumber": "Vui lòng nhập số nhỏ hơn hoặc bằng {{max}}.",
+    "IsAlreadyTaken": "{{label}} '{{value}}' đã được sử dụng.",
+    "Action": "Hành động",
+    "Clear": "Xóa",
+    "OK": "OK",
+    "Enter": "Nhập {{title}}",
+    "PleaseChoose": "Vui lòng chọn {{title}}",
+    "Filter": "Bộ lọc",
+    "PerPageSuffix": "/trang",
+    "SomethingWentWrong": "Đã xảy ra lỗi, vui lòng thử lại!",
+    "UnsafeInputDetected": "Dữ liệu bạn nhập chứa nội dung không được phép (có thể là mã HTML/script). Vui lòng kiểm tra lại.",
+    "Hide": "Ẩn",
+    "ResetSize": "Đặt lại kích thước",
+    "PinRight": "Ghim phải",
+    "PinLeft": "Ghim trái",
+    "Choose": "Chọn"
+  },
+  "Pages": {
+    "Login": {
+      "brandLabel": "Truy cập EDCAP",
+      "title": "Đăng nhập vào EDCAP",
+      "description": "Dùng tài khoản EDCAP của bạn để truy cập workspace.",
+      "formTitle": "Chào mừng quay lại",
+      "formDescription": "Nhập tên đăng nhập và mật khẩu để tiếp tục.",
+      "username": "Tên đăng nhập",
+      "usernamePlaceholder": "Nhập tên đăng nhập",
+      "password": "Mật khẩu",
+      "passwordPlaceholder": "Nhập mật khẩu",
+      "showPassword": "Hiện mật khẩu",
+      "hidePassword": "Ẩn mật khẩu",
+      "signIn": "Đăng nhập",
+      "signingIn": "Đang đăng nhập...",
+      "loginFailed": "Đăng nhập thất bại. Vui lòng thử lại.",
+      "secureAccessTitle": "Truy cập an toàn",
+      "secureAccessBody": "Người dùng đăng nhập sẽ nhận bearer token ngắn hạn cho phiên hiện tại.",
+      "temporaryLandingTitle": "Trang đích tạm thời",
+      "temporaryLandingBody": "Người dùng không phải admin sẽ được chuyển đến đây trong khi trang home chính thức đang được hoàn thiện."
+    },
+    "Errors": {
+      "INVALID_CREDENTIALS": "Tên đăng nhập hoặc mật khẩu không đúng.",
+      "ACCOUNT_TEMPORARILY_UNAVAILABLE": "Tài khoản này hiện tạm thời không khả dụng.",
+      "NO_ROLE_ASSIGNED": "Bạn không có quyền truy cập, vui lòng liên hệ admin.",
+      "VALIDATION_ERROR": "Xác thực dữ liệu thất bại. Vui lòng kiểm tra các trường bị đánh dấu.",
+      "UNAUTHORIZED": "Bạn không có quyền thực hiện thao tác này.",
+      "BAD_REQUEST": "Không thể xử lý yêu cầu.",
+      "INTERNAL_ERROR": "Đã xảy ra lỗi không mong muốn."
+    },
+    "Home": {
+      "title": "Trang tổng quan",
+      "description": "Đây là trang đích tạm thời cho người dùng không phải admin.",
+      "welcome": "Đã đăng nhập với tên {{name}}.",
+      "body": "Bạn chưa tham gia vào dự án nào. hãy liên hệ với ADMIN để được hỗ trợ."
+    },
+    "Traceability": {
+      "title": "Traceability Map",
+      "description": "Xem bằng chứng ticket, PR, commit, CI, broken links và timeline.",
+      "ticketId": "Ticket ID",
+      "ticketKey": "Mã ticket",
+      "internalTicketId": "ID ticket nội bộ",
+      "ticketIdPlaceholder": "Nhập ticket ID",
+      "load": "Tải",
+      "clear": "Xóa",
+      "emptyState": "Nhập ticket ID để tải màn hình traceability.",
+      "loading": "Đang tải dữ liệu traceability...",
+      "loadingFailed": "Không thể tải dữ liệu traceability.",
+      "NotFound": "Không tìm thấy dữ liệu traceability cho ticket này.",
+      "completeness": "Độ hoàn chỉnh",
+      "artifacts": "Artifacts",
+      "prs": "PRs",
+      "commits": "Commits",
+      "ciRuns": "CI runs",
+      "reviewRounds": "Số vòng review",
+      "brokenLinks": "Broken links",
+      "traceabilityTab": "Traceability",
+      "brokenLinksTitle": "Broken Links",
+      "brokenLinksDescription": "Thiếu bằng chứng vẫn được hiển thị.",
+      "noBrokenLinks": "Không tìm thấy broken links.",
+      "reviewComments": "Nhận xét review",
+      "noReviewComments": "Không có nhận xét review",
+      "timelineTitle": "Timeline",
+      "timelineDescription": "Các sự kiện bằng chứng theo thứ tự thời gian.",
+      "noTimeline": "Không tìm thấy sự kiện timeline.",
+      "linksTitle": "Traceability Links",
+      "linksDescription": "Các quan hệ đã lưu trong read model.",
+      "noLinks": "Không tìm thấy traceability links.",
+      "item": "Mục",
+      "state": "Trạng thái",
+      "path": "Đường dẫn",
+      "updatedAt": "Cập nhật lúc",
+      "present": "Có",
+      "missing": "Thiếu",
+      "confidence": "Confidence",
+      "ticket": "Ticket",
+      "backToDashboard": "Quay lại dashboard",
+      "lastRun": "Lần chạy cuối",
+      "lastCommit": "Lần commit cuối",
+      "version": "Phiên bản"
+    },
+    "PmDashboard": {
+      "version": "Phiên bản",
+      "kicker": "Màn hình vận hành PM",
+      "title": "PM Dashboard",
+      "description": "Theo dõi ticket bị chặn, thiếu bằng chứng, EQS và tín hiệu rủi ro trong một màn hình chỉ đọc.",
+      "refresh": "Làm mới",
+      "export": "Xuất CSV",
+      "refreshSuccess": "Đã làm mới dashboard.",
+      "exportSuccess": "Đang bắt đầu xuất CSV.",
+      "filters": "Bộ lọc",
+      "filtersDescription": "Lọc dashboard theo dự án, khoảng thời gian, repository, phase, quality band và mức rủi ro.",
+      "projectId": "Dự án",
+      "periodKey": "Khoảng thời gian",
+      "repositoryId": "Kho lưu trữ",
+      "phaseCode": "Giai đoạn",
+      "scoreBand": "Nhóm chất lượng",
+      "riskLevel": "Mức rủi ro",
+      "status": "Trạng thái",
+      "allProjects": "Tất cả dự án",
+      "allPeriods": "Tất cả khoảng thời gian",
+      "allRepositories": "Tất cả repository",
+      "allPhases": "Tất cả phase",
+      "allQualityBands": "Tất cả quality band",
+      "allRiskLevels": "Tất cả mức rủi ro",
+      "allTicketsTitle": "Danh sách ticket",
+      "allTicketsDescription": "Mọi ticket trong bộ lọc hiện tại, kể cả ticket sạch không có vấn đề.",
+      "search": "Tìm kiếm",
+      "searchPlaceholder": "Tìm ticket, PR, AC, phase, connector hoặc finding",
+      "blockedTickets": "Ticket bị chặn",
+      "openIssuesDetail": "Ticket này hiện đang có ghi nhận về sự cố.",
+      "contentMissingEvidenceDetailTicket": "Không có bằng chứng nào bị thiếu cho ticket này.",
+      "missingEvidence": "Thiếu bằng chứng",
+      "openIssues": "Vấn đề mở",
+      "waitingReview": "Chờ review",
+      "ciFailed": "CI lỗi",
+      "riskTickets": "Ticket có rủi ro",
+      "exceptionTickets": "Ticket có exception",
+      "eqsSummary": "Tổng quan EQS",
+      "updatedAt": "Cập nhật lúc",
+      "phaseBottleneck": "Điểm nghẽn phase",
+      "phaseBottleneckDescription": "Ticket bị chặn được nhóm theo phase.",
+      "missingEvidenceBottleneck": "Điểm nghẽn thiếu bằng chứng",
+      "missingEvidenceBottleneckDescription": "Ticket được nhóm theo repository dựa trên số lượng bằng chứng bị thiếu.",
+      "listTitle": "Danh sách chú ý",
+      "listDescription": "{{total}} ticket khớp với bộ lọc hiện tại.",
+      "pageInfo": "Trang {{page}} / {{totalPages}}",
+      "totalItems": "Tổng {{total}}",
+      "ticket": "Ticket",
+      "phase": "Giai đoạn",
+      "risk": "Rủi ro",
+      "createAt": "Tạo lúc",
+      "totalScore": "Tổng điểm",
+      "eqs": "EQS",
+      "age": "Tuổi",
+      "ownerDisplay": "Người phụ trách",
+      "action": "Hành động",
+      "viewDetail": "Xem chi tiết",
+      "view": "Xem",
+      "pagination": "Trang {{page}} / {{totalPages}}",
+      "previous": "Trước",
+      "next": "Sau",
+      "detailTitle": "Chi tiết ticket",
+      "loadingDetail": "Đang tải chi tiết ticket...",
+      "detailFailed": "Không thể tải chi tiết ticket.",
+      "blocked": "Bị chặn",
+      "traceability": "Khả năng truy xuất nguồn gốc",
+      "openTraceability": "Mở truy xuất nguồn gốc",
+      "metadata": "Metadata",
+      "repository": "Kho lưu trữ",
+      "project": "Dự án",
+      "missingEvidenceTitle": "Bằng chứng bị thiếu",
+      "riskExceptionTitle": "Rủi ro và ngoại lệ",
+      "scoreBreakdown": "Phân rã điểm",
+      "none": "Không có",
+      "ticketId": "ID ticket",
+      "roleTabs": {
+        "pm": "PM",
+        "qa": "QA",
+        "development": "Development",
+        "security": "Security",
+        "executive": "Executive",
+        "dataOps": "Data Ops"
+      },
+      "cards": {
+        "prToReviewToday": {
+          "title": "PR cần được review hôm nay",
+          "description": "PR của nhóm tôi, CI thất bại hoặc đã được yêu cầu review."
+        },
+        "ticketBlock": {
+          "title": "Ticket đang bị đình trệ",
+          "description": "Ticket vẫn đang mở và bị đình trệ do PR chờ quá lâu, thiếu bằng chứng, đang chờ review, CI thất bại, còn issue chưa xử lý hoặc có rủi ro."
+        },
+        "missingEvidence": {
+          "title": "Thiếu bằng chứng",
+          "description": "Thiếu spec-pack.md, imp-plan.md, review-checklist.md, self-review.md, test-plan.md, test-result.md hoặc test-report.md."
+        },
+        "TraceabilityGaps": {
+          "title": "Thiếu liên kết truy vết",
+          "description": "Ticket thiếu các liên kết truy vết đến các tài liệu bắt buộc."
+        },
+        "OpenIssue": {
+          "title": "Issue đang mở",
+          "description": "Ticket có các issue chưa được xử lý trong spec-pack.md hoặc report.md ."
+        },
+        "ciFailure": {
+          "title": "CI thất bại",
+          "description": "Lint, test, build, kiểm tra bảo mật hoặc flaky test bị thất bại."
+        },
+        "firstCIPassRate": {
+          "title": "Tỷ lệ CI thành công ngay lần đầu",
+          "description": "Tỷ lệ số ticket có CI thành công ngay lần chạy đầu tiên trên tổng số ticket có CI."
+        },
+        "exception": {
+          "title": "Ngoại lệ",
+          "description": "Số lượng ticket có ngoại lệ."
+        },
+        "risk": {
+          "title": "Rủi ro",
+          "description": "Có ticket đang mở và được đánh dấu có tín hiệu rủi ro."
+        },
+        "repeatedReviewComment": {
+          "title": "Nhận xét review lặp lại",
+          "description": "Các đề xuất nhằm cải thiện quy tắc hoặc template."
+        },
+        "aiEffectiveness": {
+          "title": "Hiệu quả của AI",
+          "description": "Template, số lượng file đã đọc, số lượng token, tỷ lệ cache hit."
+        },
+        "devEx": {
+          "title": "Trải nghiệm lập trình viên (DevEx)",
+          "description": "Đang chờ review, đang chờ sửa lỗi hoặc template khó sử dụng."
+        }
+      },
+      "emptyState": "Không có ticket nào khớp với bộ lọc hiện tại.",
+      "titleTicket": "Tiêu đề",
+      "ticketInformation": "Thông tin ticket",
+      "phaseName": "Tên phase",
+      "phaseDescription": "Mô tả",
+      "phaseCreatedAt": "Tạo lúc",
+      "riskTitle": "Rủi ro",
+      "exceptionTitle": "Ngoại lệ",
+      "traceabilityIssuesTitle": "Vấn đề truy vết",
+      "firstCiPass": "CI thành công lần đầu",
+      "firstCiFailed": "CI thất bại lần đầu",
+      "reviews": "Đánh giá",
+      "openIssuesCount": "Các vấn đề mở",
+      "exceptions": "Ngoại lệ",
+      "risks": "Rủi ro",
+      "traceabilityIssuesCount": "Vấn đề truy vết",
+      "missingSections": "Các phần bị thiếu",
+      "spec_pack_ac_numbering": "Tệp spec-pack.md tồn tại và có các AC được đánh số",
+      "spec_pack_scope": "Spec-pack.md chứa các mục con của Scope, Open Issues và Risk Controls",
+      "impl_plan_impact_rollback_ac": "Impl-plan.md chứa phạm vi tác động, kế hoạch rollback và ánh xạ đến các AC",
+      "pr_review_canonical_source": "Metadata/bình luận của PR review là nguồn đánh giá chính thức và trạng thái review đã được ghi nhận",
+      "review_checklist_security_test": "Review-checklist.md tồn tại và bao gồm các khía cạnh về bảo mật và kiểm thử",
+      "self_review_commands_results_concerns": "Self-review.md chứa các lệnh đã chạy, kết quả và các vấn đề cần lưu ý",
+      "test_plan_results_ac_linkage": "Test-plan.md và test-results.md được liên kết với các AC",
+      "ci_link_present": "Có Run ID hoặc liên kết đến CI",
+      "blackbox_testcases_main_acs": "Blackbox-testcases.md tồn tại",
+      "report_overview_impact_review_test_risk_remaining": "Report.md chứa tổng quan, tác động, đánh giá, kiểm thử, rủi ro và các vấn đề còn tồn đọng",
+      "openTraceabilityDescription": "Mở màn hình traceability để xem các bằng chứng, PR, commit, CI, broken links và timeline.",
+      "notFoundTraceabilityDescription": "Không có thành phần bắt buộc nào bị thiếu.",
+      "mergedAt": "Đã merge lúc"
+    },
+    "Admin": {
+      "title": "Bảng điều khiển quản trị",
+      "description": "Giám sát chạy connector và kích hoạt các công việc đồng bộ.",
+      "connectorsTitle": "Connector khả dụng",
+      "connectorsDescription": "Chọn một connector và chạy nó cho một dự án.",
+      "connector": "Connector",
+      "selectPlaceholder": "Chọn connector",
+      "projectId": "ID dự án",
+      "projectIdPlaceholder": "Nhập ID dự án",
+      "syncNow": "Đồng bộ ngay",
+      "unknownError": "Đã xảy ra lỗi không xác định.",
+      "loading": "Đang tải lịch sử chạy...",
+      "noRunsFound": "Không tìm thấy lần chạy nào cho connector này.",
+      "runHistory": "Lịch sử chạy cho {{connector}}",
+      "records": "bản ghi"
+    },
+    "Customer": {
+      "title": "Quản lý khách hàng",
+      "refresh": "Làm mới",
+      "create": "Tạo khách hàng",
+      "createTitle": "Tạo khách hàng",
+      "editTitle": "Sửa khách hàng",
+      "formTitle": "Biểu mẫu khách hàng",
+      "filters": "Bộ lọc",
+      "keyword": "Từ khóa",
+      "keywordPlaceholder": "Tìm theo mã hoặc bí danh",
+      "organization": "Tổ chức",
+      "classification": "Phân loại",
+      "status": "Trạng thái",
+      "all": "Tất cả",
+      "customerCode": "Mã khách hàng",
+      "customerCodePlaceholder": "Nhập mã khách hàng",
+      "customerAlias": "Bí danh khách hàng",
+      "customerAliasPlaceholder": "Nhập bí danh khách hàng",
+      "Code": {
+        "Required": "Vui lòng nhập mã khách hàng.",
+        "MaxLength": "Mã khách hàng tối đa 50 ký tự.",
+        "Duplicate": "Mã khách hàng đã tồn tại."
+      },
+      "Alias": {
+        "Required": "Vui lòng nhập tên hoặc bí danh khách hàng.",
+        "MaxLength": "Tên / bí danh khách hàng tối đa 255 ký tự.",
+        "Duplicate": "Tên / bí danh khách hàng đã tồn tại trong tổ chức này."
+      },
+      "Classification": {
+        "Invalid": "Phân loại khách hàng không hợp lệ."
+      },
+      "Status": {
+        "Invalid": "Trạng thái phải là Tất cả, Đang hoạt động hoặc Đã xóa."
+      },
+      "Organization": {
+        "Required": "Vui lòng chọn tổ chức.",
+        "NotFound": "Không tìm thấy tổ chức.",
+        "Unavailable": "Tổ chức đã bị vô hiệu hóa hoặc đã bị xóa mềm, không thể sử dụng."
+      },
+      "NotFound": "Không tìm thấy khách hàng.",
+      "Deleted": {
+        "CannotEdit": "Không thể chỉnh sửa khách hàng đã bị xóa."
+      },
+      "AlreadyDeleted": "Khách hàng đã bị xóa trước đó.",
+      "Conflict": {
+        "Version": "Thông tin khách hàng đã được người dùng khác cập nhật. Vui lòng tải lại và thử lại."
+      },
+      "Error": {
+        "Forbidden": "Bạn không có quyền truy cập chức năng quản lý khách hàng."
+      },
+      "listTitle": "Danh sách khách hàng",
+      "listDescription": "Tìm thấy {{total}} khách hàng",
+      "loading": "Đang tải khách hàng...",
+      "empty": "Không tìm thấy khách hàng nào theo bộ lọc hiện tại.",
+      "detailTitle": "Chi tiết khách hàng",
+      "detailDescription": "Tóm tắt và thao tác với khách hàng đang chọn.",
+      "detailEmpty": "Chọn một khách hàng từ danh sách để xem chi tiết.",
+      "save": "Lưu",
+      "cancel": "Hủy",
+      "edit": "Sửa",
+      "delete": "Xóa",
+      "deleteConfirm": "Bạn có chắc chắn muốn xóa khách hàng này không?",
+      "apply": "Áp dụng",
+      "previous": "Trước",
+      "next": "Sau",
+      "pagination": "Trang {{page}} / {{totalPages}}",
+      "version": "Phiên bản",
+      "updatedAt": "Cập nhật lúc",
+      "deletedAt": "Xóa lúc",
+      "unknownError": "Đã xảy ra lỗi không xác định.",
+      "selectOrganization": "Chọn tổ chức",
+      "createSuccess": "OK",
+      "updateSuccess": "OK",
+      "deleteSuccess": "OK",
+      "classificationValues": {
+        "INTERNAL": "Nội bộ",
+        "EXTERNAL": "Bên ngoài"
+      },
+      "statusValues": {
+        "ACTIVE": "Đang hoạt động",
+        "DELETED": "Đã xóa"
+      },
+      "updatedBy": "Người cập nhật",
+      "createdBy": "Người tạo",
+      "createdAt": "Tạo lúc",
+      "deletedBy": "Người xóa"
+    },
+    "Project": {
+      "title": "Quản lý dự án",
+      "create": "Tạo dự án",
+      "createTitle": "Tạo dự án",
+      "editTitle": "Chỉnh sửa dự án",
+      "detailTitle": "Chi tiết dự án",
+      "detailEmpty": "Chọn một dự án trong danh sách để xem chi tiết.",
+      "filters": "Bộ lọc",
+      "apply": "Áp dụng",
+      "save": "Lưu",
+      "close": "Đóng",
+      "cancel": "Hủy",
+      "edit": "Sửa",
+      "delete": "Xóa",
+      "deleteConfirm": "Bạn có chắc chắn muốn xóa dự án {{projectName}}?",
+      "all": "Tất cả",
+      "projectName": "Tên dự án",
+      "projectType": "Loại dự án",
+      "riskLevel": "Mức độ rủi ro",
+      "customer": "Khách hàng",
+      "teams": "Nhóm",
+      "addTeam": "Thêm nhóm",
+      "addTeamTitle": "Thêm nhóm",
+      "selectTeam": "Chọn nhóm",
+      "removeTeam": "Xóa nhóm",
+      "teamsEmpty": "Chưa có nhóm nào được chọn.",
+      "status": "Trạng thái",
+      "emptyValue": "-",
+      "statusValues": {
+        "ACTIVE": "Đang hoạt động",
+        "DELETED": "Đã xóa"
+      },
+      "severity": {
+        "INFO": "Thông tin",
+        "LOW": "Thấp",
+        "MEDIUM": "Trung bình",
+        "HIGH": "Cao",
+        "CRITICAL": "Nghiêm trọng"
+      },
+      "Alias": {
+        "Required": "Tên dự án là bắt buộc.",
+        "MaxLength": "Tên dự án không được vượt quá 255 ký tự.",
+        "Duplicate": "Tên dự án đã tồn tại cho khách hàng này."
+      },
+      "Customer": {
+        "Required": "Vui lòng chọn khách hàng.",
+        "Unavailable": "Khách hàng được chọn đã ngừng hoạt động hoặc đã bị xóa."
+      },
+      "ProjectType": {
+        "Invalid": "Loại dự án không hợp lệ."
+      },
+      "RiskLevel": {
+        "Invalid": "Mức độ rủi ro không hợp lệ."
+      },
+      "Team": {
+        "Invalid": "Một hoặc nhiều nhóm được chọn không hợp lệ."
+      },
+      "Status": {
+        "Invalid": "Trạng thái phải là Tất cả, Đang hoạt động hoặc Đã xóa."
+      },
+      "NotFound": "Không tìm thấy dự án.",
+      "Error": {
+        "Forbidden": "Bạn không có quyền truy cập chức năng quản lý dự án."
+      },
+      "loading": "Đang tải chi tiết dự án...",
+      "createdAt": "Ngày tạo",
+      "updatedAt": "Ngày cập nhật",
+      "createSuccess": "Đã tạo dự án.",
+      "updateSuccess": "Đã cập nhật dự án.",
+      "deleteSuccess": "Đã xóa dự án.",
+      "unknownError": "Đã xảy ra lỗi không xác định.",
+      "teamAssignmentHint": "Quản lý các teams được giao nhiệm vụ cho dự án này.",
+      "teamAssignmentDetailHint": "Phân công các teams thực hiện dự án này."
+    },
+    "Repository": {
+      "title": "Quản lý kho lưu trữ",
+      "create": "Tạo repository",
+      "createTitle": "Tạo repository",
+      "editTitle": "Sửa repository",
+      "detailTitle": "Chi tiết repository",
+      "loading": "Đang tải repository...",
+      "detailEmpty": "Chọn một repository từ danh sách để xem chi tiết.",
+      "save": "Lưu",
+      "cancel": "Hủy",
+      "close": "Đóng",
+      "edit": "Sửa",
+      "delete": "Xóa",
+      "project": "Dự án",
+      "name": "Tên repository",
+      "hostType": "Loại host",
+      "defaultBranch": "Nhánh mặc định",
+      "repoUrl": "URL repository",
+      "status": "Trạng thái",
+      "statusValues": {
+        "ACTIVE": "Đang hoạt động",
+        "DELETED": "Đã xóa"
+      },
+      "all": "Tất cả",
+      "filters": "Bộ lọc",
+      "apply": "Áp dụng",
+      "emptyValue": "-",
+      "createdAt": "Tạo lúc",
+      "updatedAt": "Cập nhật lúc",
+      "deleteConfirm": "Bạn có chắc muốn xóa {{repositoryName}} không?",
+      "createSuccess": "Tạo repository thành công.",
+      "updateSuccess": "Cập nhật repository thành công.",
+      "deleteSuccess": "Xóa repository thành công.",
+      "unknownError": "Đã xảy ra lỗi không mong muốn.",
+      "Project": {
+        "Required": "Vui lòng chọn dự án.",
+        "NotFound": "Không tìm thấy dự án."
+      },
+      "Name": {
+        "Required": "Vui lòng nhập tên repository.",
+        "MaxLength": "Tên repository tối đa 255 ký tự.",
+        "Duplicate": "Tên repository đã tồn tại trong dự án này."
+      },
+      "HostType": {
+        "Required": "Vui lòng chọn loại host.",
+        "Invalid": "Loại host không hợp lệ."
+      },
+      "DefaultBranch": {
+        "MaxLength": "Nhánh mặc định tối đa 100 ký tự."
+      },
+      "Url": {
+        "MaxLength": "URL repository tối đa 2048 ký tự."
+      },
+      "NotFound": "Không tìm thấy repository.",
+      "Error": {
+        "Forbidden": "Bạn không có quyền truy cập Quản lý repository."
+      }
+    },
+    "Team": {
+      "title": "Quản lý nhóm",
+      "create": "Tạo nhóm",
+      "createTitle": "Tạo nhóm",
+      "editTitle": "Chỉnh sửa nhóm",
+      "detailTitle": "Chi tiết nhóm",
+      "detailEmpty": "Chọn một nhóm trong danh sách để xem chi tiết.",
+      "filters": "Bộ lọc",
+      "apply": "Áp dụng",
+      "save": "Lưu",
+      "cancel": "Hủy",
+      "edit": "Chỉnh sửa",
+      "delete": "Xóa",
+      "deleteConfirm": "Bạn có chắc chắn muốn xóa nhóm này không?",
+      "all": "Tất cả",
+      "teamCode": "Mã nhóm",
+      "teamCodePlaceholder": "Nhập mã nhóm",
+      "teamName": "Tên nhóm",
+      "teamNamePlaceholder": "Nhập tên nhóm",
+      "description": "Mô tả",
+      "descriptionPlaceholder": "Nhập mô tả",
+      "status": "Trạng thái",
+      "statusValues": {
+        "ACTIVE": "Đang hoạt động",
+        "DELETED": "Đã xóa",
+        "INACTIVE": "Không hoạt động"
+      },
+      "Code": {
+        "Required": "Vui lòng nhập mã nhóm.",
+        "MaxLength": "Mã nhóm không được vượt quá 50 ký tự.",
+        "Duplicate": "Mã nhóm đã tồn tại."
+      },
+      "Name": {
+        "Required": "Vui lòng nhập tên nhóm.",
+        "MaxLength": "Tên nhóm không được vượt quá 255 ký tự."
+      },
+      "Description": {
+        "MaxLength": "Mô tả không được vượt quá 500 ký tự."
+      },
+      "Status": {
+        "Invalid": "Trạng thái phải là “Tất cả”, “Đang hoạt động” hoặc “Đã xóa”."
+      },
+      "NotFound": "Không tìm thấy nhóm.",
+      "NotActive": "Nhóm đã bị vô hiệu hóa hoặc đã bị xóa.",
+      "AlreadyDeleted": "Nhóm đã được xóa trước đó.",
+      "Deleted": {
+        "CannotEdit": "Không thể chỉnh sửa nhóm đã xóa."
+      },
+      "Conflict": {
+        "Version": "Nhóm đã được người dùng khác cập nhật. Vui lòng tải lại và thử lại."
+      },
+      "Error": {
+        "Forbidden": "Bạn không có quyền truy cập chức năng quản lý nhóm."
+      },
+      "loading": "Đang tải chi tiết nhóm...",
+      "members": "Thành viên",
+      "member": "Thành viên",
+      "pseudonym": "Bí danh",
+      "role": "Vai trò",
+      "selectMember": "Chọn thành viên",
+      "selectRole": "Chọn vai trò",
+      "addMember": "Thêm thành viên",
+      "addMemberTitle": "Thêm thành viên vào nhóm",
+      "updateMemberTitle": "Cập nhật vai trò thành viên",
+      "memberCount": "Số thành viên",
+      "version": "Phiên bản",
+      "updatedAt": "Thời gian cập nhật",
+      "joinedAt": "Thời gian tham gia",
+      "editMember": "Chỉnh sửa vai trò thành viên",
+      "removeMember": "Xóa thành viên",
+      "removeMemberConfirm": "Bạn có chắc chắn muốn xóa thành viên này khỏi nhóm không?",
+      "createSuccess": "Đã tạo nhóm.",
+      "updateSuccess": "Đã cập nhật nhóm.",
+      "deleteSuccess": "Đã xóa nhóm.",
+      "memberAddSuccess": "Đã thêm thành viên.",
+      "memberUpdateSuccess": "Đã cập nhật vai trò thành viên.",
+      "memberRemoveSuccess": "Đã xóa thành viên.",
+      "unknownError": "Đã xảy ra lỗi không xác định.",
+      "Member": {
+        "Required": "Vui lòng chọn thành viên.",
+        "NotFound": "Không tìm thấy thành viên.",
+        "Duplicate": "Thành viên này đã được gán vào nhóm."
+      },
+      "Role": {
+        "Required": "Vui lòng chọn vai trò.",
+        "NotFound": "Không tìm thấy vai trò."
+      },
+      "updatedBy": "Người cập nhật",
+      "createdBy": "Người tạo",
+      "createdAt": "Tạo lúc",
+      "deletedBy": "Người xóa"
+    },
+    "Organization": {
+      "title": "Quản lý tổ chức",
+      "create": "Tạo tổ chức",
+      "filtersTitle": "Bộ lọc",
+      "filtersDescription": "Tìm theo mã hoặc tên và chuyển giữa đang hoạt động, ngưng hoạt động hoặc tất cả.",
+      "keyword": "Từ khóa",
+      "keywordPlaceholder": "Tìm theo mã hoặc tên",
+      "status": "Trạng thái",
+      "apply": "Áp dụng",
+      "reset": "Đặt lại",
+      "listTitle": "Danh sách tổ chức",
+      "listDescription": "Các tổ chức được cập nhật gần nhất sẽ hiển thị trước.",
+      "loading": "Đang tải chi tiết tổ chức...",
+      "total": "{{total}} bản ghi",
+      "paginationDescription": "Hiển thị {{from}} - {{to}}/Tổng số {{total}} tổ chức",
+      "empty": "Không tìm thấy tổ chức nào.",
+      "table": {
+        "code": "Mã",
+        "name": "Tên",
+        "status": "Trạng thái",
+        "updatedAt": "Cập nhật lúc",
+        "actions": "Hành động"
+      },
+      "Status": {
+        "ACTIVE": "Đang hoạt động",
+        "DELETED": "Đã xóa",
+        "Invalid": "Trạng thái phải là All, Active hoặc Deleted."
+      },
+      "view": "Xem",
+      "edit": "Sửa",
+      "delete": "Xóa",
+      "detailTitle": "Chi tiết",
+      "detailDescription": "Bản ghi đã xóa và metadata được hiển thị chỉ đọc ở đây.",
+      "detailEmpty": "Chọn một tổ chức từ danh sách để xem chi tiết.",
+      "detail": {
+        "description": "Mô tả",
+        "version": "Phiên bản",
+        "updatedAt": "Cập nhật lúc",
+        "updatedBy": "Người cập nhật",
+        "createdBy": "Người tạo",
+        "createdAt": "Tạo lúc",
+        "deletedAt": "Đã xóa lúc",
+        "deletedBy": "Người xóa"
+      },
+      "pagination": "Trang {{page}} / {{totalPages}}",
+      "traceId": "Trace ID",
+      "error": "Đã xảy ra lỗi không xác định.",
+      "Message": {
+        "Created": "Đã tạo tổ chức.",
+        "Updated": "Đã cập nhật tổ chức.",
+        "Deleted": "Đã xóa tổ chức."
+      },
+      "Form": {
+        "CreateTitle": "Tạo tổ chức",
+        "EditTitle": "Sửa tổ chức",
+        "CreateDescription": "Nhập mã duy nhất, tên và mô tả tùy chọn.",
+        "EditDescription": "Cập nhật các trường tổ chức và giữ version hiện tại để khóa lạc quan.",
+        "Code": "Mã tổ chức",
+        "Name": "Tên tổ chức",
+        "Description": "Mô tả",
+        "Close": "Đóng",
+        "Cancel": "Hủy",
+        "Save": "Lưu",
+        "Saving": "Đang lưu..."
+      },
+      "Filter": {
+        "All": "Tất cả",
+        "Active": "Đang hoạt động",
+        "Deleted": "Đã xóa"
+      },
+      "Code": {
+        "Required": "Mã tổ chức là bắt buộc.",
+        "MaxLength": "Mã tổ chức phải có tối đa 50 ký tự.",
+        "Duplicate": "Mã tổ chức đã tồn tại.",
+        "DuplicateOnUpdate": "Mã tổ chức đã tồn tại."
+      },
+      "Name": {
+        "Required": "Tên tổ chức là bắt buộc.",
+        "MaxLength": "Tên tổ chức phải có tối đa 255 ký tự.",
+        "Duplicate": "Tên tổ chức đã tồn tại."
+      },
+      "Description": {
+        "MaxLength": "Mô tả phải có tối đa 500 ký tự."
+      },
+      "Deleted": {
+        "EditNotAllowed": "Tổ chức đã xóa không thể chỉnh sửa.",
+        "AlreadyDeleted": "Tổ chức đã được xóa trước đó."
+      },
+      "Conflict": {
+        "Version": "Tổ chức đã được người dùng khác cập nhật. Vui lòng tải lại và thử lại."
+      },
+      "NotFound": "Không tìm thấy tổ chức.",
+      "DeleteConfirm": "Bạn có chắc chắn muốn xóa tổ chức này không?"
+    },
+    "UserAccounts": {
+      "title": "Tài khoản người dùng",
+      "loading": "Đang tải chi tiết tài khoản...",
+      "paginationDescription": "{{from}}-{{to}} / {{total}} bản ghi",
+      "table": {
+        "username": "Tên đăng nhập",
+        "member": "Họ và tên",
+        "role": "Vai trò",
+        "status": "Trạng thái",
+        "updatedAt": "Cập nhật lúc"
+      },
+      "fields": {
+        "username": "Tên đăng nhập",
+        "member": "Họ và tên",
+        "email": "Email",
+        "role": "Vai trò",
+        "status": "Trạng thái",
+        "password": "Mật khẩu",
+        "newPassword": "Mật khẩu mới",
+        "confirmPassword": "Xác nhận mật khẩu",
+        "createdAt": "Tạo lúc",
+        "updatedAt": "Cập nhật lúc"
+      },
+      "status": {
+        "ACTIVE": "Đang hoạt động",
+        "INACTIVE": "Ngưng hoạt động"
+      },
+      "filter": {
+        "all": "Tất cả"
+      },
+      "actions": {
+        "create": "Tạo người dùng",
+        "view": "Xem",
+        "edit": "Sửa",
+        "resetPassword": "Đặt lại mật khẩu",
+        "deactivate": "Ngưng hoạt động",
+        "reactivate": "Kích hoạt lại"
+      },
+      "confirm": {
+        "deactivate": "Ngưng hoạt động tài khoản này?",
+        "reactivate": "Kích hoạt lại tài khoản này?"
+      },
+      "form": {
+        "createTitle": "Tạo tài khoản người dùng",
+        "editTitle": "Sửa tài khoản người dùng",
+        "detailTitle": "Chi tiết tài khoản người dùng",
+        "create": "Tạo",
+        "resetTitle": "Đặt lại mật khẩu",
+        "save": "Lưu",
+        "cancel": "Hủy",
+        "close": "Đóng"
+      },
+      "empty": {
+        "detail": "Chọn một tài khoản để xem chi tiết.",
+        "unmapped": "Chưa liên kết"
+      },
+      "security": {
+        "title": "Bảo mật",
+        "description": "Ẩn password hash. Không hiển thị token."
+      },
+      "validation": {
+        "usernameRequired": "Tên đăng nhập là bắt buộc.",
+        "roleRequired": "Vai trò là bắt buộc.",
+        "passwordMin": "Mật khẩu phải có ít nhất 8 ký tự.",
+        "passwordPattern": "Mật khẩu phải bao gồm chữ cái, số và ký tự đặc biệt.",
+        "passwordMismatch": "Xác nhận mật khẩu không khớp."
+      }
+    },
+    "RoleManagement": {
+      "title": "Quản lý vai trò",
+      "create": "Tạo vai trò",
+      "keywordPlaceholder": "Tìm theo tên vai trò",
+      "sort": "Sắp xếp",
+      "filters": "Bộ lọc",
+      "apply": "Áp dụng",
+      "all": "Tất cả",
+      "status": "Trạng thái",
+      "statusValues": {
+        "ACTIVE": "Đang hoạt động",
+        "DELETED": "Đã xóa"
+      },
+      "loading": "Đang tải vai trò...",
+      "empty": "Không tìm thấy vai trò nào.",
+      "total": "{{total}} bản ghi",
+      "previous": "Trước",
+      "next": "Sau",
+      "pagination": "Trang {{page}} / {{totalPages}}",
+      "view": "Xem",
+      "edit": "Sửa",
+      "delete": "Xóa",
+      "detailTitle": "Chi tiết vai trò",
+      "error": "Đã xảy ra lỗi không xác định.",
+      "DeleteConfirm": "Xóa vai trò {{roleName}}?",
+      "emptyValue": "-",
+      "table": {
+        "name": "Tên vai trò",
+        "description": "Mô tả",
+        "createdAt": "Ngày tạo",
+        "updatedAt": "Ngày cập nhật"
+      },
+      "detail": {
+        "createdAt": "Ngày tạo",
+        "updatedAt": "Ngày cập nhật"
+      },
+      "Sort": {
+        "NameAsc": "Tên vai trò A-Z",
+        "NameDesc": "Tên vai trò Z-A"
+      },
+      "Message": {
+        "Created": "Đã tạo vai trò.",
+        "Updated": "Đã cập nhật vai trò.",
+        "Deleted": "Đã xóa vai trò."
+      },
+      "Form": {
+        "CreateTitle": "Tạo vai trò",
+        "EditTitle": "Sửa vai trò",
+        "Name": "Tên vai trò",
+        "Description": "Mô tả",
+        "Close": "Đóng",
+        "Cancel": "Hủy",
+        "Save": "Lưu"
+      },
+      "RoleName": {
+        "Required": "Tên vai trò là bắt buộc.",
+        "MaxLength": "Tên vai trò phải có tối đa 100 ký tự.",
+        "Duplicate": "Tên vai trò đã tồn tại."
+      },
+      "SortInvalid": "Trường sắp xếp không hợp lệ.",
+      "Status": {
+        "Invalid": "Trạng thái phải là Tất cả, Đang hoạt động hoặc Đã xóa."
+      },
+      "NotFound": "Không tìm thấy vai trò."
+    },
+    "Dashboard": {
+      "roleTabs": {
+        "pm": "PM",
+        "qa": "QA",
+        "development": "Development",
+        "security": "Security",
+        "executive": "Executive",
+        "dataOps": "Data Ops"
+      },
+      "reset": "Reset",
+      "development": {
+        "title": "Dashboard Phát triển",
+        "description": "Dashboard dành cho nhóm phát triển: phân loại lỗi CI, lint, test, build, security, flaky. Lọc theo dự án và repository.",
+        "filters": {
+          "project": "Dự án",
+          "repository": "Kho lưu trữ",
+          "classification": "Phân loại lỗi",
+          "all": "Tất cả"
+        },
+        "classificationValues": {
+          "CI": "CI",
+          "LINT": "Lint",
+          "TEST": "Test",
+          "BUILD": "Build",
+          "SECURITY": "Bảo mật",
+          "FLAKY": "Không ổn định"
+        },
+        "latestCiErrorTicket": "1 ticket hiển thị lỗi CI mới nhất",
+        "reviewSourceNote": "Nhận xét review từ bảng tbl_fact_commit",
+        "parserErrorNote": "Parser error sẽ hiển thị khi missing item > 0",
+        "table": {
+          "ticket": "Ticket",
+          "title": "Tiêu đề",
+          "ciStatus": "Trạng thái CI",
+          "reviewComments": "Nhận xét review",
+          "parserError": "Lỗi phân tích cú pháp"
+        },
+        "drawer": {
+          "ticketDetail": "Chi tiết ticket",
+          "ticketTitle": "Tên ticket - Tiêu đề",
+          "project": "Dự án",
+          "ciRun": {
+            "title": "CI RUN",
+            "name": "Tên CI",
+            "status": "Trạng thái",
+            "url": "Mở CI"
+          },
+          "reviewComments": {
+            "title": "Nhận xét review",
+            "item": "Dòng {{line}}, tệp {{file}}",
+            "empty": "Không có nhận xét review",
+            "open": "Mở nhận xét"
+          },
+          "parserError": {
+            "title": "Parser error",
+            "hasErrors": "Có lỗi/missing: {{count}}",
+            "empty": "Không có parser error",
+            "openTraceability": "Mở traceability"
+          },
+          "animation": "drawer lướt ra"
+        },
+        "ciLatestTicketCard": "Ticket lỗi CI mới nhất",
+        "openTraceability": "Mở traceability"
+      }
+    },
+    "QaDashboard": {
+      "kicker": "Chapter 9 Dashboard",
+      "title": "QA Dashboard",
+      "description": "AC-Test Coverage, AC chưa test, Blackbox Coverage, Test Results, Defect Leakage và chuẩn bị nghiệm thu.",
+      "searchPlaceholder": "Tìm ticket, PR, AC, phase, connector, finding...",
+      "export": "Xuất CSV",
+      "refresh": "Refresh",
+      "refreshSuccess": "Đã làm mới dashboard QA.",
+      "exportSuccess": "Đã bắt đầu xuất CSV.",
+      "projectId": "Dự án",
+      "repositoryId": "Kho lưu trữ",
+      "ticketId": "Ticket",
+      "emptyState": "Không có dữ liệu khớp với bộ lọc hiện tại.",
+      "cards": {
+        "acTestCoverage": {
+          "title": "AC-Test Coverage",
+          "description": "Bao phủ AC theo ticket và sprint"
+        },
+        "acNotTested": {
+          "title": "AC chưa test",
+          "description": "Số AC, nội dung, ticket liên quan, role phụ trách"
+        },
+        "blackboxCoverage": {
+          "title": "Blackbox Coverage",
+          "description": "Bình thường / bất thường / biên / quyền hạn / hiệu năng"
+        },
+        "testResults": {
+          "title": "Kết quả kiểm thử",
+          "description": "PASS / FAIL / chưa thực thi / CI run link"
+        },
+        "defectLeakage": {
+          "title": "Defect Leakage",
+          "description": "Bug QA / production, phase nguyên nhân"
+        },
+        "acceptanceReady": {
+          "title": "Chuẩn bị nghiệm thu",
+          "description": "Có/không report, test-results, risk, rollback"
+        }
+      },
+      "loading": "Đang tải...",
+      "acceptanceCriteria": {
+        "title": "Bao phủ tiêu chí nghiệm thu",
+        "ac": "AC",
+        "ticket": "Ticket",
+        "status": "Trạng thái",
+        "blackbox": "Blackbox",
+        "gap": "Gap",
+        "totalItems": "{{count}} mục"
+      },
+      "coverageTrend": {
+        "title": "Xu hướng bao phủ AC",
+        "target": "Mục tiêu {{target}}%"
+      },
+      "ticketTable": {
+        "title": "Ticket",
+        "ticketId": "Mã ticket",
+        "summary": "Tóm tắt",
+        "status": "Trạng thái",
+        "priority": "Độ ưu tiên",
+        "assignee": "Người phụ trách",
+        "acCoverage": "Bao phủ AC",
+        "testResult": "Kết quả test",
+        "updatedDate": "Ngày cập nhật",
+        "viewDetail": "Xem chi tiết",
+        "version": "Phiên bản"
+      },
+      "ticketDetail": {
+        "back": "Quay lại QA Dashboard",
+        "notFound": "Không tìm thấy ticket.",
+        "loading": "Đang tải ticket...",
+        "description": "Mô tả",
+        "sprint": "Sprint",
+        "assignee": "Người phụ trách",
+        "createdDate": "Ngày tạo",
+        "updatedDate": "Ngày cập nhật",
+        "stats": {
+          "acCoverage": "Bao phủ AC",
+          "totalAc": "Tổng số AC",
+          "testedAc": "AC đã test",
+          "notTestedAc": "AC chưa test",
+          "testResult": "Kết quả test %"
+        },
+        "acTable": {
+          "title": "Tiêu chí chấp nhận",
+          "acId": "Mã AC",
+          "acceptanceCriteria": "Tiêu chí chấp nhận",
+          "status": "Trạng thái",
+          "linkedTestCase": "Test case liên kết",
+          "testResult": "Kết quả test",
+          "owner": "Người phụ trách",
+          "export": "Xuất CSV"
+        },
+        "trend": {
+          "title": "Xu hướng bao phủ AC"
+        },
+        "viewCiRun": "Xem CI Run"
+      }
+    },
+    "SecurityDashboard": {
+      "kicker": "Chapter 9 Dashboard",
+      "title": "Security Dashboard",
+      "description": "Tổng quan Safety Pack, Secret Scan, SAST/SCA, Security Checklist và Security Exception. Chỉ đọc.",
+      "searchPlaceholder": "Tìm ticket",
+      "export": "Xuất CSV",
+      "exportNotAvailable": "Chức năng export chưa khả dụng cho Security Dashboard.",
+      "refresh": "Refresh",
+      "projectId": "Dự án",
+      "repositoryId": "Kho lưu trữ",
+      "safetyStatus": "Safety Pack",
+      "secretScanStatus": "Secret Scan",
+      "sastStatus": "SAST",
+      "exceptionStatus": "Exception",
+      "allProjects": "Tất cả dự án",
+      "allRepositories": "Tất cả repository",
+      "allStatuses": "Tất cả trạng thái",
+      "emptyState": "Không có dữ liệu khớp với bộ lọc hiện tại.",
+      "loading": "Đang tải...",
+      "loadingDetail": "Đang tải chi tiết ticket...",
+      "detailFailed": "Không tải được chi tiết ticket.",
+      "none": "Không có",
+      "cards": {
+        "safetyPack": {
+          "title": "Safety Pack chưa sẵn sàng",
+          "description": "Số repository chưa có Safety Pack READY"
+        },
+        "secretScan": {
+          "title": "Secret Scan lỗi",
+          "description": "Số ticket có kết quả Secret Scan FAIL"
+        },
+        "sastSca": {
+          "title": "SAST/SCA lỗi",
+          "description": "Số ticket có kết quả SAST hoặc SCA FAIL"
+        },
+        "exception": {
+          "title": "Exception đang mở",
+          "description": "Số Security Exception đang chờ xử lý"
+        }
+      },
+      "table": {
+        "title": "Rà soát bảo mật theo ticket",
+        "ticket": "Ticket",
+        "repository": "Kho lưu trữ",
+        "safety": "Safety Pack",
+        "secretScan": "Secret Scan",
+        "sast": "SAST",
+        "sca": "SCA",
+        "exception": "Exception",
+        "verdict": "Kết luận cuối",
+        "totalItems": "{{count}} mục",
+        "version": "Phiên bản"
+      },
+      "drawer": {
+        "title": "Chi tiết ticket",
+        "metadata": "Metadata",
+        "project": "Dự án",
+        "repository": "Kho lưu trữ",
+        "safetyStatus": "Safety Pack",
+        "finalVerdict": "Kết luận cuối",
+        "scansTitle": "Quét bảo mật",
+        "checklistTitle": "Danh sách kiểm tra bảo mật",
+        "checklistAllValid": "Tất cả các mục checklist đều hợp lệ.",
+        "exceptionsTitle": "Ngoại lệ bảo mật"
+      }
+    },
+    "DevDashboard": {
+      "kicker": "Chapter 9 Dashboard",
+      "title": "Development Dashboard",
+      "description": "PR cần xem hôm nay, thiếu bằng chứng, phân loại lỗi CI, nhận xét lặp lại, hiệu quả AI và DevEx.",
+      "searchPlaceholder": "Tìm ticket, PR, AC, phase, connector, finding...",
+      "export": "Xuất CSV",
+      "refresh": "Refresh",
+      "refreshSuccess": "Đã làm mới dashboard phát triển.",
+      "exportSuccess": "Đã bắt đầu xuất file.",
+      "projectId": "Dự án",
+      "periodKey": "Sprint / Period",
+      "repositoryId": "Kho lưu trữ",
+      "updatedAt": "Updated",
+      "emptyState": "Không có dữ liệu khớp với bộ lọc hiện tại.",
+      "cards": {
+        "prToReviewToday": {
+          "title": "PR cần xem hôm nay",
+          "description": "PR của team mình, CI fail, review request"
+        },
+        "missingEvidence": {
+          "title": "Thiếu bằng chứng",
+          "description": "Các mục thiếu trong ticket của team mình"
+        },
+        "ciFailure": {
+          "title": "Lỗi CI",
+          "description": "CI thất bại khi kéo yêu cầu"
+        },
+        "repeatedReviewComment": {
+          "title": "Nhận xét lặp lại",
+          "description": "Gợi ý cải thiện rule/template"
+        },
+        "aiEffectiveness": {
+          "title": "Hiệu quả AI",
+          "description": "template, read_file_count, token, cache hit"
+        },
+        "devEx": {
+          "title": "DevEx",
+          "description": "Chờ review, chờ sửa, template khó dùng"
+        },
+        "reviewComment": {
+          "title": "Nhận xét review",
+          "description": "Nhận xét đang mở từ code review"
+        },
+        "parserError": {
+          "title": "Lỗi parser",
+          "description": "Lỗi parse, vi phạm schema, thiếu dữ liệu"
+        }
+      },
+      "pendingPrs": {
+        "title": "PR cần xử lý",
+        "pr": "PR",
+        "signal": "Signal",
+        "detail": "Detail",
+        "evidence": "Evidence"
+      },
+      "ciFailureChart": {
+        "title": "CI Failure Categories"
+      },
+      "allCiStatus": "Tất cả trạng thái CI",
+      "allReviewStatus": "Tất cả trạng thái review",
+      "ciStatus": "Trạng thái CI",
+      "ciStatusFail": "Thất bại",
+      "ciStatusPass": "Thành công",
+      "reviewStatus": "Trạng thái review",
+      "reviewStatusOpen": "Còn findings",
+      "reviewStatusResolved": "Không còn findings",
+      "viewDetail": "Xem chi tiết",
+      "ticketTable": {
+        "title": "Tiêu đề",
+        "total": "{{count}} items",
+        "ticket": "Ticket",
+        "ciStatus": "Trạng thái CI",
+        "ciFailCount": "CI Thất bại",
+        "openFindings": "Findings mở",
+        "ageDays": "Tuổi",
+        "reworkRounds": "Số lần rework",
+        "reviewRounds": "Số vòng review",
+        "reviewComments": "Nhận xét review",
+        "parserError": "Lỗi parser",
+        "parserErrorYes": "Có lỗi",
+        "parserErrorNo": "Không có lỗi",
+        "prev": "Trước",
+        "next": "Tiếp",
+        "version": "Phiên bản"
+      },
+      "detail": {
+        "title": "Chi tiết ticket",
+        "ticket": "Ticket",
+        "project": "Project",
+        "status": "Trạng thái",
+        "age": "Tuổi",
+        "ciFailures": "CI Thất bại",
+        "openFindings": "Findings mở",
+        "parserErrors": "Lỗi parser",
+        "ciRuns": "CI Runs",
+        "findings": "Findings",
+        "reviewComments": "Nhận xét review",
+        "viewCiRun": "Xem CI run",
+        "viewCommit": "Xem commit",
+        "openTraceability": "Mở truy xuất nguồn gốc",
+        "noReviewComments": "Không có nhận xét review",
+        "noParserErrors": "Không có lỗi parser",
+        "parserSummary": "Tóm tắt parser",
+        "parseErrors": "Lỗi parse",
+        "schemaViolations": "Vi phạm schema",
+        "missing": "Thiếu"
+      }
+    },
+    "AdminAuditLog": {
+      "title": "Nhật ký kiểm toán quản trị",
+      "description": "Nhật ký chỉ đọc ghi lại mọi thao tác CRUD và sự kiện đăng nhập trên các màn hình quản trị.",
+      "filters": {
+        "module": "Module",
+        "operationType": "Loại thao tác",
+        "actor": "Người thực hiện",
+        "actorPlaceholder": "Tìm theo tên đăng nhập",
+        "dateRange": "Khoảng thời gian",
+        "all": "Tất cả"
+      },
+      "cards": {
+        "total": {
+          "title": "Tổng số bản ghi",
+          "description": "Theo bộ lọc hiện tại."
+        },
+        "modules": {
+          "title": "Module (trang này)",
+          "description": "Số module khác nhau trên trang hiện tại."
+        }
+      },
+      "table": {
+        "time": "Thời gian",
+        "actor": "Người thực hiện",
+        "module": "Module",
+        "entity": "Đối tượng",
+        "operation": "Thao tác",
+        "detail": "Chi tiết"
+      },
+      "detail": {
+        "title": "Chi tiết nhật ký kiểm toán",
+        "loading": "Đang tải...",
+        "time": "Thời gian",
+        "actor": "Người thực hiện",
+        "userAgent": "User-Agent",
+        "changedFields": "Trường đã thay đổi",
+        "traceId": "Trace ID",
+        "errorMessage": "Thông báo lỗi",
+        "diffTitle": "Trước / Sau",
+        "before": "Trước",
+        "after": "Sau"
+      }
+    },
+    "ThresholdConfig": {
+      "title": "Cấu hình ngưỡng điểm",
+      "description": "Cấu hình các dải ngưỡng điểm dùng để phân loại điểm đánh giá và chất lượng.",
+      "actions": {
+        "edit": "Chỉnh sửa",
+        "cancel": "Hủy bỏ",
+        "save": "Lưu",
+        "addBand": "Thêm dải",
+        "delete": "Xóa",
+        "undo": "Hoàn tác"
+      },
+      "table": {
+        "from": "Từ",
+        "to": "Đến",
+        "label": "Nhãn",
+        "code": "Mã",
+        "color": "Màu",
+        "status": "Trạng thái",
+        "createdInfo": "Ngày tạo",
+        "updatedInfo": "Cập nhật lúc",
+        "actions": "Thao tác"
+      },
+      "status": {
+        "ACTIVE": "Đang hoạt động",
+        "DELETED": "Đã xóa"
+      },
+      "ActiveSet": {
+        "Empty": "Cần ít nhất một dải đang hoạt động."
+      },
+      "Label": {
+        "Required": "Nhãn là bắt buộc.",
+        "MaxLength": "Nhãn không được vượt quá 255 ký tự."
+      },
+      "Code": {
+        "Required": "Mã là bắt buộc.",
+        "InvalidFormat": "Mã chỉ được chứa chữ hoa, số hoặc dấu gạch dưới.",
+        "MaxLength": "Mã không được vượt quá 100 ký tự.",
+        "Duplicate": "Mã phải là duy nhất trong các dải đang hoạt động."
+      },
+      "Color": {
+        "InvalidFormat": "Màu phải là giá trị hex hợp lệ, ví dụ #10B981.",
+        "MaxLength": "Màu không được vượt quá 20 ký tự."
+      },
+      "Range": {
+        "OutOfBounds": "Dải điểm phải nằm trong khoảng 0-100.",
+        "MinGreaterThanMax": "Giá trị Từ không được lớn hơn Đến.",
+        "MaxLength": "Từ và Đến không được vượt quá 3 ký tự."
+      },
+      "Coverage": {
+        "Gap": "Các dải đang hoạt động phải phủ toàn bộ khoảng 0-100, không có khoảng trống.",
+        "Overlap": "Các dải đang hoạt động không được chồng lấn."
+      }
+    },
+    "DataOpsDashboard": {
+      "title": "Data Ops Dashboard",
+      "description": "Tình trạng connector, tình trạng parser, thiếu evidence, độ mới dữ liệu và tình trạng traceability trong một màn hình.",
+      "searchPlaceholder": "Tìm connector hoặc repository",
+      "projectId": "Dự án",
+      "export": "Xuất CSV",
+      "repositoryId": "Kho lưu trữ",
+      "connectorName": "Connector",
+      "parserStatus": "Trạng thái Parser",
+      "allProjects": "Tất cả dự án",
+      "allRepositories": "Tất cả repository",
+      "allConnectors": "Tất cả connector",
+      "allParserStatus": "Tất cả trạng thái parser",
+      "parserStatusSuccess": "Thành công",
+      "parserStatusWarning": "Cảnh báo",
+      "parserStatusError": "Lỗi",
+      "emptyState": "Không có dữ liệu phù hợp với bộ lọc hiện tại.",
+      "cards": {
+        "connectorFailure": {
+          "title": "Connector lỗi",
+          "description": "Connector có lần chạy gần nhất thất bại."
+        },
+        "parseError": {
+          "title": "Lỗi parse",
+          "description": "Kiểm tra chất lượng dữ liệu có lỗi parse."
+        },
+        "missingEvidence": {
+          "title": "Thiếu evidence",
+          "description": "Artifact không tồn tại hoặc thiếu trường bắt buộc."
+        },
+        "staleFreshness": {
+          "title": "Dữ liệu cũ",
+          "description": "Kiểm tra chất lượng dữ liệu vượt ngưỡng độ mới."
+        },
+        "brokenLink": {
+          "title": "Liên kết gãy",
+          "description": "Liên kết traceability có độ tin cậy thấp."
+        }
+      },
+      "repositoryIssues": {
+        "title": "Vấn đề repository",
+        "connectorCount": "{{count}} connector",
+        "failedConnectorCount": "{{count}} thất bại",
+        "parseErrorCount": "{{count}} lỗi parse",
+        "missingEvidenceCount": "{{count}} thiếu evidence",
+        "connectors": "Connector",
+        "noConnectorRows": "Đã phát hiện evidence thiếu, nhưng không có dòng connector nào cho repository này.",
+        "failedRuns": "Lần chạy thất bại",
+        "parseErrorsShort": "Lỗi parse"
+      },
+      "kpiChart": {
+        "title": "Tổng quan KPI"
+      },
+      "connectorTable": {
+        "title": "Connector",
+        "missingEvidence": "Thiếu bằng chứng",
+        "description": "Theo dõi tình trạng hoạt động của trình kết nối và phân tích sâu các sự cố ở cấp độ kho lưu trữ.",
+        "total": "{{count}} mục",
+        "connector": "Connector",
+        "repository": "Kho lưu trữ",
+        "latestRunStatus": "Lần chạy gần nhất",
+        "failedRunCount": "Số lần thất bại",
+        "parseErrorCount": "Lỗi parse",
+        "prev": "Trước",
+        "next": "Sau"
+      },
+      "detail": {
+        "title": "Chi tiết connector",
+        "repository": "Kho lưu trữ",
+        "recentRuns": "Lần chạy gần đây",
+        "noRuns": "Chưa ghi nhận lần chạy connector nào.",
+        "dataQuality": "Kiểm tra chất lượng dữ liệu",
+        "noDataQualityIssues": "Không ghi nhận vấn đề chất lượng dữ liệu.",
+        "parseErrorCount": "{{count}} lỗi parse",
+        "errorSummaryLabel": "Tóm tắt lỗi",
+        "noErrorSummary": "Chưa ghi nhận tóm tắt lỗi parse.",
+        "missingEvidence": "Thiếu bằng chứng",
+        "noMissingEvidence": "Không tìm thấy dòng evidence thiếu cho connector này.",
+        "itemCount": "{{count}} mục",
+        "requiredFieldsMissing": "Trường bị thiếu trong file",
+        "exists": "Tồn tại",
+        "missing": "Thiếu"
+      }
+    }
+  },
+  "Component": {
+    "Permission": {
+      "Denied": "Bạn không có quyền thực hiện hành động này.",
+      "Unauthorized": "Phiên của bạn đã hết hạn. Vui lòng đăng nhập lại."
+    },
+    "Error": {
+      "Unexpected": "Đã xảy ra lỗi không xác định."
+    }
+  }
+}

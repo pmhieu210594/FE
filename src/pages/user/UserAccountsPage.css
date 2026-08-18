@@ -1,0 +1,33 @@
+.ant-drawer .item.type-password .relative {
+  position: relative;
+}
+
+.ant-drawer .item.type-password .ant-input {
+  padding-right: 36px;
+}
+
+.ant-drawer .item.type-password .icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  z-index: 10;
+  height: 18px;
+  width: 18px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  fill: hsl(var(--muted-foreground));
+}
+
+.ant-select.user-account-select,
+.user-account-select,
+.user-account-select .ant-select-selector {
+  width: 100%;
+  max-width: 100%;
+}
+
+.user-account-select .ant-select-selection-item,
+.user-account-select .ant-select-selection-placeholder {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

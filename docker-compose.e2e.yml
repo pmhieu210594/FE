@@ -1,0 +1,33 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: sdd-postgres
+    environment:
+      POSTGRES_USER: sdd
+      POSTGRES_PASSWORD: change-me-in-production
+      POSTGRES_DB: sdd_platform
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U sdd -d sdd_platform" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    image: khactrung0608/edcap-be:main
+    container_name: edcap_backend
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/sdd_platform
+      SPRING_DATASOURCE_USERNAME: sdd
+      SPRING_DATASOURCE_PASSWORD: change-me-in-production
+      APP_JWT_SECRET: replace-with-random-256-bit-base64-string
+
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
+      SECRET_KEY_STRING: ${SECRET_KEY_STRING}
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy

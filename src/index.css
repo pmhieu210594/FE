@@ -1,0 +1,450 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 13px;
+  }
+
+  body *,
+  body *::before,
+  body *::after {
+    font-size: inherit !important;
+  }
+
+  .c-svg-icon {
+    fill: currentColor;
+  }
+}
+
+@layer components {
+  .wrapper-grid {
+    width: 100%;
+  }
+
+  .card {
+    border: 1px solid hsl(var(--border));
+    border-radius: 8px;
+    background: hsl(var(--card));
+    box-shadow: 0 1px 2px rgb(15 23 42 / 0.08);
+  }
+
+  .card>.body {
+    padding: 24px;
+  }
+
+  .btn {
+    display: inline-flex;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background: #2563eb;
+    padding: 0 12px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    transition:
+      background-color 150ms ease,
+      border-color 150ms ease,
+      color 150ms ease;
+  }
+
+  /* Normalize button font across custom and Ant Design buttons */
+  button,
+  .ant-btn {
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  /* Ensure Filter button in data-table header uses 14px (override Ant styles if needed) */
+  .data-table .top-header .right .ant-btn,
+  .data-table .top-header .right .btn {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+  }
+
+  /* Table font smaller for compact rows */
+  .data-table .c-virtual-scroll thead th,
+  .data-table .c-virtual-scroll tbody td {
+    font-size: 13px;
+  }
+
+  .cdrawer-form .cdrawer-form__title {
+    font-size: 18px !important;
+  }
+
+  /* Page title override */
+  h1 {
+    font-size: 28px !important;
+  }
+
+  .btn:hover {
+    background: #1d4ed8;
+  }
+
+  .btn.\!bg-primary {
+    background: #2563eb !important;
+    color: #fff !important;
+  }
+
+  .btn.\!bg-primary:hover {
+    background: #1d4ed8 !important;
+  }
+
+  .btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+  }
+
+  .action {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .action button {
+    display: inline-flex;
+    height: 22px;
+    width: 22px;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: transparent;
+    padding: 0;
+  }
+
+  .action svg {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    padding: 4px;
+    color: #fff;
+    transition:
+      background-color 150ms ease,
+      opacity 150ms ease;
+  }
+
+  .action svg.primary,
+  svg.option.primary {
+    background: #74c043;
+  }
+
+  .action svg.primary:hover,
+  svg.option.primary:hover {
+    background: #5aa82f;
+  }
+
+  .action svg.error,
+  svg.option.error {
+    background: #ec407a;
+  }
+
+  .action svg.error:hover,
+  svg.option.error:hover {
+    background: #d81b60;
+  }
+
+  .c-search {
+    position: relative;
+    width: 100%;
+  }
+
+  .c-search .ant-input {
+    height: 40px;
+    width: 100%;
+    border: 1px solid hsl(var(--input));
+    border-radius: 6px;
+    background: hsl(var(--background));
+    padding: 0 36px 0 12px;
+    color: hsl(var(--foreground));
+    outline: none;
+  }
+
+  .c-search .ant-input:focus {
+    border-color: #93c5fd;
+    box-shadow: 0 0 0 3px rgb(59 130 246 / 0.12);
+  }
+
+  .c-search .ant-input::placeholder {
+    color: hsl(var(--muted-foreground));
+  }
+
+  .c-search>.c-svg-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    z-index: 10;
+    height: 14px;
+    width: 14px;
+    transform: translateY(-50%);
+    color: hsl(var(--muted-foreground));
+    cursor: pointer;
+  }
+
+  .data-table .top-header {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .data-table .top-header .right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .data-table .top-header .right .c-search {
+    width: min(360px, 100%);
+  }
+
+  .data-table .top-header .right select {
+    height: 40px;
+  }
+
+  .data-table .scrollbar {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-radius: 12px;
+  }
+
+  .data-table .scrollbar>table {
+    min-width: max-content;
+  }
+
+  .data-table .c-virtual-scroll {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  .data-table .c-virtual-scroll thead th {
+    background: #f3f6fb;
+    border-bottom: 1px solid hsl(var(--border));
+    border-right: 0;
+    height: 40px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    line-height: 1.1;
+    vertical-align: middle;
+  }
+
+  .data-table .c-virtual-scroll thead th>button {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    white-space: nowrap;
+    gap: 6px;
+  }
+
+  .data-table .c-virtual-scroll thead th:last-child {
+    border-right: 0;
+  }
+
+  .data-table .c-virtual-scroll tbody tr {
+    background: #f8fbff;
+  }
+
+  .data-table .c-virtual-scroll tbody td {
+    background: inherit;
+    border-bottom: 1px solid hsl(var(--border));
+    border-right: 0;
+    padding: 8px 16px;
+    box-sizing: border-box;
+  }
+
+  .data-table .c-virtual-scroll tbody td:first-child {
+    padding-right: 12px;
+  }
+
+  .data-table .c-virtual-scroll tbody td:nth-child(2) {
+    padding-left: 12px;
+  }
+
+  @media (min-width: 1024px) {
+    .data-table .top-header {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .data-table .top-header .right {
+      margin-left: auto;
+    }
+  }
+
+  .c-form {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .c-form .item {
+    position: relative;
+  }
+
+  .c-form .item label {
+    margin-bottom: 6px;
+    display: block;
+    color: hsl(var(--foreground));
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .c-form .ant-input {
+    min-height: 40px;
+    width: 100%;
+    border: 1px solid hsl(var(--input));
+    border-radius: 6px;
+    background: hsl(var(--background));
+    padding: 8px 12px;
+    color: hsl(var(--foreground));
+    outline: none;
+  }
+
+  .c-form textarea.ant-input {
+    min-height: 112px;
+    resize: vertical;
+  }
+
+  .c-form .ant-input:focus {
+    border-color: #93c5fd;
+    box-shadow: 0 0 0 3px rgb(59 130 246 / 0.12);
+  }
+
+  .c-form .ant-input.disabled,
+  .c-form .ant-input[readonly],
+  .c-form textarea.ant-input:disabled {
+    cursor: not-allowed;
+    background: hsl(var(--muted));
+    color: hsl(var(--muted-foreground));
+    opacity: 1;
+  }
+
+  .c-form .feedback {
+    min-height: 16px;
+    margin-top: 4px;
+    color: hsl(var(--destructive));
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .c-form .feedback:empty {
+    visibility: hidden;
+  }
+
+  .pagination {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-top: 1px solid hsl(var(--border));
+    padding-top: 12px;
+  }
+
+  .pagination .left {
+    display: flex;
+    flex: none;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+
+  .pagination .right {
+    margin-left: auto;
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border-radius: 8px;
+    background: hsl(var(--muted));
+    padding: 4px;
+  }
+
+  .pagination .right>button {
+    min-width: 24px;
+    border-radius: 8px;
+    padding: 2px 6px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: hsl(var(--foreground));
+  }
+
+  .pagination .right>button.active {
+    background: hsl(var(--foreground) / 0.2);
+  }
+
+  .pagination .right>button.disabled {
+    color: hsl(var(--foreground) / 0.3);
+  }
+
+  .pagination .right>button svg {
+    width: 8px;
+    height: 8px;
+  }
+
+  .data-table .action {
+    justify-content: center;
+  }
+}

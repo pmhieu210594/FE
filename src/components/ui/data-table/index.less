@@ -1,0 +1,47 @@
+/**
+ * Styles for the data table component.
+ *
+ */
+.data-table {
+  .group-header-scroll {
+    overflow: hidden;
+  }
+
+  .group-header-row {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .group-header-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: pre-line;
+  }
+
+  .top-header {
+    @apply ~'mb-2.5 gap-y-2.5' flex flex-col-reverse justify-between lg:flex-row;
+
+    .search {
+      @apply relative;
+
+      > div > input.ant-input {
+        @apply pr-8;
+      }
+
+      svg {
+        @apply ~'top-1.5' ~'size-3.5' absolute right-3 z-10 my-1 fill-gray-500 text-lg;
+      }
+    }
+    .right {
+      @apply mt-2 flex gap-2 sm:mt-0;
+    }
+  }
+  .no-data {
+    @apply py-4 text-base-content;
+  }
+}
