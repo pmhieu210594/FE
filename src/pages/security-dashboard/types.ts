@@ -105,4 +105,5 @@ export type SecurityTicketDetail = {
   exceptions: SecurityException[];
   finalVerdict: string;
   artifactVersion: number | null;
+  resolutionTime: string;
 };
