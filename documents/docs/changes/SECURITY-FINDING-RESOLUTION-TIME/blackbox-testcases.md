@@ -1,0 +1,51 @@
+# blackbox-testcases
+
+**Ticket ID**: SECURITY-FINDING-RESOLUTION-TIME
+**Create date**: 2026-08-18
+**Author**: Claude (QA Designer)
+**Update date**: 2026-08-18
+
+**Cách đọc bảng**: Mỗi test case mô tả 1 thao tác mà người dùng thật (PM, QA,
+security reviewer) có thể tự tay làm trên màn hình **Security Dashboard →
+mở chi tiết 1 ticket**. Không cần biết API, DTO hay tên bảng dữ liệu — chỉ
+cần biết: mở màn hình nào, bấm gì, và nhìn thấy gì trên giao diện.
+
+Trường mới được kiểm tra ở đây là **"Security Finding Resolution Time"**
+(tiếng Việt: "Thời gian xử lý finding bảo mật") — hiển thị trong khung chi
+tiết ticket (drawer) khi bấm xem chi tiết 1 ticket trên Security Dashboard.
+
+---
+
+| ID | AC | Viewpoint | Dữ liệu tiền đề | Thủ tục | Input | Expected result | Priority | Note |
+|---|---|---|---|---|---|---|---|---|
+| BB-001 | AC-SECFINDRES-1 | Normal | TD-TICKET-A (1 đợt xử lý đã hoàn tất) | 1. Đăng nhập bằng tài khoản có quyền xem Security Dashboard cho dự án chứa ticket. 2. Vào Security Dashboard, lọc/tìm đúng ticket TD-TICKET-A. 3. Bấm nút xem chi tiết ticket. | Không có input nhập tay — chỉ thao tác chọn/bấm | Khung chi tiết hiện ra, mục "Security Finding Resolution Time" hiển thị đúng khoảng thời gian từ lúc phát hiện lỗi đến lúc xử lý xong của TD-TICKET-A, dạng `giờ:phút:giây` (vd `51:30:00`) | P0 | Đây là case cơ bản nhất — phải đúng tuyệt đối trước khi test các case khác |
+| BB-002 | AC-SECFINDRES-2 | Normal / Empty data | TD-TICKET-B (chưa từng bị quét bảo mật lần nào) | 1. Mở Security Dashboard. 2. Tìm và mở chi tiết ticket TD-TICKET-B. | Không có | Mục "Security Finding Resolution Time" hiển thị dấu gạch ngang `"-"` (không hiển thị số 0, không để trống, không báo lỗi) | P0 | Xác nhận hệ thống không nhầm "chưa có dữ liệu" thành "0 giờ" |
+| BB-003 | AC-SECFINDRES-3 | Boundary / State (đang xử lý dở) | TD-TICKET-C (đang có lỗi bảo mật chưa xử lý xong, chưa từng xử lý xong lần nào trước đó) | 1. Mở Security Dashboard. 2. Mở chi tiết ticket TD-TICKET-C. | Không có | Mục "Security Finding Resolution Time" hiển thị `"-"` (không hiển thị số 0 hay giá trị nhầm lẫn nào khác) | P0 | Ticket đang có lỗi mở nhưng CHƯA từng đóng lần nào → vẫn phải là `"-"`, không phải một con số |
+| BB-004 | AC-SECFINDRES-4 | Loại ký tự / đa ngôn ngữ | TD-TICKET-A | 1. Đổi ngôn ngữ giao diện sang Tiếng Việt. 2. Mở chi tiết ticket TD-TICKET-A, đọc tên nhãn của mục thời gian xử lý. 3. Đổi ngôn ngữ sang Tiếng Anh, lặp lại. 4. Đổi ngôn ngữ sang Tiếng Nhật, lặp lại. | Không có | - VI: nhãn hiển thị đúng "Thời gian xử lý finding bảo mật". - EN: nhãn hiển thị đúng "Security Finding Resolution Time". - JP: nhãn hiển thị đúng "セキュリティ指摘解消時間". Không có chữ bị lỗi font/ký tự lạ (mojibake) ở bất kỳ ngôn ngữ nào | P1 | Giá trị số (`HH:mm:ss`) phải giữ nguyên dạng số Latin ở cả 3 ngôn ngữ, không đổi thành ký tự khác |
+| BB-005 | AC-SECFINDRES-5 | Regression / không phá màn hình cũ | TD-TICKET-H (ticket có đủ cả 3 khối dữ liệu cũ: có ít nhất 1 loại quét bảo mật khác đã hiển thị trước đây, có mục checklist, có ít nhất 1 exception) | 1. Mở chi tiết ticket TD-TICKET-H. 2. Quan sát toàn bộ khung chi tiết từ trên xuống dưới. | Không có | Khung chi tiết hiển thị đủ **4 khối**: (1) Security Finding Resolution Time (mới), (2) khối "Scans" liệt kê **đầy đủ tất cả** loại quét bảo mật đã từng hiển thị trước đây (bao gồm cả kết quả quét SAST), (3) khối Checklist, (4) khối Exceptions — không khối nào bị thiếu dòng, lệch layout, hoặc mất dữ liệu so với trước khi có field mới | P0 | **Đã phát hiện lỗi thật ở bản build hiện tại**: khối "Scans" đang **ẩn mất** dòng kết quả quét SAST sau khi thêm field mới — xem `test-results.md` mục 5/9. Test case này hiện đang **FAIL**, không được sửa ngầm để test qua, cần người phụ trách xác nhận hướng xử lý trước khi đóng ticket |
+| BB-006 | AC-SECFINDRES-6 | Data integrity (read-only) | TD-TICKET-A | 1. Ghi lại toàn bộ nội dung khối "Scans" của ticket TD-TICKET-A (số liệu, trạng thái) trước khi mở chi tiết. 2. Mở chi tiết ticket (xem field Resolution Time) 5 lần liên tiếp. 3. Đóng khung chi tiết. 4. So sánh lại khối "Scans" với bước 1. | Không có | Dữ liệu quét bảo mật của ticket **không thay đổi** dù đã mở xem chi tiết nhiều lần — chỉ xem, không có thao tác nào tạo/sửa/xóa dữ liệu | P0 | Việc "xem" field mới tuyệt đối không được làm thay đổi dữ liệu lịch sử quét |
+| BB-007 | AC-SECFINDRES-7 | Normal (nhiều đợt xử lý) | TD-TICKET-D (2 đợt xử lý đã đóng: 6 giờ và 24 giờ) | 1. Mở chi tiết ticket TD-TICKET-D. | Không có | Mục Resolution Time hiển thị **tổng cộng cả 2 đợt** = `30:00:00` (6 giờ + 24 giờ), không phải chỉ đợt gần nhất hay đợt đầu tiên | P0 | Xác nhận hệ thống cộng dồn đúng, không lấy nhầm 1 đợt duy nhất |
+| BB-008 | AC-SECFINDRES-8 | State transition / boundary | TD-TICKET-E (1 đợt đã đóng 2 giờ + 1 đợt lỗi mới đang mở, chưa xử lý xong) | 1. Mở chi tiết ticket TD-TICKET-E. | Không có | Mục Resolution Time hiển thị `02:00:00` — **chỉ tính đợt đã xử lý xong**, đợt đang mở (chưa xử lý xong) không được cộng vào và không làm giá trị biến thành `"-"` | P0 | Case dễ nhầm lẫn nhất: có dữ liệu thật (không phải rỗng) nhưng vẫn phải loại trừ đợt chưa xong |
+| BB-009 | AC-SECFINDRES-9 | Boundary (số giờ lớn) | TD-TICKET-F (tổng thời gian xử lý vượt qua 24 giờ, ví dụ 48 giờ) | 1. Mở chi tiết ticket TD-TICKET-F. | Không có | Số giờ hiển thị đúng tổng thực tế (vd `48:00:00`), **không bị chia lại theo ngày** (không hiển thị như "2 ngày 0 giờ" hay reset về `00:00:00`) | P1 | Đây là thời lượng cộng dồn, không phải giờ đồng hồ trong ngày |
+| BB-009b | AC-SECFINDRES-9 | Boundary (số giờ ≥ 100) | TD-TICKET-F2 (tổng thời gian xử lý ≥ 100 giờ) | 1. Mở chi tiết ticket TD-TICKET-F2. | Không có | Số giờ hiển thị đủ 3 chữ số trở lên nếu cần (vd `120:00:00`), không bị cắt bớt còn 2 chữ số | P2 | Kiểm tra thêm mốc 3 chữ số ngoài mốc 24h thông thường |
+| BB-010 | Business rule chung (BR-2) — không phải AC riêng | Normal / dao động số liệu | TD-TICKET-G (trong 1 đợt xử lý, số lỗi chưa xử lý tăng giảm nhiều lần trước khi về 0) | 1. Mở chi tiết ticket TD-TICKET-G. | Không có | Hệ thống vẫn tính đây là **1 đợt xử lý duy nhất** (từ lần đầu phát hiện lỗi tới lần đầu tiên hết lỗi hoàn toàn) — không bị tách thành nhiều đợt nhỏ chỉ vì số lỗi dao động lên xuống trong lúc xử lý | P1 | Xác nhận hệ thống chỉ quan tâm "có lỗi hay hết lỗi", không quan tâm số lượng lỗi tăng giảm bao nhiêu lần ở giữa |
+| BB-011 | Permission (kế thừa từ Security Dashboard hiện có, áp dụng cho field mới) | Permission | TD-USER-NOACCESS (tài khoản không có quyền Security trên dự án chứa ticket, ví dụ tài khoản Developer thường) | 1. Đăng nhập bằng TD-USER-NOACCESS. 2. Thử mở Security Dashboard / thử mở chi tiết ticket thuộc dự án không được cấp quyền. | Không có | Hệ thống từ chối truy cập (thông báo không có quyền), **không hiển thị** bất kỳ dữ liệu nào của ticket — kể cả field Resolution Time mới | P1 | Field mới không được là "lỗ hổng" lộ dữ liệu ra ngoài luồng phân quyền hiện có |
+| BB-012 | Non-existing ID | Error / dữ liệu không tồn tại | Mã ticket không có thật trong hệ thống | 1. Truy cập trực tiếp vào đường dẫn/thao tác mở chi tiết cho 1 mã ticket không tồn tại (vd gõ thẳng URL hoặc thao tác trong lúc dữ liệu vừa bị xoá ở tab khác). | Mã ticket không tồn tại | Hệ thống hiển thị thông báo "không tìm thấy" rõ ràng, thân thiện — không hiển thị màn hình trắng, không hiển thị lỗi kỹ thuật (mã lỗi hệ thống, stack trace) cho người dùng | P1 | Hành vi giữ nguyên như hiện tại của màn hình chi tiết, field mới không được làm phát sinh lỗi khác |
+| BB-013 | Double submit | Double submit | TD-TICKET-A | 1. Mở chi tiết ticket TD-TICKET-A. 2. Bấm liên tục 2-3 lần thật nhanh vào nút "xem chi tiết" của cùng 1 ticket (hoặc bấm khi khung chi tiết đang tải). | Bấm nhanh nhiều lần | Khung chi tiết chỉ mở **1 lần**, hiển thị đúng 1 giá trị Resolution Time duy nhất, không bị hiển thị 2 khung chồng nhau, không bị giá trị nhấp nháy sai/giá trị cũ của ticket khác | P2 | Kiểm tra hành vi khi người dùng thao tác nhanh, không phải lỗi cố ý của tính năng |
+| BB-014 | Back/reload — chuyển đổi giữa các ticket | State transition | TD-TICKET-A và TD-TICKET-B (2 ticket có giá trị Resolution Time khác nhau: 1 ticket có số liệu, 1 ticket là `"-"`) | 1. Mở chi tiết ticket TD-TICKET-A, xác nhận giá trị hiển thị đúng của A. 2. Đóng khung chi tiết. 3. Mở ngay chi tiết ticket TD-TICKET-B. | Không có | Giá trị Resolution Time của ticket TD-TICKET-B hiển thị đúng là `"-"`, **không bị giữ lại** giá trị số của ticket TD-TICKET-A trước đó | P1 | Phòng lỗi "dữ liệu cũ còn sót lại" khi chuyển nhanh giữa các ticket |
+| BB-015 | External IF failure | External IF failure | TD-TICKET-A, đồng thời hệ thống backend/CSDL đang gặp sự cố (giả lập bằng cách ngắt kết nối tạm thời hoặc theo kịch bản QA/dev đã thống nhất) | 1. Trong lúc backend gặp sự cố, mở chi tiết ticket TD-TICKET-A. | Không có | Màn hình hiển thị thông báo lỗi chung chung, dễ hiểu (vd "Không tải được dữ liệu, vui lòng thử lại") — không hiển thị màn hình trắng, không crash trình duyệt, không lộ thông tin kỹ thuật nội bộ | P1 | Hành vi lỗi phải giống với hành vi lỗi hiện có của các khối dữ liệu khác trong cùng màn hình (không có xử lý lỗi riêng cho field mới) |
+| BB-016 | Boundary định dạng số nhỏ nhất | Boundary | TD-TICKET-I (đợt xử lý cực ngắn, đúng 0 phút 0 giây — phát hiện và xử lý xong gần như cùng lúc) | 1. Mở chi tiết ticket TD-TICKET-I. | Không có | Giá trị hiển thị đúng định dạng đủ 2 chữ số cho phút/giây (vd `00:00:00` hoặc `00:00:0x`), không hiển thị thiếu số 0 phía trước (không phải `0:0:0`) | P2 | Kiểm tra padding số 0 ở biên nhỏ nhất |
+
+---
+
+## Ghi chú về các viewpoint không tạo test case riêng
+
+- **Full-width number (số toàn góc)**: Field này không có bất kỳ ô nhập liệu
+  nào cho người dùng cuối (chỉ hiển thị, không nhập) — không áp dụng viewpoint
+  này. Không tạo test case giả để né tránh việc "không áp dụng".
+- **Trùng thời điểm giữa 2 lần quét (dữ liệu bị trùng giờ tuyệt đối)**: Đây là
+  điểm mơ hồ trong đặc tả (`spec-pack.md` không định nghĩa rõ khi 2 lần quét
+  trùng đúng thời điểm thì tính thứ tự thế nào) — **không tạo test case khẳng
+  định 1 kết quả "đúng" cụ thể** vì sẽ tự đặt ra quy tắc không có trong spec.
+  Đã đưa lại thành Open Issue (xem `test-results.md` mục 9) để người phụ trách
+  quyết định trước khi viết test case chính thức cho case này.

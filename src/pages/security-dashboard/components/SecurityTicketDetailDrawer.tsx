@@ -163,6 +163,15 @@ export function SecurityTicketDetailDrawer({
               </div>
             )}
           </section>
+
+          <section className="space-y-3">
+            <h3 className="text-base font-semibold text-slate-950">
+              {t("Pages.SecurityDashboard.drawer.resolutionTimeTitle")}
+            </h3>
+            <div className="rounded-xl border border-slate-200 p-3 text-sm text-slate-950">
+              {detail.resolutionTime ?? "-"}
+            </div>
+          </section>
         </div>
       ) : null}
     </Drawer>
