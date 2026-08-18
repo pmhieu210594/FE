@@ -3,7 +3,7 @@
 - **Ticket:** SECURITY-FINDING-RESOLUTION-TIME
 - **Trạng thái:** Draft
 - **Tạo ngày:** 2026-08-18
-- **Diff review:** không có git repo trong workspace này (`Is a git repository: false`) — không thể lấy `sha-base...sha-head`. Xem block "Ghi chú quan trọng về input" bên dưới.
+- **Diff review:** không có git repo trong workspace này (`Is a git repository: false`) — không thể lấy `sha-base...sha-head`. Xem block "Ghi chú quan trọng về input" bên dưới. 
 - **Branch:** không áp dụng (không có git)
 - **Nguồn đối chiếu:** [docs/changes/SECURITY-FINDING-RESOLUTION-TIME/spec-pack.md](spec-pack.md)
 - **Reviewer:** AI review — người review cần điền tên và xác nhận lại
